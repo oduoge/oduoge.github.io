@@ -265,7 +265,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
             分类
           </a>
@@ -273,7 +273,7 @@
       
         
         <li class="menu-item menu-item-handwriting">
-          <a href="/categories/hadnwriting/" rel="section">
+          <a href="/categories/handwriting/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
@@ -639,6 +639,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/搭建博客/" itemprop="url" rel="index">
+                    <span itemprop="name">搭建博客</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -668,7 +690,25 @@
       
         
           
-            
+            <h4 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h4><ul>
+<li><p>新建分类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo new page handwriting</span><br><span class="line">## 在新生成的handwwriting目录下的index.md中添加type项.</span><br><span class="line">---</span><br><span class="line">title: handwriting</span><br><span class="line">date: 2018-12-01 23:10:11</span><br><span class="line">type: handwriting</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>允许文章添加图片</p>
+</li>
+</ul>
+<p>修改<code>_config.yml</code>配置文件中的<code>post_asset_folder</code>项为<code>true</code></p>
+<p>创建新文章<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;新文章名&quot;</span><br></pre></td></tr></table></figure></p>
+<p>之后在<code>source/_posts</code>下会生成一个名为”新文章名”的文件夹和一个名为”新文章名”的<code>.md</code>文件，文件夹中放置需要收入的图片，在<code>.md</code>文件中引入图片的方式为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img 需要引入的图片名.png 图片说明 %&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>编译文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>提交</p>
+</li>
+</ul>
+<p>提交之前可用<code>hexo clean</code>删除以前的内容，也可以不用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
+
           
         
       
@@ -890,10 +930,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                
-                  <span class="site-state-item-count">2</span>
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
-                
+                </a>
               </div>
             
 
@@ -901,10 +941,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">1</span>
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
-                
+                </a>
               </div>
             
 
