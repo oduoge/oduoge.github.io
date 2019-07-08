@@ -8,15 +8,16 @@ categories:
 
 ## <code>Apache</code>
 
-首先执行命令找到 ```httpd``` 路径:
- ```
+首先执行命令找到 <code>httpd</code> 路径:
+ ```sh
  ps aux | grep httpd
  ``` 
- 如 ```httpd``` 路径为 ```/usr/local/apache/bin/httpd``` 然后执行以下命令:
-  ```
+
+ 如 <code>httpd</code> 路径为 <code>/usr/local/apache/bin/httpd</code> 然后执行以下命令:
+  ```sh
   /usr/local/apache/bin/httpd -V | grep “SERVER_CONFIG_FILE”
   ``` 
-  即可找到编译时加载的配置文件路径 ```httpd.conf```， ```-V``` 参数可以看到编译时配置的参数
+  即可找到编译时加载的配置文件路径 <code>httpd.conf</code>， <code>-V</code> 参数可以看到编译时配置的参数
 
 ## <code>Nginx</code>
 
@@ -59,20 +60,24 @@ ps aux | grep mysqld
 ## <code>PHP</code>
 
 ### 1
-可通过 ```php``` 函数 ```phpinfo``` 来查看，写个文件，然后用网址访问一下，查找 ```“Loaded Configuration File”``` 对应的值即为php加载的配置文件
+可通过 <code>php</code> 函数 <code>phpinfo</code> 来查看，写个文件，然后用网址访问一下，查找 <code>“Loaded Configuration File”</code> 对应的值即为 <code>php</code> 加载的配置文件
 ### 2
-如果是 ```nginx+php``` 配置，也可以通过查找 ```php``` 执行路径
+如果是 <code>nginx + php</code> 配置，也可以通过查找 <code>php</code> 执行路径
 ```
 ps aux | grep php
 ```
-如，路径为 ```/usr/local/nginx/sbin/php-fpm```
+如，路径为 <code>/usr/local/nginx/sbin/php-fpm</code>
 然后执行以下命令
 ```
 /usr/local/nginx/sbin/php-fpm -i | grep “Loaded Configuration File”
 ```
-即可看到 ```php``` 加载的配置文件
+即可看到 <code>php</code> 加载的配置文件
 ### 3
-如果是 ```apache+mod_php``` 配置，也可以在 ```apache``` 配置文件中查看加载的 ```php.ini``` 路径。如 ```PHPIniDir “/usr/local/apache/conf/php.ini”```
+如果是 <code>apache + mod_php</code> 配置，也可以在 <code>apache</code> 配置文件中查看加载的 <code>php.ini</code> 路径。如 
+```
+PHPIniDir “/usr/local/apache/conf/php.ini”
+```
+
 当然也有简单的方法，就是通过find来搜索
 如
 ```
