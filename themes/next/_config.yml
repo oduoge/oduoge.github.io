@@ -425,11 +425,11 @@ gitment:
   enable: true
   mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
   count: true # Show comments count in post meta area
-  lazy: true # Comments lazy loading with a button
+  lazy: false # Comments lazy loading with a button
   cleanly: false # Hide 'Powered by ...' on footer, and more
   language: # Force language, or auto switch by theme
   github_user: oduoge@126.com # MUST HAVE, Your Github ID
-  github_repo: https://github.com/oduoge/hello-world.git # MUST HAVE, The repo you use to store Gitment comments
+  github_repo: git@github.com:oduoge/hello-world.git # MUST HAVE, The repo you use to store Gitment comments
   client_id: 9451f4c1064d818a4bb9 # MUST HAVE, Github client id for the Gitment
   client_secret: dcd4a4d229e2079f02561b2b184b403b8da7c2d1 # EITHER this or proxy_gateway, Github access secret token for the Gitment
   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
