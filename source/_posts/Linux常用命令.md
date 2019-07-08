@@ -6,8 +6,9 @@ categories:
 - linux
 ---
 
-1. 开放端口
-- <code>CentOS 7</code>
+## 开放端口
+### <code>CentOS 7</code>
+
 查看防火墙状态: 
 ```
 firewall-cmd --state

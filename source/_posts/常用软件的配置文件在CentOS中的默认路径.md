@@ -9,14 +9,16 @@ categories:
 ## <code>Apache</code>
 
 首先执行命令找到 <code>httpd</code> 路径:
- ```sh
- ps aux | grep httpd
- ``` 
+```
+ps aux | grep httpd
+```
 
  如 <code>httpd</code> 路径为 <code>/usr/local/apache/bin/httpd</code> 然后执行以下命令:
-  ```sh
-  /usr/local/apache/bin/httpd -V | grep “SERVER_CONFIG_FILE”
-  ``` 
+
+```
+/usr/local/apache/bin/httpd -V | grep “SERVER_CONFIG_FILE”
+```
+
   即可找到编译时加载的配置文件路径 <code>httpd.conf</code>， <code>-V</code> 参数可以看到编译时配置的参数
 
 ## <code>Nginx</code>
