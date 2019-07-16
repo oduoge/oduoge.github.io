@@ -29,7 +29,7 @@ void AFPSCppProjectile::OnHit(
 }
 ```
 
-1. 创建组件
+## 创建组件
 
 一个<code>Actor</code>中的添加多个组件时需要指定一个根组件。
 
@@ -55,7 +55,7 @@ SphereComp->SetupAttachment(MeshComp);
 
 头文件中不要添加额外的包，其会加长编译的时间，可通过声明的方式解决编译时的报错
 
-- 设置碰撞
+### 设置碰撞
 
 ```c++
 // 无碰撞
@@ -73,7 +73,7 @@ SphereComp->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
 ```
 
 
-- 碰撞时生成粒子效果
+### 碰撞时生成粒子效果
 
 ```c++
 // .h 
@@ -94,7 +94,7 @@ AFPSObjectiveActor::PlayEffects()
 
 ```
 
-- 重叠时调用
+### 重叠时调用
 
 ```c++
 public:
@@ -114,13 +114,13 @@ void AFPSObjectiveActor::NotifyActorBeginOverlap(AActor* OtherActor)
 
 ```
 
-2. <code>errors</code>
+## <code>errors</code>
 
-- <code>不能将 "UStaticMeshComponent *" 类型的值分配到 "USceneComponent *" 类型的实体</code>
+### 不能将 <code>"UStaticMeshComponent *"</code> 类型的值分配到 <code>"USceneComponent *"</code> 类型的实体
 
 原因是未识别<code>UStaticMeshComponent</code>类型，导入其头文件即可: <code>include "Components/StaticMeshComponent.h"</code>
 
-- unrealheadertool failed for target ue4editor
+### <code>unrealheadertool failed for target ue4editor</code>
 
 用<code>VS</code>编译时出现上述错误，不明所以，改用<code>Unreal Editor</code>打开项目，通过<code>Editor</code>编译，报错，信息指出是代码拼写出错，修正后解决。若<code>VS</code>提供的调试信息不够明确，可尝试换个方式。
 

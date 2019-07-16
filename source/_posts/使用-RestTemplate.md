@@ -4,7 +4,6 @@ date: 2019-07-08 17:01:14
 tags:
 categories:
 - Spring Boot
-- java
 ---
 
 ## <code>Not enough variables available to expand</code>

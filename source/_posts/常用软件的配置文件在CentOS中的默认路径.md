@@ -19,7 +19,7 @@ ps aux | grep httpd
 /usr/local/apache/bin/httpd -V | grep “SERVER_CONFIG_FILE”
 ```
 
-  即可找到编译时加载的配置文件路径 <code>httpd.conf</code>， <code>-V</code> 参数可以看到编译时配置的参数
+即可找到编译时加载的配置文件路径 <code>httpd.conf</code>， <code>-V</code> 参数可以看到编译时配置的参数
 
 ## <code>Nginx</code>
 

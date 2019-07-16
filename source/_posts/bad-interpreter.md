@@ -5,8 +5,7 @@ tags:
 - hexo
 - 异常
 categories:
-- java
-- linux
+- Linux
 ---
 在 <code>windows</code> 下创建的 <code>shell</code> 文件上传到 <code>Linux</code> 服务器，运行时出现
 ```shell
