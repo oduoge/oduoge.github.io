@@ -61,3 +61,4 @@ String paramedUrl = "http://localhost:8080/sayHello?p1={p1}";
 System.out.println(restTemplate.getForObject(paramedUrl, String.class, map));
 ```
 
+## 连接池
