@@ -4,7 +4,7 @@ date: 2018-04-14 11:59:02
 tags:
 - 测试
 - hexo
-categories: 搭建博客
+categories: 博客
 ---
 
 #### 基本操作

@@ -2,8 +2,9 @@
 title: 'FPS C++ '
 date: 2019-05-07 22:58:34
 tags:
-categories: 
 - UE4
+categories: 
+- Game
 ---
 
 使用<code>UGameplayStatics</code>需要引入头文件<code>Kismet/GameplayStatics.h</code>

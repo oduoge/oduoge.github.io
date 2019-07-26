@@ -12,9 +12,9 @@ categories:
 /bin/sh^M: bad interpreter
 ```
 可以用以下方式解决
-```vi xxx.sh``` (报错的那个文件)
+<code>vi xxx.sh</code> (报错的那个文件)
 
-```
+```sh
 :set fileformat=unix
 :wq
 ```
