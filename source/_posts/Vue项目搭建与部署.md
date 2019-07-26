@@ -222,3 +222,23 @@ module.exports = {
 ```
 
 在页面中按需引入模块即可操作
+
+
+## 附录
+
+### <code>vue</code>对数据对象的属性更改后，视图没更新
+
+在函数中对数据对象直接采用赋值的形式更新数据后，视图中的数据没有相应的改变。
+
+
+```js
+data () {
+  params: {}
+},
+method: {
+  queryInfo: funtion() {
+    this.params.name = 'Tony'; // 不能触发数据的改变
+    this.$set(this.params, 'name', 'Tony'); // 直接调用 set 来触发数据改变
+  }
+}
+```
