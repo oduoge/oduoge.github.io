@@ -4,8 +4,8 @@ date: 2019-07-26 16:33:34
 tags:
 - 文档摘要
 categories:
+- java
 - Spring Boot
-- 后端
 ---
 
 Spring Cloud Netflix [官方文档](https://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html)
