@@ -41,3 +41,6 @@ fudge 127.127.1.0 stratum 10
 
 启动<code>ntp</code>服务：<code>service ntpd start</code>
 查看同步情况：<code>ntpq -p</code>
+
+
+## 解压/压缩命令
