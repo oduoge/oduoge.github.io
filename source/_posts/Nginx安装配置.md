@@ -7,6 +7,8 @@ categories:
 - 后端
 ---
 
+
+{% asset_img pets-4415649_960_720.jpg pets %}
 ### 安装<code>nginx</code>开源版
 
 通过<code>yum</code>源安装

@@ -8,7 +8,7 @@ subtitle:
 description: 千里之行, 始于足下
 keywords:
 author: Lieber
-language: zh-Hans
+language: zh-CN
 timezone:
 
 # URL
@@ -74,7 +74,7 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 # theme: landscape
-theme: next
+theme: hueman
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

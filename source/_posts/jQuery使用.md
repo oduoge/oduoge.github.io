@@ -6,6 +6,7 @@ categories:
 - 前端
 ---
 
+{% asset_img shanghai-3459422_960_720.jpg shanghai %}
 ## 兼容性
 
 ### 苹果手机 <code>jquery</code> 点击事件无效

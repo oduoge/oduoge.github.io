@@ -4,8 +4,11 @@ date: 2019-05-09 14:55:41
 tags:
 - git
 categories:
+- 工具
 ---
 
+
+{% asset_img cobweb-4439844_960_720.jpg 风景 %}
 1. 错误信息
 
 - <code>ssh: connect to host github.com port 22: Connection timed out</code>

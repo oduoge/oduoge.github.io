@@ -7,6 +7,7 @@ categories:
 - Mysql
 ---
 
+{% asset_img flowers-4436910_960_720.jpg flowers %}
 Mysql中可以通过设置<code>max_connections</code>参数来控制数据库的最大连接数:
 <!---------------more --------------------->
 - <code>max_connections</code>

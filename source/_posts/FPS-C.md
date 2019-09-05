@@ -9,6 +9,7 @@ categories:
 
 使用<code>UGameplayStatics</code>需要引入头文件<code>Kismet/GameplayStatics.h</code>
 
+<!-----more ---------------->
 ```c++
 #include "Kismet/GameplayStatics.h"
 

@@ -7,6 +7,7 @@ categories:
 - Mysql
 ---
 
+{% asset_img nature-4431134_960_720.jpg nature %}
 ### 重启服务
 
 - CentOS7

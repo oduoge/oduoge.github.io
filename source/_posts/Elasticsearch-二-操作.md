@@ -7,6 +7,8 @@ categories:
 - 后端
 ---
 
+{% asset_img outdoor-4433532_960_720.jpg outdoor %}
+
 # 插件
 
 ## <code>logstash</code>

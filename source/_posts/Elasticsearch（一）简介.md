@@ -7,6 +7,8 @@ categories:
 - 后端
 ---
 
+{% asset_img apartments-4358755_960_720.jpg apartment %}
+
 搜索引擎三大过程，爬取内容、进行分词、建立反向索引。
 
 存储海量数据的分布式搜索引擎
