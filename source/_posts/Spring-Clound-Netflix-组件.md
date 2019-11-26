@@ -2,9 +2,9 @@
 title: Spring Cloud Netflix 组件
 date: 2019-07-26 16:33:34
 tags:
-- 文档摘要
+- abstract
 categories:
-- java
+- Java
 - Spring Boot
 ---
 

@@ -2,7 +2,9 @@
 title: 使用 RestTemplate
 date: 2019-07-08 17:01:14
 tags:
+- tips
 categories:
+- Java
 - Spring Boot
 ---
 
