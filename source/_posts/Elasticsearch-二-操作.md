@@ -2,7 +2,7 @@
 title: Elasticsearch(二)操作
 date: 2019-08-29 14:48:18
 tags:
-- Elasticsearch
+- ElasticSearch
 categories:
 - 后端
 ---
