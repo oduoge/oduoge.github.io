@@ -5,6 +5,7 @@ tags:
 - Elasticsearch
 categories:
 - 后端
+- 中间件
 ---
 
 {% asset_img apartments-4358755_960_720.jpg apartment %}

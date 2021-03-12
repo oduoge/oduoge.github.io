@@ -1,10 +1,10 @@
 ---
-title: bad interpreter
+title: 脚本运行时出现Bad Interpreter
 date: 2018-12-01 22:47:26
 tags:
-- hexo
-- 异常
+- 运维
 categories:
+- 操作系统
 - Linux
 ---
 在 <code>windows</code> 下创建的 <code>shell</code> 文件上传到 <code>Linux</code> 服务器，运行时出现

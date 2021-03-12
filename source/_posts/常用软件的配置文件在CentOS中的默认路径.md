@@ -2,9 +2,14 @@
 title: 常用软件的配置文件在CentOS中的默认路径
 date: 2019-07-08 17:25:01
 tags:
+- 运维
 categories:
+- 操作系统
 - Linux
 ---
+
+&emsp;&emsp;收集整理一些常用的软件在 CentOS 中的安装地址。
+<!------more------>
 
 ## <code>Apache</code>
 

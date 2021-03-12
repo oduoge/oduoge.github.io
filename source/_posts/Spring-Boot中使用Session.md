@@ -2,10 +2,10 @@
 title: Spring Boot中使用Session
 date: 2019-08-02 15:26:23
 tags:
-- tips
-categories:
-- Java
 - Spring Boot
+categories:
+- 后端
+- Java
 ---
 
 ## 基础知识  

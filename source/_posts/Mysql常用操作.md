@@ -1,10 +1,11 @@
 ---
-title: Mysql常用操作
+title: MySQL常用操作
 date: 2019-08-19 14:44:16
 tags:
-- tips
+- MySQL
 categories:
-- Mysql
+- 数据库
+- MySQL
 ---
 
 {% asset_img nature-4431134_960_720.jpg nature %}

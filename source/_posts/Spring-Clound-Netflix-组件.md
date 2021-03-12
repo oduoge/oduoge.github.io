@@ -2,10 +2,10 @@
 title: Spring Cloud Netflix 组件
 date: 2019-07-26 16:33:34
 tags:
-- abstract
-categories:
-- Java
 - Spring Boot
+categories:
+- 后端
+- Java
 ---
 
 Spring Cloud Netflix [官方文档](https://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html)

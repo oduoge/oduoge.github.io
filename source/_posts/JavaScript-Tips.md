@@ -1,9 +1,11 @@
 ---
-title: JavaScript Tips
+title: JS 数据操作
 date: 2019-07-22 14:48:16
 tags:
 - tips
 categories:
+- 前端
+- JavaScript
 ---
 
 ## 数组赋值引用

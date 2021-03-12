@@ -98,15 +98,16 @@ menu:
   home: / || home
   #about: /about/ || user
   tags: /tags/ || tags
-  java: /categories/java/ || tags
+  # java: /categories/java/ || tags
   #categories: /categories/ || th
-  categories: /categories/
+  categories: /categories/ || book
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
   #something: /categories/something/
-  handwriting: /categories/handwriting/
+  gallery: /gallery/ || camera
+  handwriting: /categories/handwriting/ || pencil
 
 # Enable/Disable menu icons.
 menu_icons:
@@ -121,7 +122,8 @@ menu_icons:
   sitemap: sitemap
   commonweal: heartbeat
   something: question
-
+  gallery: camera
+  handwriting: pencil
 
 
 # ---------------------------------------------------------------
@@ -130,9 +132,9 @@ menu_icons:
 
 # Schemes
 #scheme: Muse
-scheme: Mist
+# scheme: Mist
 #scheme: Pisces
-#scheme: Gemini
+scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -327,7 +329,7 @@ font:
     external: true
     #family: Lato
     family: Monda
-    size:
+    size: 16
 
   # Font settings for Headlines (h1, h2, h3, h4, h5, h6).
   # Fallback to `global` font settings.
@@ -341,6 +343,7 @@ font:
   posts:
     external: true
     family:
+    size: 16  
 
   # Font settings for Logo.
   # Fallback to `global` font settings.

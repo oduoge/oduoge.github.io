@@ -1,10 +1,11 @@
 ---
-title: CSS Tips
+title: CSS色彩控制
 date: 2019-07-22 16:33:45
 tags:
-- tips
+- CSS
 categories:
 - 前端
+- CSS
 ---
 
 ## [颜色](https://www.cnblogs.com/xuan-0107/p/4448068.html)

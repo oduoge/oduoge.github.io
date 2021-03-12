@@ -1,11 +1,11 @@
 ---
-title: 使用 RestTemplate
+title: RestTemplate
 date: 2019-07-08 17:01:14
 tags:
-- tips
-categories:
-- Java
 - Spring Boot
+categories:
+- 后端
+- Java
 ---
 
 ## <code>Not enough variables available to expand</code>

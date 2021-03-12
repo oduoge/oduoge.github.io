@@ -1,10 +1,11 @@
 ---
-title: Nginx安装配置
+title: NGINX安装配置
 date: 2019-08-20 14:54:21
 tags:
-- nginx
+- NGINX
 categories:
 - 后端
+- Web服务器
 ---
 
 

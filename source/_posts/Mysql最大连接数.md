@@ -1,10 +1,11 @@
 ---
-title: Mysql最大连接数
+title: MySQL最大连接数
 date: 2019-08-19 15:01:04
 tags:
-- tips
+- MySQL
 categories:
-- Mysql
+- 数据库
+- MySQL
 ---
 
 {% asset_img flowers-4436910_960_720.jpg flowers %}

@@ -2,8 +2,9 @@
 title: Linux常用命令
 date: 2019-07-08 16:04:01
 tags:
-- tips
+- 运维
 categories:
+- 操作系统
 - Linux
 ---
 

@@ -1,8 +1,8 @@
 ---
-title: git操作
+title: Git操作
 date: 2019-05-09 14:55:41
 tags:
-- git
+- Git
 categories:
 - 工具
 ---

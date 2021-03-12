@@ -2,10 +2,10 @@
 title: Vue项目搭建与部署
 date: 2019-07-25 18:19:57
 tags:
-- vue
-- js
+- Vue
 categories:
 - 前端
+- JavaScript
 ---
 
   使用 <code> vue cli 3 </code> ，要求 <code>node.js 8.9</code>或更高版本，<code>UI</code> 插件选用的是<code>vux</code>

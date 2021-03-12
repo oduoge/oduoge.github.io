@@ -5,6 +5,7 @@ tags:
 - ElasticSearch
 categories:
 - 后端
+- 中间件
 ---
 
 {% asset_img outdoor-4433532_960_720.jpg outdoor %}
