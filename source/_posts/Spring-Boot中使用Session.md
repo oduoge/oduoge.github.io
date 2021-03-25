@@ -8,6 +8,9 @@ categories:
 - Java
 ---
 
+记录`Spring Boot`中操作`Session`的过程
+<!---more ---->
+
 ## 基础知识  
 ### Cookie  
 1. Cookie由服务器端创建，然后添加到 HttpServletResponse 中发送给客户端（浏览器）。  

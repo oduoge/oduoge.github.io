@@ -6,7 +6,12 @@ tags:
 categories:
 - 操作系统
 - Linux
+toc: true
 ---
+
+记录`Linux`的一些日常使用命令
+
+<!---more ---->
 
 ## 开放端口
 ### <code>CentOS 7</code>

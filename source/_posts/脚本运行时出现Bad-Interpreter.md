@@ -7,6 +7,11 @@ categories:
 - 操作系统
 - Linux
 ---
+
+脚本运行时出现Bad Interpreter
+
+<!----more ----->
+
 在 <code>windows</code> 下创建的 <code>shell</code> 文件上传到 <code>Linux</code> 服务器，运行时出现
 ```shell
 /bin/sh^M: bad interpreter

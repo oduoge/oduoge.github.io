@@ -6,7 +6,12 @@ tags:
 categories:
 - 后端
 - Java
+toc: true
 ---
+
+记录在使用`RestTemplate`过程中遇到的问题
+
+<!---more ---->
 
 ## <code>Not enough variables available to expand</code>
 

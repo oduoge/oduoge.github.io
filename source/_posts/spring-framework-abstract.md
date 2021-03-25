@@ -1,5 +1,5 @@
 ---
-title: Spring Framework Abstract
+title: Spring Framework
 date: 2019-09-09 10:47:35
 tags:
 - Spring Framework
@@ -8,6 +8,9 @@ categories:
 - Java
 - Spring Framework
 ---
+
+`Spring` 框架的部分文档摘要
+<!----more ----->
 
 > <code>Version 5.1.9.RELEASE</code>
 

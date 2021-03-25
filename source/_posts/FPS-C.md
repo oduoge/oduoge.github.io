@@ -5,7 +5,12 @@ tags:
 - UE4
 categories: 
 - Game
+toc: true
 ---
+
+记录`UE4`中如何使用`C++`控制`Actor`
+
+<!----more ---->
 
 使用<code>UGameplayStatics</code>需要引入头文件<code>Kismet/GameplayStatics.h</code>
 

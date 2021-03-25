@@ -9,6 +9,11 @@ categories:
 ---
 
 {% asset_img nature-4431134_960_720.jpg nature %}
+
+记录`MySQL`数据库的一些日常操作
+
+<!---more ---->
+
 ### 重启服务
 
 - CentOS7

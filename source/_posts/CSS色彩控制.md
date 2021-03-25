@@ -1,5 +1,5 @@
 ---
-title: CSS色彩控制
+title: CSS小Tips
 date: 2019-07-22 16:33:45
 tags:
 - CSS
@@ -7,6 +7,10 @@ categories:
 - 前端
 - CSS
 ---
+
+`CSS` 使用小`tips`
+
+<!----more --->
 
 ## [颜色](https://www.cnblogs.com/xuan-0107/p/4448068.html)
 

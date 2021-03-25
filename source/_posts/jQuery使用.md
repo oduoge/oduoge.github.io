@@ -9,6 +9,11 @@ categories:
 ---
 
 {% asset_img shanghai-3459422_960_720.jpg shanghai %}
+
+记录在使用 `JQuery` 的过程中遇到的部分问题
+
+<!-----more ---->
+
 ## 兼容性
 
 ### 苹果手机 <code>jquery</code> 点击事件无效

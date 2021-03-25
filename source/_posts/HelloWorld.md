@@ -5,7 +5,11 @@ tags:
 - 测试
 - hexo
 categories: 博客
+toc: true
 ---
+
+测试`hexo`中如何操作
+<!---more --->
 
 #### 基本操作
 

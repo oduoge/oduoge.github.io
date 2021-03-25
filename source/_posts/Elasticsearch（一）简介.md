@@ -10,6 +10,10 @@ categories:
 
 {% asset_img apartments-4358755_960_720.jpg apartment %}
 
+`Elasticsearch` 的使用背景
+
+<!----more ---->
+
 搜索引擎三大过程，爬取内容、进行分词、建立反向索引。
 
 存储海量数据的分布式搜索引擎
