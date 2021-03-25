@@ -116,7 +116,8 @@ slider:
 #  friends: false
 smart_menu:
   innerArchive: '所有文章'
-  friends: '友链'
+  # friends: '友链'
+  friends: false
   aboutme: '关于我'
 
 friends:
