@@ -6,6 +6,7 @@ tags:
 categories:
 - 后端
 - Go
+toc: true
 ---
 
 ## 一、我们为什么选择Go语言
