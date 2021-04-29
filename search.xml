@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>智能问答系统研究综述</title>
+      <link href="/2020/11/05/zhi-neng-wen-da-xi-tong-yan-jiu-zong-shu/"/>
+      <url>/2020/11/05/zhi-neng-wen-da-xi-tong-yan-jiu-zong-shu/</url>
+      
+        <content type="html"><![CDATA[<p>网上查找到的一份关于<em>智能问答系统</em> 的综述<br><a id="more"></a></p><object data="/pdf/2016-03-06_Intellegent_QA_system.pdf" type="application/pdf" width="800px" height="700px"><br>    <embed src="/pdf/2016-03-06_Intellegent_QA_system.pdf"><br>     This browser does not support PDFs. Please download the PDF to view it: <a href="http://cslt.riit.tsinghua.edu.cn/mediawiki/images/5/56/2016-03-06_Intellegent_QA_system.pdf" target="_blank" rel="noopener">Download PDF</a>.<p></p><br>    <br></object> ]]></content>
+      
+      
+      <categories>
+          
+          <category> 问答系统 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>问答系统和对话系统-KBQA和对话系统综述</title>
+      <link href="/2020/11/05/wen-da-xi-tong-he-dui-hua-xi-tong-kbqa-he-dui-hua-xi-tong-zong-shu/"/>
+      <url>/2020/11/05/wen-da-xi-tong-he-dui-hua-xi-tong-kbqa-he-dui-hua-xi-tong-zong-shu/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p><a href="https://zhuanlan.zhihu.com/p/93023782" target="_blank" rel="noopener">原文地址</a></p></blockquote><h1 id="问答系统和对话系统的综述"><a href="#问答系统和对话系统的综述" class="headerlink" title="问答系统和对话系统的综述"></a>问答系统和对话系统的综述</h1><p>主要对问答系统和对话系统进行技术综述，包括落地场景及开源框架选择<br>问答系统<br><a id="more"></a><br>综述问答系统相关技术细节及开源框架<br>问答系统的发展<br>问答系统的分类<br>知识领域分类：面向限定领域的问答系统；面向开放领域的问答系统；面向常用问题集（ Frequently Asked Questions, FAQ ）的问答系统<br>答案来源：基于结构化的问答系统，例如KBQA系统；基于文本的问答系统，如SQuAD阅读理解问答、Facebook DrQA、CoQA；基于问答对的问答系统，如FAQ问答<br>答案反馈机制：基于检索式的问答系统；基于生成式的问答系统<br>问答系统关键技术<br>FQA<br>简介： FAQ检索型问答是根据用户的新Query去FAQ知识库找到最合适的答案并反馈给用户<br>传统文本匹配方法：主要解决字面相似度问题<br>信息检索BM25<br>向量空间模型VSM<br>深度学习文本匹配方法：解决相似度匹配问题；问题答案对匹配.<br>Represention-based Method<br>Interaction-based Method<br>KBQA( 知识图谱-基于ES(ElasticSearch)和gAnswer构建智能问答系统可以查看 )<br>语义解析<br>信息抽取<br>向量建模<br>基于阅读理解的问答<br>传统的机器阅读理解问答：一般是先对文本进行实体和属性的解析和提取（类似于实体和关系抽取），构建结构化的知识图谱，在知识图谱上进行问答（类似KBQA系统）<br>实体识别与检测：对文本中提及的实体，进行分类(实体文本/文本分类)<br>实体链接：识别的实体需要与外部知识库进行链接匹配<br>属性填充：从文本检测出来的属性，补充到外部知识库中<br>知识检索：根据实体和属性进行相关问答答案的问答（这个部分与KBQA系统中的问题-答案映射算法类似）<br>端对端的机器阅读的问答(在SQuAD数据集上)<br>微软的R-net<br>Match-LSTM with Answer Pointer<br>BiDAF模型<br>QANet(NarrativeQA数据集)<br>BiDAF+Self-att+ELMO（SQuAD2.0）<br>BERT(HotpotQA)<br>DCN模型<br>数据集：SQuAD，完形填空数据集 CNN/Daily News 和 Children‘s Book Test (CBT)</p><p>VOA(视觉问答)<br>问答系统开源平台及实现方式<br>百度 AnyQ<br>AnyQ 系统采用配置化、插件化框架设计，搭载由百度自主研发、业界领先的 SimNet 语义匹配技术，针对 FAQ 问答的种种技术难题给出了高效的解决方案<br>IBM QuestionAnsweringSystem<br>QuestionAnsweringSystem是一个Java实现的人机问答系统，能够自动分析问题并给出候选答案。IBM人工智能计算机系统”沃森”（Watson）在2011年2月美国热门的电视智力问答节目”危险边缘”（Jeopardy！）中战胜了两位人类冠军选手，QuestionAnsweringSystem就是IBM Watson的Java开源实现。<br>gAnswer<br>gAnswer 能够将自然语言问题转化成包含语义信息的查询图，然后，将查询图转化成标准的SPARQL查询，并将这些查询在图数据库中执行，最终得到用户的答案。<br>ADAM<br>ADAM 一个问题回答系统，从维基百科中提取答案，然后用自然语言提出问题 ,基于工业自然语言框架spaCy流水线<br>OpenEphyra<br>OpenEphyra 是一个使用 Java 开发的模块化、可扩展的问答系统、安装简单<br>DeepQA<br>DeepQA是Google基于知识库的问答系统.<br>其他开源对话系统对比</p><p>没有对上述系统进行详细的测试，还以其他的社区问答开源平台</p><p>对话系统<br>对话系统的发展<br>对话系统关键技术<br>管道式<br>端对端<br>对话系统开发辅助语言<br>AIMI<br>AIMI是由Richard Wallace开发的。他制造了一个名为A.L.I.C.E.(人工语言学互联网计算机实体)的机器人，该机器人赢得了几项人工智能大奖。有趣的是，寻找人工智能的图灵测试之一是让人类通过文本界面与机器人交谈几分钟，看看他们是否认为它是人类。AIML是一种XML格式，它定义了匹配模式和确定响应的规则<br>Chatscript<br>Chatscript<br>对话系统开源平台<br>Rasa<br>Rasa是一款搭建智能助手及机器人的开源系统平台，主要由两个部分组成：rasa NLU(主要用于理解用户消息，包括意图识别、实体识别、填充槽位值等，把用户的自然语言输入转换为结构化数据 )；rasa Core 对话管理平台，类似于对话系统中DPL(对话策略学习)、DST(对话策略跟踪)<br>Botfront 是一个建立在Rasa库之上的免费开源聊天机器人平台。类似于Rasa-X，但是Rasa-X不开放源码，使用这个前端框架需要Docker/Docker-Compose来同时运行多个容器，比如web-botfront</p><p>Uber Plato<br>Plato是一个用于构建、训练和部署会话 AI 智能体的平台<br>FacebookParAl<br>ParAI 一个用于共享、培训和测试对话模型的python框架，从开放域的聊天到VQA(可视化的问题回答)<br>ConvLab<br>ConvLab由清华与微软联合开发多领域的端对端对话系统平是DSTC8 track1的官方平台，基于SLM-Lab（强化学习平台）实现<br>DeepPavlov<br>DeepPavlov是一款开源的对话AI架构 （Context QA SQuAD)对话式文档问答，百度UNIT3.0创新技术的范畴。可以与Rasa接口对接<br>PyDial<br>PyDial是一个开源的端到端的统计对话系统工具包，它为所有的对话系统模块提供了统计方法的实现。此外，它还被扩展为提供多域会话功能。它提供了各自对话系统模块的简单配置、简单的可扩展性和独立于域的实现。<br>Virtual Human Toolkit<br>VHT 旨在帮助和支持研究人员和开发人员创建虚拟人对话系统。<br>百度UNIT<br>UNIT搭载业界领先的需求理解、对话控制及底层的自然语言处理、知识挖掘等核心技术让您的产品快速拥有对话交互能力<br>腾讯TBP<br>腾讯智能对话平台（Tencent Bot Platform，TBP）专注于“对话即服务”的愿景，全面开放腾讯对话系统核心技术，为大型企业客户、开发者和生态合作伙伴提供开发平台和机器人中间件能力，实现便捷、低成本构建人机对话体验和高效、多样化赋能行业<br>科大讯飞AIUI<br>AIUI 是科大讯飞2015年推出的一套以语音为核心的人机交互解决方案，意在使应用和设备能够快速具备能听会说，能理解会思考的能力。接入了 AIUI 的应用和设备 可以轻松实现查询天气、播放音视频资源、设置闹钟以及控制智能家居等能力<br>Opendial<br>Opendial 一个基于java、领域独立的开发语音对话系统的工具包。OpenDial的主要重点是健壮和自适应的对话管理，但OpenDial也可以用来建立成熟的、端到端的对话系统，集成语音识别、语言理解、生成和语音合成<br>京东Wukong-robot<br>Wukong-robot 是一个简单、灵活、优雅的中文语音对话机器人/智能音箱项目，目的是让中国的 Maker 和 Haker 们也能快速打造个性化的智能音箱<br>晓多客户机器人<br>晓多客服人平台 成都晓多科技有限公司（简称晓多）核心团队由来自百度NLP和京东JIMI机器人团队的人工智能专家组成，毕业于北京大学、复旦大学、斯坦福大学等世界知名高校 。客服机器人构建平台，通过自主配置知识库(内置知识问答库、自定义问答库、动态问答、多轮会话和知识图谱)，添加知识库后启动训练，提高机器人领域识别能力。<br>支持FQA一问一答任务，也支持KBQA和多轮问答任务，但是需要收费，主要应用无客服机器人，试用版不能够进行语料的训练，平台不怎么开放。</p><p>ChatterBot<br>ChatterBot是用Python构建的基于机器学习的对话对话引擎，它可以根据已知对话的集合生成响应。ChatterBot的语言独立设计允许它被训练成任何语言 。<br>Wit-ai<br>Wit-ai<br>Snips<br>Snips平台是一个软件解决方案，为私人语音助手提供支持。无论是企业还是个人，任何人都可以在单板电脑上设置Snips平台(例如:a Raspberry Pi 3, a i。MX8M板，Android或iOS设备)，并安装语音助手。国外语音助手开发框架，类似国内腾讯的Wu-kong<br>提供Snips NLU模块,NLP模块是基于spaCy<br>KITT.AI（百度收购）<br>snowboy 是一个开源的、轻量级语音唤醒引擎，可以通过它很轻松地创建属于自己的类似“hey, Siri” 的唤醒词。它的主要特性如下：<br>高度可定制性。可自由创建和训练属于自己的唤醒词<br>始终倾听。可离线使用，无需联网，保护隐私。精确度高，低延迟<br>轻量可嵌入。耗费资源非常低（单核 700MHz 树莓派只占用 10% CPU）<br>开源跨平台。开放源代码，支持多种操作系统和硬件平台，可绑定多种编程语言<br>Kore AI<br>KoreAI是业界第一个也是唯一一个企业级、端到端的对话型人工智能机器人平台，用于设计、创建、培训、测试和托管人工智能和nlp型聊天机器人，用于最受欢迎的消费者和商业通信渠道。也 是一个基于web的平台，它提供了满足消费者和企业bot用例所需的所有技术工具、流程和业务组件。<br>模块非常丰富，支持技能打断/恢复,如下图所示，会话流程设计(非常重要的环节)，两个意图（查询航班和查询天气）(后面重点来介绍Kore.ai的相关技术细节，主要三个模块(Fundamental Meaning（Chatscript编写） Custom Machine Learning (ML)、Ontology-based Knowledge Graph Engine (KG))</p><p>SAP Conversational AI(前身是Recast.AI)<br>SAP Conversational AI傻瓜式的对话机器人构建平台，界面交互比较友好，主要是面向企业级的用户，SAP公司主要是为企业提供软件管理服务，收购Recast.ai后与其他产品进行绑定。中文支持不好，NLU模块只支持意图识别和实体识别(需要自己构建训练)</p><p>Watson Assistant<br>Watson Assistant<br>Activechat.ai<br>activechat流程式的对话系统平台，NLU模块调用Dialog Flow的NLU模块API进行意图识别、词槽和实体识别<br>Flow.ai<br>flow.ai 流程式构建对话流程，NLU模块需要训练（自己构建好意图语料库），对于中文，官方语言中没有官方语言的选择，试用了一下，是可以支持的，比BotStart纯流程构建要好很多，支持语音输入模块,如下操作</p><p>BotStar<br>BotStar流程式的对话系统平台，没有使用到NLU中意图识别和词槽填充，主要应用于机器导引的流程式场景，使用BotStar简单做了一个流程的机器人，如下图所示</p><p>BotPress<br>botpress 是一个开源的一体化机器人创建平台，提供了构建、调试和部署基于人工智能的对话助手所需的所有工具。<br>相对流程式的对话管理，botpress有更好的扩展性，支持FQA，对话引擎、NLU，同时支持主要NLU第三方平台，比如Google Dialogflow、Rasa NLU等，简答实践效果如下图所示</p><p>BotKit<br>Botkit 一个开放源码的开发工具，用于为主要的消息传递平台构建聊天机器人、应用程序和自定义集成<br>参考文献<br>Relation Extraction Survey</p><p>DeepPavlov：一个面向端到端对话系统和聊天机器人的开源库</p><p>NLP 笔记 - Question Answering System</p><p>自动问答系统开源轮子简介</p><p>NLP（二）, Storm, Pulsar</p><p>阿里云小蜜对话机器人背后的核心算法</p><p>基于知识图谱的问答在美团智能交互场景中的应用和演进</p><p>人机对话系统调研</p><p>开源问答系统开源软件</p><p>百度 UNIT 技术负责人揭秘：如何让你的对话系统更智能</p><p>详解ParlAI：为让AI更会聊天，Facebook开源了这个“一站式对话研究工具</p><p>Uber 宣布开源 Plato 人工智能对话平台</p><p>DeepPavlov：一个面向端到端对话系统和聊天机器人的开源库</p><p>微软和清华开源ConvLab: 多领域端到端对话系统平台</p><p>《从零开始学习自然语言处理(NLP)》-DeepPavlov框架解析（4）</p><p>2019-06-17问答系统项目落地调研</p><p>Watson之心：DeepQA</p><p>十个Chatbot框架介绍</p><p>任务型对话管理的产品实践（第三篇）- 业界解决方案一览</p><p>微软小冰论文——第六代小冰架构解析</p><p>大厂对话系统实践文章链接</p><p>基于深度学习的FAQ问答系统</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 问答系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 待整理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>问答系统背景知识</title>
+      <link href="/2020/11/05/wen-da-xi-tong-bei-jing-zhi-shi/"/>
+      <url>/2020/11/05/wen-da-xi-tong-bei-jing-zhi-shi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>&emsp;&emsp;<a href="https://baike.baidu.com/item/%E9%97%AE%E7%AD%94%E7%B3%BB%E7%BB%9F/9641943" target="_blank" rel="noopener">问答系统(Question Answering System, QA)</a>是信息检索系统的一种高级形式。它能用准确、简洁的自然语言回答用户用自然语言提出的问题。其研究兴起的主要原因是人们对快速、准确地获取信息的需求。问答系统是目前人工智能和自然语言处理领域中一个倍受关注并具有广泛发展前景的研究方向。国际上，问答系统的研究方兴未艾，许多大的科研院所和著名公司，都积极参与到该领域的研究,中文问答系统需要在现有的中文信息处理技术基础上，充分研究和利用问答的特性与需求，通过各种方法解决和克服(或暂时回避)以上难点和困难，设计和开发问答系统。<br><a id="more"></a><br>&emsp;&emsp;问答系统外部的行为上来看，其与目前主流资讯检索技术有两点不同：首先是查询方式为完整而口语化的问句，再来则是其回传的为高精准度网页结果或明确的答案字串。<br>&emsp;&emsp;以Ask Jeeves为例，使用者不需要思考该使用什么样的问法才能够得到理想的答案，只需要用口语化的方式直接提问如<code>「请问谁是美国总统？」</code>即可。而系统在了解使用者问句后，会非常清楚地回答<code>「奥巴马是美国总统」</code>。面对这种系统，使用者不需要费心去一一检视搜寻引擎回传的网页，对于资讯检索的效率与资讯的普及都有很大帮助。从系统内部来看，问答系统使用了大量有别于传统资讯检索系统自然语言处理技术，如自然语言剖析（<code>Natural Language Parsing</code>）、问题分类（<code>Question Classification</code>）、专名辨识（<code>Named Entity Recognition</code>）等等。少数系统甚至会使用复杂的逻辑推理机制，来区隔出需要推理机制才能够区隔出来的答案。在系统所使用的资料上，除了传统资讯检索会使用到的资料外（如字典），问答系统还会使用本体论等语义资料，或者利用网页来增加资料的丰富性。<br>&emsp;&emsp;问答系统接受的是自然语言问句，为了有效控制研究变因，多会定制可接受的问题类型来限制研究范围。最基本的类型为「仿真陈述问答」（<code>Factoid Question Answering</code>），此类系统根据答案语料所述资讯，取出一小段字串作为答案。由于答案的正确与否是根据答案语料的内容来决定，在现实生活中不一定为真，故称为仿真陈述问答。<br>&emsp;&emsp;有些系统把问答范围进一步缩小，限定在人、地、组织等明确的专有名词上。若此类系统有能力回答如 <strong>「请列举美国历届总统」</strong> 这种清单型的问句，则称为 <strong>「清单问答」</strong>  <code>（List Question Answering）</code>；若能回答定义问题，则称为 <strong>「定义问答」</strong> <code>（ Definition Question Answering）</code>；以此类推还能定义出其他类型的问题。除了这些与问句资讯内容有关的类型外，最近评鉴会议引进如「时间限制问题」（Temporally Restricted Questions）与「序列问题」（Series of Questions）等复杂的问题类型。时间限制型的问题会在问句中明确指出答案的时间范围限制，比如说以「民国九十年时的国民党主席是谁」这问句来说，系统必须有根据答案语料结构化资料，或上下文来推论正确答案的能力。序列问题则把问答系统未来的应用定位在互动式的系统上。经过来回多次问答的方式来满足使用者的资讯需求。了解这些问题类型分类，有助于研究范围界定，同时在分析比较上也比较有依据。<br>&emsp;&emsp;我们可以从知识领域、答案来源等角度来替问答系统做分类。从知识领域来看，可分为「封闭领域」以及「开放领域」两类系统。封闭领域系统专注于回答特定领域的问题，如医药或特定公司等。由于问题领域受限，系统有比较大的发挥空间，可以导入如专属本体论等知识，或将答案来源全部转换成结构性资料，来有效提升系统的表现。开放领域系统则希望不设限问题的内容范围，天文地理无所不问。系统中所有知识与元件都必须尽量做到与领域不相关，当然难度也相对地提高。<br>&emsp;&emsp;若根据答案来源来区分，可分为「知识库问答」、「常问问题问答」、「新闻问答」、「网际网路问答」等系统。知识库是最常见的结构化资料储存媒介，我们在下面对其进行简单介绍。虽然透过操控SQL语言便能够有效率地存取资料，但有些系统试图提供更直觉的自然语言查询介面，希望能进一步降低学习门槛。<br>&emsp;&emsp;知识库问答（knowledge base question answering, KB-QA）即给定自然语言问题，通过对问题进行语义理解和解析，进而利用知识库进行查询、推理得出答案。  </p><h1 id="KB-QA-具有以下特点："><a href="#KB-QA-具有以下特点：" class="headerlink" title="KB-QA 具有以下特点："></a>KB-QA 具有以下特点：</h1><ol><li><p>答案<br>回答的答案是知识库中的实体或实体关系，或者 no-answer（即该问题在 KB 中找不到答案），当然这里答案不一定唯一，比如中国的城市有哪些 。</p></li><li><p>评价标准<br>回召率（Recall），精确率（Precision)），F1-Score。  </p></li></ol><p>&emsp;&emsp;当我们在百度询问 2016 年奥斯卡最佳男主角时，百度会根据知识库进行查询和推理，返回答案，这其实就是 KB-QA 的一个应用。</p><h1 id="发展历史"><a href="#发展历史" class="headerlink" title="发展历史"></a>发展历史</h1><p>&emsp;&emsp;早在1961年，Green就发展了第一个问答系统，用来回答单季美国职棒大联盟相关比赛问题。该系统执行于IBM 7090平台，以今日的观点来看，其硬体资源相当贫乏，但由于问答的范围狭小，系统正确率尚能达到令人满意的地步。受限于当时的技术水平，早期的问答系统大部分是封闭领域系统。著名的项目有上个世纪60年代研制的LUNAR系统，专事回答有关阿波罗登月返回的月球岩石样本的地质分析问题。SHRDLE 是另一个基于人工智能的专家系统，模拟的是机器人在玩具积木世界中的操作，机器人可以回答这个玩具世界的几何状态的问题，并听从语言指令进行合法操作。<br>&emsp;&emsp;20世纪70年代和80年代，计算语言学综合理论的发展，导致了文本理解和问答的雄心勃勃的项目的发展。这种系统的一个例子是Unix顾问（UC），由Robert Wilensky在U.C伯克利在20世纪80年代末期开发。该系统回答了与Unix操作系统有关的问题。它拥有一个较全面的手工设计的领域知识库。另一个项目是LILOG，一个文本理解系统，在德国城市的旅游信息领域运作。<br>&emsp;&emsp;1999年，搜索业界的第八届年会（TREC-8：Text REtrieval Conference）决定增加一个问答系统的竞赛，美国国防部有名的DARPA项目资助，由美国国家标准局组织实施，这是开放式问答系统的正式诞生。但早期的问答系统研究并不顺利，并且当时的相关算法（如信息抽取）表现也不够先进，一直到2010年后，问答系统才又一次变成了研究热点。<br>&emsp;&emsp;2013年，Jonathan Berant等人训练了一个可扩展到Freebase的语义解析器。 他们从问答对中学习，而不是依赖于注释的逻辑形式，因为这对于大规模获取来说特别昂贵。 此设置中的主要挑战是缩小给定问题的大量可能的逻辑谓词。 他们以两种方式解决这个问题：首先，我们使用知识库和大型文本语料库构建从短语到谓词的粗略映射。 其次，他们使用桥接操作基于相邻谓词生成其他谓词。<br>&emsp;&emsp;2014年Antoine Bordes, Sumit Chopra, Jason Weston介绍的系统使用了向量建模，该系统学习使用少量人工设计的特征从知识库中回答关于广泛主题的问题。 他们的模型学习单词和知识库成分的低维嵌入; 这些表示用于根据候选答案对自然语言问题进行评分。<br>&emsp;&emsp;2015年，Li Dong等人针对当时大多数系统通常依赖于手工制作的功能和规则来进行问题理解和/或答案排名，引入了多列卷积神经网络（MCCNN）来从三个不同方面（即答案路径，答案上下文和答案类型）理解问题并学习它们的分布式表示。他们使用FREEBASE作为知识库，并在WEBQUESTIONS数据集上进行大量实验。实验结果表明，与基线系统相比，他们的方法具有更好或相当的性能。此外，他们开发了一种计算不同列网络中问题词的显着性得分的方法，有助于直观地了解MCCNN的学习内容。<br>&emsp;&emsp;同年，来自微软的Scott Wen-tau Yih和Jianfeng Gao等人提出了一种新的语义解析框架，用于使用知识库进行问答。 他们定义了一个类似于知识库子图的查询图，可以直接映射到逻辑表单。 语义解析被简化为查询图生成，被公式化为分阶段搜索问题。他们的方法在早期利用知识库来修剪搜索空间，从而简化语义匹配问题。 通过应用先进的实体链接系统和匹配问题和谓词序列的深度卷积神经网络模型，他们的系统在WebQuestions数据集上实现了52.5％的F1测量。<br>&emsp;&emsp;因为自然语言处理中的大多数任务都可以转换为语言输入的问题回答（QA）问题，2017年，Ankit Kumar和Richard Socher等人改进了动态内存网络（DMN），这是一种处理输入序列和问题，形成情景记忆并生成相关答案的神经网络体系结构。 问题触发迭代注意过程，该过程允许模型将其注意力放在输入和先前迭代的结果上。 然后在分层递归序列模型中推导出这些结果以产生答案。 DMN可以端到端地进行培训，并在几种类型的任务和数据集上获得了当时最先进的结果：问答（Facebook的bAbI数据集），情感分析的文本分类（斯坦福情感树库）和序列建模 词性标注（WSJ-PTB）。 对这些不同任务的训练完全依赖于训练有素的单词矢量表示和输入 - 问题 - 答案三元组。<br>&emsp;&emsp;2018年，Adams Wei Yu , David Dohan , Minh-Thang Luong认为目前的端到端机器阅读和问答（Q&amp;A）模型主要基于带注意力机制的循环神经网络（RNN）。尽管它们取得了一定程度的成功，但由于 RNN 的序列特性，这些模型的训练速度和推断速度通常较慢。他们提出了一个名为 QANet 的新型问答系统框架，它不再需要循环网络：其编码器仅仅由卷积和自注意力机制构成，卷积可以对局部相互作用建模，而自注意力机制可以对全局相互作用建模。在 SQuAD 数据集上，QANet 模型的训练速度提升到对应的 RNN 模型的 3 到 13 倍、推断速度提升到 4 到 9 倍，并且取得了和循环模型同等的准确率。他们将 QANet 模型和使用神经机器翻译模型回译得到的数据结合了起来。在 SQuAD 数据集上，他们使用增强的数据训练的模型在测试集上获得了 84.6 的 F1 值，这远远优于当时公开的最佳模型 81.8 的 F1 值。<br>&emsp;&emsp;同年，随着近年来知识库的快速发展，基于知识库的问答系统（KBQA ）吸引了业界的广泛关注。该类问答系统秉承先编码再比较的设计思路，即先将问题和知识库中的三元组联合编码至统一的向量空间，然后在该向量空间内做问题和候选答案间的相似度计算。该类方法简单有效，可操作性比较强，然而忽视了很多自然语言词面的原始信息。因此，Yingqi Qu, Jie Liu, Liangyi Kang, Qinfeng Shi, Dan Ye提出了一种 Attentive RNN with Similarity Matrix based CNN（AR-SMCNN）模型，利用 RNN 和 CNN 自身的结构特点分层提取有用信息。文中使用 RNN 的序列建模本质来捕获语义级关联，并使用注意机制同时跟踪实体和关系。同时，文中使用基于 CNN 的相似矩阵和双向池化操作建模数据间空间相关性的强度来计算词语字面的匹配程度。此外，文中设计了一种新的实体检测启发式扩展方法，大大降低了噪声的影响。文中的方法在准确性和效率上都超越了 SimpleQuestion 基准测试的当时最好水平。</p><h1 id="发展分析"><a href="#发展分析" class="headerlink" title="发展分析"></a>发展分析</h1><h2 id="瓶颈"><a href="#瓶颈" class="headerlink" title="瓶颈"></a>瓶颈</h2><p>&emsp;&emsp;自然语言问句的理解是智能问答系统中最核心也是最困难的一个环节， 因为这个环节实际上要解决的问题是如何将自然语言最准确地转化为计算机可以表示和理解的形式。这个不仅是智能问答系统需要解决的问题，也是人工智能领域所需要解决的最核心的难题之一。此外，目前的知识库远远不能满足开发领域智能问答系统对知识资源的需求，更何况现在绝大多数的知识都存在于非结构化的文本数据中。在不同领域的多个知识资源库是存在的，但如何将所有异构的知识源统一起来，形成一个形式统一的知识源满足用户的统一查询需求也是一个问题。</p><h2 id="未来发展方向"><a href="#未来发展方向" class="headerlink" title="未来发展方向"></a>未来发展方向</h2><p>&emsp;&emsp;问答系统的使用是一个对话过程，而需要语义接地，即将自然语言映射到内部的表征，如何定义和使用语义表征是一个核心问题。<br>&emsp;&emsp;语言理解的多义性、多样性问题。虽然迄今有很多研究，但仍然没有根本解决。<br>&emsp;&emsp;语言和知识，既可以由符号表征，又可以由向量表征（神经表征），各有优缺点，如何将符号处理和深度学习结合是一个重要的问题。<br>&emsp;&emsp;问答系统是一个复杂的系统，需要进行层次化和模块化处理，如何构建这样的系统，并使其拥有自动学习功能也是一个大问题。<br>&emsp;&emsp;机器学习的数据往往是不够的，这使得端对端训练系统变得困难，在小样本的条件下训练模型是需要解决的重要课题。</p><p><code>https://www.jiqizhixin.com/graph/technologies/fca61fff-ab9b-4ee2-8716-bbd8e7a44507</code></p><h1 id="系统研究"><a href="#系统研究" class="headerlink" title="系统研究"></a>系统研究</h1><p>中文问答系统相对于英文有如下几个方面的难点或不足之处：</p><ul><li>连写：中文是连续书写，分词是汉语言处理的基础。中文问答系统由于是句子级别的信息检索，要分析句子，首先要分词。</li><li>形态：汉语缺乏狭义的形态变化，如英文中的主动被动语态，完成时进行时等，形态对于计算机就是标记，有利于计算机的处理。</li><li>语法：汉语语法灵活，句子各成分之间的关系靠词序、“意合”、虚词，变化较多。</li><li>语义：一词多义、同音词、同义词、近义词等，以及丰富的表达方式，上下文依赖度高，省略语等都是计算机处理的难点。</li><li>语法研究：面向计算机处理的中文语法研究不足，如中文问答系统需要的关于中文句型形式化、不同句型之间的转换的研究资料极少。</li><li>相关资源：缺乏包括语法、语义词典等中文语言学资源和相关生熟语料，国外这方面强得多，如TREC就提供的相当数量的可用于英文问答研究和评测的语料。<br>&emsp;&emsp;中文问答系统需要在现有的中文信息处理技术基础上，充分研究和利用问答的特性与需求，通过各种方法解决和克服(或暂时回避)以上难点和困难，设计和开发问答系统。</li></ul><h1 id="系统应用"><a href="#系统应用" class="headerlink" title="系统应用"></a>系统应用</h1><p>&emsp;&emsp;问答系统主要应用于web形式的问答网站，代表作有：百度知道、新浪爱问、天涯问答、雅虎知识堂、果壳、知乎网等这些即问即答网站。</p><p>智能问答是个覆盖范围广泛的领域。按照目前主流的方向来划分，其中包括了（暂不考虑FAQ问答）：</p><p>1、KBQA；2、IR-based QA；3、Community QA；4、Open-domain QA；5、MRC；（开放域的问答和MRC有共通的部分）</p><p>作者：xingluxi<br>链接：<a href="https://www.zhihu.com/question/349499033/answer/902873433" target="_blank" rel="noopener">https://www.zhihu.com/question/349499033/answer/902873433</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p><p>1 研究任务：从ACL/EMNLP/NAACL三大顶会的趋势看，就我关注到的内容而言，有两个任务热度很高：1、Multi-hop QA，尤其是在HotpotQA任务上，同类数据集 WikiHop 关注度在今年略有下降，但是ACL2019上的很多工作都启发自基于WikiHop任务的工作；2、FEVER（Fact Extraction and Verification） ，在EMNLP2019上开设了单独的一个Workshop，是个具有实用价值的任务；2（期待看到的）研究方向有以下几点：1、更多类型的任务，更难的数据集，MRC的主要特点是任务导向+数据驱动，任务/数据集推动模型迭代。更多类型的任务指测试机器单一问答能力的任务，比如只测试模型回答因果关系（Event2Mind），还有题主回答评论中提及的MathQA、BoolQA等。更难的数据集测试QA模型的鲁棒性。此外，还有具备可解释性监督信号的数据集以及跨语言QA数据集。2、尝试用 unsupervised learning 或 few-shot learning 的方式训练QA模型。参考：Unsupervised Question Answering by Cloze Translation. ACL,2019.3、生成式QA，如何生成自然语言语句构成的答案，这个方向上，还缺乏针对评价生成答案的指标；4、KBQA 在向融合文本信息的方向上发展，Open-domainQA和MRC在向同时融合结构化知识和文本知识等异构信息的方向上发展。</p><p>研究方向</p><ul><li><p>非事实类问题<br>大多数研究关注于事实类问题，而非事实类问题的研究相对不足，包括数学类的问题、判断类的问题等。<br>[EMNLP 2019] NumNet: Machine Reading Comprehension with Numerical Reasoning 数学类问题<br>NAACL19 - MathQA: Towards Interpretable Math Word Problem Solving with Operation-Based Formalisms<br>NAACL19 - BoolQ: Exploring the Surprising Difficulty of Natural Yes/No Questions</p></li><li><p>多跳推理</p></li></ul><blockquote><p>作者：Y.Shu<br>链接：<a href="https://www.zhihu.com/question/349499033/answer/900173774" target="_blank" rel="noopener">https://www.zhihu.com/question/349499033/answer/900173774</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p></blockquote><ul><li>多跳（multi-hop）<br>在最近的顶会上关注度非常高，目前实现这一机制的方法也比较复杂。<br>[EMNLP 2019] What’s Missing: A Knowledge Gap Guided Approach for Multi-hop Question Answering<br>[EMNLP 2019] Self-Assembling Modular Networks for Interpretable Multi-Hop Reasoning<br>[EMNLP 2019] Avoiding Reasoning Shortcuts: Adversarial Evaluation, Training, and Model Development for Multi-Hop QA<br>[ACL 2019] Multi-Hop Paragraph Retrieval for Open-Domain Question Answering<br>[ACL 2019] Dynamically Fused Graph Network for Multi-hop Reasoning<br>[ACL 2019] Explore, Propose, and Assemble: An Interpretable Model for Multi-Hop Reading Comprehension<br>[ACL 2019] Multi-hop Reading Comprehension through Question Decomposition and Rescoring<br>[ACL 2019] Compositional Questions Do Not Necessitate Multi-hop Reasoning<br>[ACL 2019] Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction<br>[ACL 2019] Cognitive Graph for Multi-Hop Reading Comprehension at Scale<br>[ACL 2019] Understanding Dataset Design Choices for Multi-hop Reasoning<br>[NAACL 2019] Repurposing Entailment for Multi-Hop Question Answering Tasks<br>[NAACL 2019] BAG: Bi-directional Attention Entity Graph Convolutional Network for Multi-hop Reasoning Question Answering<br>[ACL 2019] Exploiting Explicit Paths for Multi-hop Reading Comprehension<br>[ACL 2019] Multi-hop reading comprehension across multiple documents by reasoning over heterogeneous graphs</li><li>多语言/跨语言的问答<br>包括英法德等主流语言之间的研究，也包括特定于使用人数较少的语言的研究。<br>[EMNLP 2019] Cross-Lingual Machine Reading Comprehension<br>[EMNLP 2019] BiPaR: A Bilingual Parallel Dataset for Multilingual and Cross-lingual Reading Comprehension Novels<br>[ACL 2019] XQA: A Cross-lingual Open-domain Question Answering Dataset</li><li>知识库问答和基于文本的问答的结合<br>前者通常是限定域的，知识容量有限，结构化信息比较好查询；后者通常是开放域的，信息量很大，但是提取知识比较困难。<br>[EMNLP 2019] Language Models as Knowledge Bases? 探索语言模型作为知识来源的可能性<br>[ACL 2019] Interpretable Question Answering on Knowledge Bases and Text<br>[ACL 2019] Enhancing Pre-Trained Language Representations with Rich Knowledge for Machine Reading Comprehension<br>[EMNLP 2019] Incorporating External Knowledge into Machine Reading for Generative Question Answering长文本/多段落MRC 的研究在向多段落/长文本扩展。<br>[EMNLP 2019] BookQA: Stories of Challenges and Opportunities<br>[ACL 2019] Simple and Effective Curriculum Pointer-Generator Networks for Reading Comprehension over Long Narratives<br>[ACL 2019] ELI5: Long Form Question Answering<br>[ACL 2018] Multi-Passage Machine Reading Comprehension with Cross-Passage Answer Verification<br>[ACL 2019] Token-level Dynamic Self-Attention Network for Multi-Passage Reading Comprehension<br>[EMNLP 2019] Multi-passage BERT: A Globally Normalized BERT Model for Open-domain Question Answering<br>[ACL 2019] Retrieve, Read, Rerank: Towards End-to-End Multi-Document Reading Comprehension<br>[ACL 2019] Multi-hop reading comprehension across multiple documents by reasoning over heterogeneous graphs<br>EMNLP19 - PullNet: Open Domain Question Answering with Iterative Retrieval on Knowledge Bases and Text</li><li>QA 系统的可解释性<br>比如可以将对答案的解释也作为训练数据的一部分，让模型学会解释。<br>[NAACL 2019] Enhancing Key-Value Memory Neural Networks for Knowledge Based Question Answering<br>[EMNLP 2017] QUINT: Interpretable Question Answering over Knowledge Bases<br>[ACL 2019] Interpretable Question Answering on Knowledge Bases and Text<br>[ACL 2019] Explore, Propose, and Assemble: An Interpretable Model for Multi-Hop Reading Comprehension</li><li>不可回答的问题这个问题<br>包括无法回答的问题和合理答案的判别两个任务。<br>[AAAI 2019] Read + Verify: Machine Reading Comprehension with Unanswerable Questions<br>[ACL 2019] Learning to Ask Unanswerable Questions for Machine Reading Comprehension</li><li>数据集的构建<br>更实用、智能、强大的 QA 系统需要更多优质的数据集来推动。<br>[EMNLP 2019] BiPaR: A Bilingual Parallel Dataset for Multilingual and Cross-lingual Reading Comprehension on Novels 多语言与跨语言的小说阅读理解<br>[EMNLP 2019] GeoSQA: A Benchmark for Scenario-based Question Answering in the Geography Domain at High School Level 高中地理场景下的问答基准测试<br>[EMNLP 2019] Quoref: A Reading Comprehension Dataset with Questions Requiring Coreferential Reasoning 共指解析问题<br>[IJCAI 2019] AmazonQA: A Review-Based Question Answering Task 基于评论的问答<br>[EMNLP 2019] BiPaR: A Bilingual Parallel Dataset for Multilingual and Cross-lingual Reading Comprehension Novels  </li><li>多语言和跨语言阅读理解小说的双语并行数据集<br>[ACL 2019] XQA: A Cross-lingual Open-domain Question Answering Dataset 跨语言开放域问答数据集<br>[ACL 2019] WEETQA: A Social Media Focused Question Answering Dataset 社交媒体问答数据集<br>[EMNLP 2019] A Span-Extraction Dataset for Chinese Machine Reading Comprehension 中文阅读跨度提取数据集</li></ul><blockquote><p>作者：Y.Shu<br>链接：<a href="https://www.zhihu.com/question/349499033/answer/900173774" target="_blank" rel="noopener">https://www.zhihu.com/question/349499033/answer/900173774</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 问答系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 待整理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Go语言的应用</title>
+      <link href="/2020/11/05/go-yu-yan-de-ying-yong/"/>
+      <url>/2020/11/05/go-yu-yan-de-ying-yong/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、为什么选择Go语言"><a href="#一、为什么选择Go语言" class="headerlink" title="一、为什么选择Go语言"></a>一、为什么选择Go语言</h2><p>选择Go语言的原因可能会有很多，关于Go语言的特性、优势等，我们在之前的文档中也已经介绍了很多了。但是最主要的原因，应该是基于以下两方面的考虑：<br><a id="more"></a></p><ul><li>执行性能</li></ul><p>缩短API的响应时长，解决批量请求访问超时的问题。在Uwork的业务场景下，一次API批量请求，往往会涉及对另外接口服务的多次调用，而在之前的PHP实现模式下，要做到并行调用是非常困难的，串行处理却不能从根本上提高处理性能。而GO语言不一样，通过协程可以方便的实现API的并行处理，达到处理效率的最大化。 依赖Golang的高性能HTTP Server，提升系统吞吐能力，由PHP的数百级别提升到数千里甚至过万级别。</p><ul><li>开发效率</li></ul><p>GO语言使用起来简单、代码描述效率高、编码规范统一、上手快。 通过少量的代码，即可实现框架的标准化，并以统一的规范快速构建API业务逻辑。 能快速的构建各种通用组件和公共类库，进一步提升开发效率，实现特定场景下的功能量产。</p><h2 id="二、Go语言能做什么"><a href="#二、Go语言能做什么" class="headerlink" title="二、Go语言能做什么"></a>二、Go语言能做什么</h2><p>Go 语言从发布 1.0 版本以来备受众多开发者关注并得到广泛使用，Go 语言的简单、高效、并发特性吸引了众多传统语言开发者的加入，而且人数越来越多。</p><p>鉴于Go语言的特点和设计的初衷，Go语言作为服务器编程语言，很适合处理日志、数据打包、虚拟机处理、文件系统、分布式系统、数据库代理等；网络编程方面，Go语言广泛应用于Web 应用、API应用、下载应用等；除此之外，Go语言还适用于内存数据库和云平台领域，目前国外很多云平台都是采用Go开发。</p><p>服务器编程，以前你如果使用C或者C++做的那些事情，用Go来做很合适，例如处理日志、数据打包、虚拟机处理、文件系统等。</p><p>分布式系统、数据库代理器、中间件等，例如Etcd。</p><p>网络编程，这一块目前应用最广，包括Web应用、API应用、下载应用，而且Go内置的net/http包基本上把我们平常用到的网络功能都实现了。</p><p>数据库操作</p><p>开发云平台，目前国外很多云平台在采用Go开发</p><h2 id="三、国内外有哪些企业或项目使用Go语言"><a href="#三、国内外有哪些企业或项目使用Go语言" class="headerlink" title="三、国内外有哪些企业或项目使用Go语言"></a>三、国内外有哪些企业或项目使用Go语言</h2><p>Go发布之后，很多公司特别是云计算公司开始用Go重构他们的基础架构，很多都是直接采用Go进行了开发，最近热火朝天的Docker就是采用Go开发的。</p><p>使用 Go 语言开发的开源项目非常多。早期的 Go 语言开源项目只是通过 Go 语言与传统项目进行C语言库绑定实现，例如 Qt、Sqlite 等；后期的很多项目都使用 Go 语言进行重新原生实现，这个过程相对于其他语言要简单一些，这也促成了大量使用 Go 语言原生开发项目的出现。</p><ul><li>云计算基础设施领域</li></ul><p>代表项目：docker、kubernetes、etcd、consul、cloudflare CDN、七牛云存储等。</p><ul><li>基础软件</li></ul><p>代表项目：tidb、influxdb、cockroachdb等。</p><ul><li>微服务</li></ul><p>代表项目：go-kit、micro、monzo bank的typhon、bilibili等。</p><ul><li>互联网基础设施</li></ul><p>代表项目：以太坊、hyperledger等。</p><p>采用Go的一些国外公司，如Google、Docker、Apple、Cloud Foundry、CloudFlare、Couchbase、CoreOS、Dropbox、MongoDB、AWS等公司；</p><p>采用Go开发的国内企业：如阿里云CDN、百度、小米、七牛、PingCAP、华为、金山软件、猎豹移动、饿了么等公司。</p><ul><li>Docker</li></ul><p>Docker 是一种操作系统层面的虚拟化技术，可以在操作系统和应用程序之间进行隔离，也可以称之为容器。Docker 可以在一台物理服务器上快速运行一个或多个实例。基于lxc的一个虚拟打包工具，能够实现PAAS平台的组建。例如，启动一个 CentOS 操作系统，并在其内部命令行执行指令后结束，整个过程就像自己在操作系统一样高效。<br>项目链接：<br><a href="https://github.com/docker/docker" target="_blank" rel="noopener">https://github.com/docker/docker</a></p><ul><li>go语言</li></ul><p>Go 语言自己的早期源码使用C语言和汇编语言写成。从 Go 1.5 版本后，完全使用 Go 语言自身进行编写。Go 语言的源码对了解 Go 语言的底层调度有极大的参考意义，建议希望对 Go 语言有深入了解的读者读一读。</p><p>项目链接：</p><p><a href="https://github.com/golang/go" target="_blank" rel="noopener">https://github.com/golang/go</a></p><ul><li>Kubernetes</li></ul><p>Google 公司开发的构建于 Docker 之上的容器调度服务，用户可以通过 Kubernetes 集群进行云端容器集群管理。</p><p>项目链接：</p><p><a href="https://github.com/kubernetes/kubernetes" target="_blank" rel="noopener">https://github.com/kubernetes/kubernetes</a></p><p>etcd</p><p>一款分布式、可靠的 KV 存储系统，可以快速进行云配置。</p><p>项目链接：</p><p><a href="https://github.com/coreos/etcd" target="_blank" rel="noopener">https://github.com/coreos/etcd</a></p><ul><li>beego</li></ul><p>beego 是一个类似 Python的 Tornado 框架，采用了 RESTFul 的设计思路，使用 Go 语言编写的一个极轻量级、高可伸缩性和高性能的 Web 应用框架。</p><p>项目链接：</p><p><a href="https://github.com/astaxie/beego" target="_blank" rel="noopener">https://github.com/astaxie/beego</a></p><ul><li>martini</li></ul><p>一款快速构建模块化的 Web 应用的 Web 框架。</p><p>项目链接：</p><p><a href="https://github.com/go-martini/martini" target="_blank" rel="noopener">https://github.com/go-martini/martini</a></p><ul><li>codis</li></ul><p>国产的优秀分布式 Redis 解决方案。</p><p>项目链接：</p><p><a href="https://github.com/CodisLabs/codis" target="_blank" rel="noopener">https://github.com/CodisLabs/codis</a></p><ul><li>delve</li></ul><p>Go语言强大的调试器，被很多集成环境和编辑器整合。</p><p>项目链接：</p><p><a href="https://github.com/derekparker/delve" target="_blank" rel="noopener">https://github.com/derekparker/delve</a></p><ul><li>Facebook</li></ul><p>Facebook也在用，为此他们还专门在Github上建立了一个开源组织facebookgo，大家可以通过<a href="https://github.com/facebookgo访问查看facebook开源的项目，比如著名的是平滑升级的grace。" target="_blank" rel="noopener">https://github.com/facebookgo访问查看facebook开源的项目，比如著名的是平滑升级的grace。</a></p><ul><li><p>Uber</p></li><li><p>腾讯</p></li></ul><p>腾讯作为国内的大公司，还是敢于尝试的，尤其是Docker容器化这一块，他们在15年已经做了docker万台规模的实践，具体可以参考<a href="http://www.infoq.com/cn/articles/tencent-millions-scale-docker-application-practice" target="_blank" rel="noopener">http://www.infoq.com/cn/articles/tencent-millions-scale-docker-application-practice</a> 。</p><ul><li>百度</li></ul><p>目前所知的百度的使用是在运维这边，是百度运维的一个BFE项目，负责前端流量的接入。他们的负责人在2016年有分享，大家可以看下这个 <a href="http://www.infoq.com/cn/presentations/application-of-golang-in-baidu-frontend" target="_blank" rel="noopener">http://www.infoq.com/cn/presentations/application-of-golang-in-baidu-frontend</a> 。</p><p>其次就是百度的消息系统。负责公司手百消息通讯系统服务器端开发及维护。</p><ul><li>京东</li></ul><p>京东云消息推送系统、云存储，以及京东商城等都有使用Go做开发。</p><ul><li>小米</li></ul><p>小米对Golang的支持，莫过于运维监控系统的开源，也就是 <a href="http://open-falcon.com/" target="_blank" rel="noopener">http://open-falcon.com/</a> 。</p><p>此外，小米互娱、小米商城、小米视频、小米生态链等团队都在使用Golang。</p><ul><li>360</li></ul><p>360对Golang的使用也不少，一个是开源的日志搜索系统Poseidon，托管在Github上，<a href="https://github.com/Qihoo360/poseidon" target="_blank" rel="noopener">https://github.com/Qihoo360/poseidon</a>.</p><p>还有360的推送团队也在使用，他们还写了篇博文在Golang的官方博客上 <a href="https://blog.golang.org/qihoo。" target="_blank" rel="noopener">https://blog.golang.org/qihoo。</a></p><ul><li>七牛云</li></ul><p>七牛云用了近50万行代码，来实现整个产品。七牛云存储产品网址：<a href="http://qiniu.com/。上线时间：2011-9-1。应用范围：整个产品（包括基础服务、Web端、统计平台、各类小工具等等）Go代码行数占比：99.9%日" target="_blank" rel="noopener">http://qiniu.com/。上线时间：2011-9-1。应用范围：整个产品（包括基础服务、Web端、统计平台、各类小工具等等）Go代码行数占比：99.9%日</a> PV：保密</p><ul><li>美团</li></ul><p>美团后台流量支撑程序。应用范围：支撑主站后台流量（排序，推荐，搜索等），提供负载均衡，cache，容错，按条件分流，统计运行指标（qps，latency）等功能。</p><ul><li>滴滴</li></ul><p>基础服务平台。</p><ul><li>金山微看</li></ul><p>应用范围：服务接口，后台流程服务，消息系统，图片系统</p><ul><li>搜狗</li></ul><p>搜狗推送系统。Push系统中用于维持与客户端连接的部分。</p><ul><li>QOR - 模块化的电商系统</li></ul><p>QOR官网: QOR: E-commerce &amp; CMS SDK written in Go</p><p>github地址: qor/qor · GitHub</p><p>应用范围: 整个产品</p><ul><li>weico</li></ul><p>产品名：weico 3.0， 服务端所有代码都是用Go实现。</p><ul><li>仙侠道</li></ul><p>产品网址：仙侠道官网 - 心动游戏</p><p>应用范围： 游戏服务端（通讯、逻辑、数据存储）</p><ul><li>快玩游戏</li></ul><p>网址：快玩小游戏,单机游戏,网页游戏,快玩游戏,快玩游戏盒</p><p>应用范围：实时消息系统、用户认证、用户会话、统一统计接口</p><ul><li>盛大云CDN</li></ul><p>网址：盛大云计算</p><p>应用范围：CDN的调度系统、分发系统、监控系统、短域名服务，CDN内部开放平台、运营报表系统以及其他一些小工具等</p><ul><li>Bmob移动后端云服务平台</li></ul><p>产品网址：Bmob移动后端云服务平台</p><p>应用范围：Restful API(使用Beego)、统计分析平台、常用服务如发邮件、队列异步处理、统计用户空间和接口请求</p><ul><li>群策</li></ul><p>网址：群策 - 统一团队沟通，高效完成工作</p><p>应用范围：全系统</p><ul><li>BiddingX DSP广告投放系统</li></ul><p>网址：BiddingX_专业的DSP解决方案供应商</p><p>应用范围：竞价投放、曝光统计、点击跳转</p><ul><li>街坊四邻</li></ul><p>网址：首页 - 街坊四邻</p><p>应用范围：后台服务</p><ul><li>Leanote</li></ul><p>网址：Leanote</p><ul><li>Bearychat</li></ul><p>网址：BearyChat</p><ul><li>宅豆</li></ul><p>网址：宅豆网 - 自筑最美家，宅豆随你搭</p><p>白板- 设计图讨论工具</p><p>网址：白板</p><ul><li>实验楼</li></ul><p>网址：实验楼 - 第一家以实验为核心的IT在线教育平台</p><ul><li>新浪微博</li></ul><p>中间件和弹性调度用 Java 和 Go 编写，微博视频转码及存储服务用 Go 编写。</p><ul><li>爱奇艺</li></ul><p>VR 后台系统中间件，VR 端的 HTTP 接口。</p><ul><li>猎豹移动</li></ul><p>消息推送</p><ul><li>网易</li></ul><p>网易蜂巢容器公有云。</p><ul><li>哔哩哔哩</li></ul><p>弹幕</p><ul><li>巨人网络</li></ul><p>部分手机游戏的服务端。</p><ul><li>今日头条</li></ul><p>Nsq：Nsq 是由Go语言开发的高性能、高可用消息队列系统，性能非常高，每天能处理数十亿条的消息；</p><p>Packer:用来生成不同平台的镜像文件，例如VM、vbox、AWS等，作者是vagrant的作者</p><p>Skynet：分布式调度框架</p><p>Doozer：分布式同步工具，类似ZooKeeper</p><p>Heka：mazila开源的日志处理系统</p><p>Cbfs：couchbase开源的分布式文件系统</p><p>Tsuru：开源的PAAS平台，和SAE实现的功能一模一样</p><p>Groupcache：memcahe作者写的用于Google下载系统的缓存系统</p><p>God：类似redis的缓存系统，但是支持分布式和扩展性</p><p>Gor：网络流量抓包和重放工具</p><p>还有很多，比如阿里中间件、聚美优品、高升控股、探探、斗鱼直播、人人车、亚信、Udesk、方付通、招财猫、三一集团、美餐网等。一般的选择，都是选择用于自己公司合适的产品系统来做，比如消息推送的、监控的、容器的等，Golang特别适合做网络并发的服务，这是他的强项，所以也是被优先用于这些项目。Go语言作为一门大型项目开发语言，在很多大公司相继使用，甚至完全转向Go开发。</p><h2 id="四、写在最后"><a href="#四、写在最后" class="headerlink" title="四、写在最后"></a>四、写在最后</h2><p>当然，一个技术能不能发展起来，关键还要看三点。</p><p>有没有一个比较好的社区。像 C、C++、Java、Python 和 JavaScript 的生态圈都是非常丰富和火爆的。尤其是有很多商业机构参与的社区那就更为人气爆棚了，比如 Linux 的社区。</p><p>有没有一个工业化的标准。像 C、C++、Java 都是有标准化组织的。尤其是 Java，其在架构上还搞出了像 J2EE 这样的企业级标准。</p><p>有没有一个或多个杀手级应用。C、C++ 和 Java 的杀手级应用不用多说了，就算是对于 PHP 这样还不能算是一个好的编程语言来说，因为是 Linux 时代的第一个杀手级解决方案 LAMP 中的关键技术，所以，也发展起来了。</p><p>上述的这三点是非常关键的，新的技术只需要占到其中一到两点就已经很不错了，何况有的技术，比如 Java，是三点全占到了，所以，Java 的发展是如此好。当然，除了上面这三点重要的，还有一些其它的影响因素，比如：</p><p>学习曲线是否低，上手是否快。这点非常重要，C++ 在这点上越做越不好了。</p><p>有没有一个不错的提高开发效率的开发框架。如：Java 的 Spring 框架，C++ 的 STL 等。</p><p>是否有一个或多个巨型的技术公司作为后盾。如：Java 和 Linux 后面的 IBM、Sun……</p><p>有没有解决软件开发中的痛点。如：Java 解决了 C 和 C++ 的内存管理问题。</p><p>用这些标尺来量一下 Go 语言，我们可以清楚地看到：</p><p>Go 语言容易上手；</p><p>Go 语言解决了并发编程和写底层应用开发效率的痛点；</p><p>Go 语言有 Google 这个世界一流的技术公司在后面；</p><p>Go 语言的杀手级应用是 Docker，而 Docker 的生态圈在这几年完全爆棚了。</p><p>所以，Go 语言的未来是不可限量的。当然，我个人觉得，Go 可能会吞食很多 C、C++、Java 的项目。不过，Go 语言所吞食主要的项目应该是中间层的项目，既不是非常底层也不会是业务层。</p><p>也就是说，Go 语言不会吞食底层到 C 和 C++ 那个级别的，也不会吞食到高层如 Java 业务层的项目。Go 语言能吞食的一定是 PaaS 上的项目，比如一些消息缓存中间件、服务发现、服务代理、控制系统、Agent、日志收集等等，没有复杂的业务场景，也到不了特别底层（如操作系统）的中间平台层的软件项目或工具。而 C 和 C++ 会被打到更底层，Java 会被打到更上层的业务层。</p><p>好了，我们再用上面的标尺来量一下 Go 语言的杀手级应用 Docker，你会发现基本是一样的。</p><p>Docker 上手很容易。</p><p>Docker 解决了运维中的环境问题以及服务调度的痛点。</p><p>Docker 的生态圈中有大公司在后面助力。比如 Google。</p><p>Docker 产出了工业界标准 OCI。</p><p>Docker 的社区和生态圈已经出现像 Java 和 Linux 那样的态势。</p><p>……</p><p>所以，虽然几年前的 Docker ，当时的坑儿还很多，但是，相对于这些大的因素来说，那些小坑儿都不是问题。只是需要一些时间，这些小坑儿在未来 5-10 年就可以完全被填平了。</p><p>同样，我们可以看到 Kubernetes 作为服务和容器调度的关键技术一定会是最后的赢家。</p><p>最后，我还要说一下，为什么要早一点地进入这些新技术，而不是等待这些技术成熟了后再进入。原因有这么几个。</p><p>技术的发展过程非常重要。因为你可以清楚地看到了这种新技术的生态圈发展过程。让我们收获最大的并不是这些技术本身，而是一个技术的变迁和行业的发展。</p><p>从中，我们看到了非常具体的各种思潮和思路，这些东西比起 技术本身来说更有价值。因为，这不但让我们重新思考已经掌握的技术以及如何更好地解决已有的问题，而且还让我看到了未来。不但有了技术优势，而且这些知识还让我们的技术生涯多了很多的可能性。</p><p>这些关键新技术，可以让你拿到技术的先机。这些对一个需要技术领导力的个人或公司来说都是非常重要的。</p><p>一个公司或是个人能够占有技术先机，就会比其它公司或个人有更大的影响力。一旦未来行业需求引爆，那么这个公司或是个人的影响力就会形成一个比较大的护城河，并可以快速地产生经济利益。</p><p>Go的应用范围一直在扩大，云计算，微服务，区块链，哪里都有用Go写的重量级项目。docker/kubernetes生态圈，几百/千万行代码，基本统治了云原生应用市场。去年大热的区块链，以太坊的geth，比特币的btcd，闪电网络的lnd，都是Go语言开发。还是那句话，多看看各种语言的生态，或许都并没有你想象的那么不堪。。。Go语言设计上确实不够“先进”，但也是另一种“务实”。其实go不管在国内还是国外已经很受待见了，国外google用的很多，uber也在用，国内有著名的今日头条，每日千亿级的访问妥妥的。多少语言终其一生都没有这么大的应用场景。</p><blockquote><p>作者：qfliweimin<br>链接：<a href="https://www.jianshu.com/p/620519a3412a" target="_blank" rel="noopener">https://www.jianshu.com/p/620519a3412a</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。  </p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+          <category> Go </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Go </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>在线文档导航</title>
+      <link href="/2019/12/10/zai-xian-wen-dang-dao-hang/"/>
+      <url>/2019/12/10/zai-xian-wen-dang-dao-hang/</url>
+      
+        <content type="html"><![CDATA[<p>收集常用的在线档地址<br><a id="more"></a></p><h3 id="1-Java-相关"><a href="#1-Java-相关" class="headerlink" title="1. Java 相关"></a>1. Java 相关</h3><h4 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a><code>Dubbo</code></h4><p><code>doc</code>(<em><a href="http://dubbo.apache.org/zh-cn/docs/user/preface/background.html" target="_blank" rel="noopener">http://dubbo.apache.org/zh-cn/docs/user/preface/background.html</a></em>)</p><p><code>dubbo-spring-boot-starter</code> (<em><a href="https://github.com/alibaba/dubbo-spring-boot-starter" target="_blank" rel="noopener">https://github.com/alibaba/dubbo-spring-boot-starter</a></em>)</p><p><code>dubbo-spring-boot-project</code>(<em><a href="https://github.com/apache/dubbo-spring-boot-project" target="_blank" rel="noopener">https://github.com/apache/dubbo-spring-boot-project</a></em>)</p><hr><h4 id="YApi"><a href="#YApi" class="headerlink" title="YApi"></a><code>YApi</code></h4><p><code>doc</code>(<em><a href="https://hellosean1025.github.io/yapi/documents/redev.html" target="_blank" rel="noopener">https://hellosean1025.github.io/yapi/documents/redev.html</a></em>)</p><p><code>code&gt;</code>(<em><a href="https://github.com/YMFE/yapi" target="_blank" rel="noopener">https://github.com/YMFE/yapi</a></em>)</p><hr><h4 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a><code>Spring</code></h4><p><code>Zuul</code>(<a href="https://cloud.spring.io/spring-cloud-netflix/multi/multi__router_and_filter_zuul.html" target="_blank" rel="noopener">https://cloud.spring.io/spring-cloud-netflix/multi/multi__router_and_filter_zuul.html</a>)</p><p><code>Spring Project</code>(<em><a href="https://spring.io/projects" target="_blank" rel="noopener">https://spring.io/projects</a></em>)</p><p><code>Spring Doc</code>(<em><a href="https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/" target="_blank" rel="noopener">https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/</a></em>)</p><ul><li><code>Eureka</code><br><code>doc</code>(<a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-netflix/2.2.0.M1/#_circuit_breaker_hystrix_clients" target="_blank" rel="noopener">https://cloud.spring.io/spring-cloud-static/spring-cloud-netflix/2.2.0.M1/#_circuit_breaker_hystrix_clients</a>)</li></ul><p><code>Article</code><br><code>Eureka 服务提供者与消费者</code>.(<em><a href="https://cloud.tencent.com/developer/article/1334267" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1334267</a></em>)</p><p><code>spring cloud Eureka 服务的管理和spring cloud consul有什么区别？</code>.(<em><a href="https://www.zhihu.com/question/55749122/answer/483755459" target="_blank" rel="noopener">https://www.zhihu.com/question/55749122/answer/483755459</a></em>)</p><hr><ul><li><code>Spring Boot</code><br><code>Article</code><br><code>Spring Boot 部署与服务配置</code>. (<em><a href="https://blog.csdn.net/catoop/article/details/50588851" target="_blank" rel="noopener">https://blog.csdn.net/catoop/article/details/50588851</a></em>)</li></ul><h3 id="2-爬虫相关"><a href="#2-爬虫相关" class="headerlink" title="2. 爬虫相关"></a>2. 爬虫相关</h3><h4 id="mechanize"><a href="#mechanize" class="headerlink" title="mechanize"></a><code>mechanize</code></h4><p><code>doc</code>(<em><a href="https://mechanize.readthedocs.io/en/latest/advanced.html#cookies" target="_blank" rel="noopener">https://mechanize.readthedocs.io/en/latest/advanced.html#cookies</a></em>)</p><p><code>code&gt;</code>(<em><a href="https://github.com/python-mechanize/mechanize" target="_blank" rel="noopener">https://github.com/python-mechanize/mechanize</a></em>)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spring Framework</title>
+      <link href="/2019/09/09/spring-framework-abstract/"/>
+      <url>/2019/09/09/spring-framework-abstract/</url>
+      
+        <content type="html"><![CDATA[<p><code>Spring</code> 框架的部分文档摘要<br><a id="more"></a></p><blockquote><p><code>Version 5.1.9.RELEASE</code></p></blockquote><h2 id="Core-Technologies"><a href="#Core-Technologies" class="headerlink" title="Core Technologies"></a>Core Technologies</h2><p>A thorough treatment of the Spring Framework’s IoC container is closely followed by comprehensive coverage of Spring’s Aspect-Oriented Propramming (AOP) technologies.<br>The Spirng Framework has its own AOP framework.<br>Coverage of Spring’s integration with AspectJ.</p><h3 id="1-The-IoC-Container"><a href="#1-The-IoC-Container" class="headerlink" title="1. The IoC Container"></a>1. The IoC Container</h3><p>IoC is also known as dependency injection(DI). It is a process whereby objects define their dependencies(this is, the other objects they work with)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+          <category> Java </category>
+          
+          <category> Spring Framework </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Spring Framework </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Elasticsearch(二)操作</title>
+      <link href="/2019/08/29/elasticsearch-er-cao-zuo/"/>
+      <url>/2019/08/29/elasticsearch-er-cao-zuo/</url>
+      
+        <content type="html"><![CDATA[<img src="/2019/08/29/Elasticsearch-二-操作/outdoor-4433532_960_720.jpg" title="outdoor"><p>记录 <code>Elasticsearch</code> 的使用过程中遇到的部分问题</p><a id="more"></a><h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><h2 id="logstash"><a href="#logstash" class="headerlink" title="logstash"></a><code>logstash</code></h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h3 id="同步-mysql-数据"><a href="#同步-mysql-数据" class="headerlink" title="同步 mysql 数据"></a>同步 <code>mysql</code> 数据</h3><h2 id="Kibana"><a href="#Kibana" class="headerlink" title="Kibana"></a><code>Kibana</code></h2><h2 id="IK"><a href="#IK" class="headerlink" title="IK"></a><code>IK</code></h2><h1 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h1><h2 id="CURD"><a href="#CURD" class="headerlink" title="CURD"></a><code>CURD</code></h2><h2 id="Spring-Boot-项目"><a href="#Spring-Boot-项目" class="headerlink" title="Spring Boot 项目"></a><code>Spring Boot</code> 项目</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+          <category> 中间件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ElasticSearch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java连接SSH服务器并执行命令</title>
+      <link href="/2019/08/29/java-lian-jie-ssh-fu-wu-qi-bing-zhi-xing-ming-ling/"/>
+      <url>/2019/08/29/java-lian-jie-ssh-fu-wu-qi-bing-zhi-xing-ming-ling/</url>
+      
+        <content type="html"><![CDATA[<img src="/2019/08/29/Java连接SSH服务器并执行命令/fileds-4439896_960_720.jpg" title="fileds"><p><code>Java</code> 中使用 <code>SSH</code> 连接</p><a id="more"></a><h2 id="jsch-官方示例"><a href="#jsch-官方示例" class="headerlink" title="jsch 官方示例"></a><code>jsch</code> 官方示例</h2><pre><code class="java">/* -*-mode:java; c-basic-offset:2; indent-tabs-mode:nil -*- *//** * This program enables you to connect to sshd server and get the shell prompt. *   $ CLASSPATH=.:../build javac Shell.java  *   $ CLASSPATH=.:../build java Shell * You will be asked username, hostname and passwd.  * If everything works fine, you will get the shell prompt. Output may * be ugly because of lacks of terminal-emulation, but you can issue commands. * */import com.jcraft.jsch.*;import java.awt.*;import javax.swing.*;public class Shell{  public static void main(String[] arg){    try{      JSch jsch=new JSch();      //jsch.setKnownHosts(&quot;/home/foo/.ssh/known_hosts&quot;);      String host=null;      if(arg.length&gt;0){        host=arg[0];      }      else{        host=JOptionPane.showInputDialog(&quot;Enter username@hostname&quot;,                                         System.getProperty(&quot;user.name&quot;)+                                         &quot;@localhost&quot;);       }      String user=host.substring(0, host.indexOf(&#39;@&#39;));      host=host.substring(host.indexOf(&#39;@&#39;)+1);      Session session=jsch.getSession(user, host, 22);      String passwd = JOptionPane.showInputDialog(&quot;Enter password&quot;);      session.setPassword(passwd);      UserInfo ui = new MyUserInfo(){        public void showMessage(String message){          JOptionPane.showMessageDialog(null, message);        }        public boolean promptYesNo(String message){          Object[] options={ &quot;yes&quot;, &quot;no&quot; };          int foo=JOptionPane.showOptionDialog(null,                                                message,                                               &quot;Warning&quot;,                                                JOptionPane.DEFAULT_OPTION,                                                JOptionPane.WARNING_MESSAGE,                                               null, options, options[0]);          return foo==0;        }        // If password is not given before the invocation of Session#connect(),        // implement also following methods,        //   * UserInfo#getPassword(),        //   * UserInfo#promptPassword(String message) and        //   * UIKeyboardInteractive#promptKeyboardInteractive()      };      session.setUserInfo(ui);      // It must not be recommended, but if you want to skip host-key check,      // invoke following,      // session.setConfig(&quot;StrictHostKeyChecking&quot;, &quot;no&quot;);      //session.connect();      session.connect(30000);   // making a connection with timeout.      Channel channel=session.openChannel(&quot;shell&quot;);      // Enable agent-forwarding.      //((ChannelShell)channel).setAgentForwarding(true);      channel.setInputStream(System.in);      /*      // a hack for MS-DOS prompt on Windows.      channel.setInputStream(new FilterInputStream(System.in){          public int read(byte[] b, int off, int len)throws IOException{            return in.read(b, off, (len&gt;1024?1024:len));          }        });       */      channel.setOutputStream(System.out);      /*      // Choose the pty-type &quot;vt102&quot;.      ((ChannelShell)channel).setPtyType(&quot;vt102&quot;);      */      /*      // Set environment variable &quot;LANG&quot; as &quot;ja_JP.eucJP&quot;.      ((ChannelShell)channel).setEnv(&quot;LANG&quot;, &quot;ja_JP.eucJP&quot;);      */      //channel.connect();      channel.connect(3*1000);    }    catch(Exception e){      System.out.println(e);    }  }  public static abstract class MyUserInfo                          implements UserInfo, UIKeyboardInteractive{    public String getPassword(){ return null; }    public boolean promptYesNo(String str){ return false; }    public String getPassphrase(){ return null; }    public boolean promptPassphrase(String message){ return false; }    public boolean promptPassword(String message){ return false; }    public void showMessage(String message){ }    public String[] promptKeyboardInteractive(String destination,                                              String name,                                              String instruction,                                              String[] prompt,                                              boolean[] echo){      return null;    }  }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JQuery使用</title>
+      <link href="/2019/08/29/jquery-shi-yong/"/>
+      <url>/2019/08/29/jquery-shi-yong/</url>
+      
+        <content type="html"><![CDATA[<img src="/2019/08/29/jQuery使用/shanghai-3459422_960_720.jpg" title="shanghai"><p>记录在使用 <code>JQuery</code> 的过程中遇到的部分问题</p><a id="more"></a><h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><h3 id="苹果手机-jquery-点击事件无效"><a href="#苹果手机-jquery-点击事件无效" class="headerlink" title="苹果手机 jquery 点击事件无效"></a>苹果手机 <code>jquery</code> 点击事件无效</h3><p>页面在苹果移动设备上使用 <code>jquery click</code> 事件时，出现异常。</p><p>解决方法：</p><blockquote><p>在点击当前元素上添加样式css的手势样式</p></blockquote><pre><code class="css">.next_button{            cursor: pointer    }</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JQuery </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>NGINX使用及配置</title>
+      <link href="/2019/08/20/nginx-an-zhuang-pei-zhi/"/>
+      <url>/2019/08/20/nginx-an-zhuang-pei-zhi/</url>
+      
+        <content type="html"><![CDATA[<p>记录<code>nginx</code>的使用过程<br><img src="/2019/08/20/Nginx安装配置/pets-4415649_960_720.jpg" title="pets"><br><a id="more"></a></p><h3 id="安装nginx开源版"><a href="#安装nginx开源版" class="headerlink" title="安装nginx开源版"></a>安装<code>nginx</code>开源版</h3><p>通过<code>yum</code>源安装</p><ol><li>安装<code>EPEL</code>软件包</li></ol><p><code>yum install epel-release</code></p><ol start="2"><li>更新<code>yum</code>源</li></ol><p><code>yum update</code></p><ol start="3"><li>安装<code>nginx</code>开源版</li></ol><p><code>yum install nginx</code></p><ol start="4"><li>验证是否安装成功</li></ol><p><code>nginx -v</code></p><h3 id="启动nginx"><a href="#启动nginx" class="headerlink" title="启动nginx"></a>启动<code>nginx</code></h3><h4 id="启动nginx-1"><a href="#启动nginx-1" class="headerlink" title="启动nginx"></a>启动<code>nginx</code></h4><p>通过命令行启动，首先查找<code>nginx</code>的启动文件：<br><code> whereis nginx</code></p><p>通常是</p><p><code>/usr/bin/nginx</code></p><p>或者</p><p><code>/usr/sbin/nginx</code></p><p>在命令行中输入上述命令即可启动。</p><p><code>nginx</code>可通过带参数的形式启动，如：</p><pre><code>/usr/bin/nginx -t -c ~/mynginx.conf -g &quot;pid /var/run/nginx.pid; worker_processes 2;&quot;</code></pre><p>可选项：</p><table><thead><tr><th style="text-align:left">参数</th><th style="text-align:left">含义</th></tr></thead><tbody><tr><td style="text-align:left"><code>-?, -h</code></td><td style="text-align:left">帮助信息</td></tr><tr><td style="text-align:left"><code>-v</code></td><td style="text-align:left">版本</td></tr><tr><td style="text-align:left"><code>-V</code></td><td style="text-align:left">版本, 编辑器的版本信息, 当前配置信息</td></tr><tr><td style="text-align:left"><code>-t</code></td><td style="text-align:left">测试配置文件，服务实际上不会启动。主要检查配置文件中可能存在的格式和符号问题</td></tr><tr><td style="text-align:left"><code>-q</code></td><td style="text-align:left">不输出在测试阶段的非错误信息</td></tr><tr><td style="text-align:left"><code>-s signal</code></td><td style="text-align:left">向主进程发送指令信号：<code>stop, quit, reopen, reload (version &gt;= 0.7.53)</code></td></tr><tr><td style="text-align:left"><code>-p prefix</code></td><td style="text-align:left">设置前缀路径，默认值为<code>/usr/local/nginx</code>需要<code> (version &gt;= 0.7.53)</code></td></tr><tr><td style="text-align:left"><code>-c filename</code></td><td style="text-align:left">手动指定生效的配置文件</td></tr><tr><td style="text-align:left"><code>-g directives</code></td><td style="text-align:left">设置全局指令</td></tr></tbody></table><blockquote><p><code>nginx</code>的可用参数比较少，几乎所有配置都是通过配置文件运行的</p></blockquote><h4 id="停止或重启nginx服务"><a href="#停止或重启nginx服务" class="headerlink" title="停止或重启nginx服务"></a>停止或重启<code>nginx</code>服务</h4><p>对于已在运行的<code>NGINX</code>服务，有两种方式去控制它：</p><ol><li>通过指令</li></ol><pre><code>/usr/bin/nginx -s stop</code></pre><ol start="2"><li>通过向<code>NGINX</code>主进程发送信号</li></ol><p>如优雅的关闭<code>NGINX</code>服务：</p><pre><code>kill -QUIT $( cat /usr/local/nginx/logs/nginx.pid )</code></pre><p><code>NGINX</code>的主进程可以处理以下指令：</p><table><thead><tr><th style="text-align:left">指令</th><th style="text-align:left">含义</th></tr></thead><tbody><tr><td style="text-align:left">TERM, INT</td><td style="text-align:left">Quick shutdown</td></tr><tr><td style="text-align:left">QUIT</td><td style="text-align:left">Graceful shutdown</td></tr><tr><td style="text-align:left">KILL</td><td style="text-align:left">Halts a stubborn process</td></tr><tr><td style="text-align:left">HUP</td><td style="text-align:left">Configuration reload <br>Start the new worker processes with a new configuration<br>Gracefully shutdown the old worker processes</td></tr><tr><td style="text-align:left">USR1</td><td style="text-align:left">Reopen the log files</td></tr><tr><td style="text-align:left">USR2</td><td style="text-align:left">Upgrade Executable on the fly</td></tr><tr><td style="text-align:left">WINCH</td><td style="text-align:left">Gracefully shutdown the worker processes</td></tr></tbody></table><p>没有必要处理其他的工作进程，但它们也支持下列指令：</p><table><thead><tr><th style="text-align:left">指令</th><th style="text-align:left">含义</th></tr></thead><tbody><tr><td style="text-align:left">TERM, INT</td><td style="text-align:left">Quick shutdown</td></tr><tr><td style="text-align:left">QUIT</td><td style="text-align:left">Graceful shutdown</td></tr><tr><td style="text-align:left">USR1</td><td style="text-align:left">Reopen the log files</td></tr></tbody></table><p>另外<code>NGINX</code>支持在运行阶段更新配置信息<sup>[1]</sup></p><p>[1] <code>Starting, Stopping, and Restarting NGINX</code> (<em><a href="https://www.nginx.com/resources/wiki/start/topics/tutorials/commandline/" target="_blank" rel="noopener">https://www.nginx.com/resources/wiki/start/topics/tutorials/commandline/</a></em>)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+          <category> Web服务器 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> NGINX </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MySQL最大连接数</title>
+      <link href="/2019/08/19/mysql-zui-da-lian-jie-shu/"/>
+      <url>/2019/08/19/mysql-zui-da-lian-jie-shu/</url>
+      
+        <content type="html"><![CDATA[<img src="/images/loading.gif" data-original="/2019/08/19/mysql-zui-da-lian-jie-shu/flowers-4436910_960_720.jpg" title="flowers"><p>Mysql中可以通过设置<code>max_connections</code>参数来控制数据库的最大连接数:<br><a id="more"></a></p><ul><li><code>max_connections</code></li></ul><table><thead><tr><th style="text-align:left">Property</th><th style="text-align:left">Value</th></tr></thead><tbody><tr><td style="text-align:left">Command-Line Format</td><td style="text-align:left">–max-connections=#</td></tr><tr><td style="text-align:left">System Variable</td><td style="text-align:left">max_connections</td></tr><tr><td style="text-align:left">Scope</td><td style="text-align:left">Global</td></tr><tr><td style="text-align:left">Dynamic</td><td style="text-align:left">Yes</td></tr><tr><td style="text-align:left">Type</td><td style="text-align:left">Integer</td></tr><tr><td style="text-align:left">Default Value</td><td style="text-align:left">151</td></tr><tr><td style="text-align:left">Minimum Value</td><td style="text-align:left">1</td></tr><tr><td style="text-align:left">Maximum Value</td><td style="text-align:left">100,000</td></tr></tbody></table><p>最大连接数，指的是客户端可以在同一时刻连接数据库服务的最大数目。</p><h3 id="MySQL是如何控制客户端连接的"><a href="#MySQL是如何控制客户端连接的" class="headerlink" title="MySQL是如何控制客户端连接的"></a>MySQL是如何控制客户端连接的</h3><h4 id="网络接口和管理连接的线程"><a href="#网络接口和管理连接的线程" class="headerlink" title="网络接口和管理连接的线程"></a>网络接口和管理连接的线程</h4><p>服务端能够通过多种网络接口监听客户端连接。通过这些接口，管理连接的线程可有效的处理客户端的连接请求，服务端主要监听以下内容：</p><ul><li>在所有的平台上，都有一个<code>管理线程</code>来处理 <code>TCP/IP</code>请求</li><li>在<code>Unix</code>上，该<code>管理线程</code>同时也会处理<code>Unix</code>的<code>socket</code>请求</li><li>在<code>Windows</code>服务器上一个<code>管理线程</code>会处理在<code>共享内存</code>中的连接请求，另一个线程处理<code>命名管道连接请求</code></li></ul><p>服务端不会创建线程去处理那些没被监听的网络接口。例如，假如一台<code>Windows</code>服务器支持<code>命名管道</code>的服务没有开启，那么<code>MySQL</code>服务端也不会创建一个新的线程去处理它们。</p><h4 id="客户端连接线程的管理"><a href="#客户端连接线程的管理" class="headerlink" title="客户端连接线程的管理"></a>客户端连接线程的管理</h4><p>每一个到达服务端的客户端连接，服务端都会为其提供一个线程，这个线程会处理与之相对应的客户端连接的认证和请求。<br>线程管理器会首先查看缓存中是否有可用线程用于提供给客户端，如果没有的话，则新建一个线程。<br>当一个连接算是完成时，它所对应的服务线程如果不空，则会被放入到缓存中。</p><p>在该连接模型下，会存在当前有多少个连接请求，就会有多少个线程的情况，服务端就会被迫处理大量的请求，这会造成多方面的不利因素。比如，线程的创建和销毁的开销会增大，同时，每个线程都需要服务端和内核的资源，如栈空间。为了调度大量的并发连接，每个线程的栈空间必须保持在一个较低的值，这会导致出现栈空间太小或者服务端消耗大量的内存。也可能出现其他资源的耗尽，造成调度开销变得非常大。</p><p><code>MySQL Enterprise Edition</code> 包含一个线程池的插件，提供了一个可选的线程处理模型，能够减少开销提高性能。</p><p>[1] MySQL 5.7 Reference Manual <em><a href="https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html" target="_blank" rel="noopener">https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html</a></em></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据库 </category>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MySQL常用操作</title>
+      <link href="/2019/08/19/mysql-chang-yong-cao-zuo/"/>
+      <url>/2019/08/19/mysql-chang-yong-cao-zuo/</url>
+      
+        <content type="html"><![CDATA[<img src="/2019/08/19/Mysql常用操作/nature-4431134_960_720.jpg" title="nature"><p>记录<code>MySQL</code>数据库的一些日常操作</p><a id="more"></a><h3 id="重启服务"><a href="#重启服务" class="headerlink" title="重启服务"></a>重启服务</h3><ul><li>CentOS7</li></ul><p><code>systemctl restart mysqld</code></p><h3 id="查询设置"><a href="#查询设置" class="headerlink" title="查询设置"></a>查询设置</h3><p>查看 <code>max_allowed_packet</code> 大小: <code>show VARIABLES like ‘%max_allowed_packet%’;</code></p><h3 id="日志相关"><a href="#日志相关" class="headerlink" title="日志相关"></a>日志相关</h3><pre><code>mysql&gt;set global log_output=file;//输出到文件mysql&gt;set global general_log_file=&#39;file-path.log&#39;;//输出文件地址mysql&gt;set global general_log=on;//开启通用日志mysql&gt;set global general_log=off;//关闭通用日志mysql有以下几种日志：     错误日志：     -log-err     查询日志：     -log     慢查询日志:   -log-slow-queries     更新日志:     -log-update     二进制日志： -log-bin  是否启用了日志 mysql&gt;show variables like &#39;log_%&#39;; 怎样知道当前的日志 mysql&gt; show master status; </code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据库 </category>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spring Boot中使用Session</title>
+      <link href="/2019/08/02/spring-boot-zhong-shi-yong-session/"/>
+      <url>/2019/08/02/spring-boot-zhong-shi-yong-session/</url>
+      
+        <content type="html"><![CDATA[<p>记录<code>Spring Boot</code>中操作<code>Session</code>的过程<br><a id="more"></a></p><h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><ol><li>Cookie由服务器端创建，然后添加到 HttpServletResponse 中发送给客户端（浏览器）。  </li><li>可以添加多个cookie键值对。  </li><li>Cookie 由键值名和键值组成。相同 domain 和 path 中的键值名不能重复，添加键值名重名的键值对会覆盖上一个同名的键值对。<!------------------------------------------more -------------------------------></li><li>添加 Cookie 时，需要指定cookie所在域(setDomain), 路径(setPath)，指定存在时长(setMaxAge)。  </li><li>服务端创建好cookie后提交给客户端，之后浏览器的每次请求（HttpServletRequest）里都会携带cookie数组。  </li><li>springmvc有两种方式获取：（1）在控制器函数中通过对参数注解@CookieValue（键值名），获取指定某个cookie。（2）通过 HttpServletRequest 中的 getcookies 方法获取 cookie 数组，然后迭代里面的每一个 cookie 键值对。</li></ol><h3 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h3><ol><li>服务器会根据客户端的请求 HttpServletRequest 创建 session=request.getSession()。  </li><li>每一个 session 都有一个唯一的标示 sessionID ，可通过 request.getSession().getId()获得。  </li><li>session是存储在服务器端的，每一个 session 都有一个id，当创建一个 session 后，会将该 sessionID 存放到此次访问的 cookie 中，当下次客户端的访问到来需要提取服务器中的 session时，会根据访问中 cookie 里的 sessionID 值来找到服务器中的具体 session。  </li><li>访问静态资源时不会创建 session  </li><li>服务器会把长时间没有活动的 session 从服务器内存中清除，此时 session 便失效。Tomcat 中 session的默认失效时间为 20分钟  </li><li>Tomcat 7以上的版本中默认禁止客户端脚本读取session Id，需要在context.xml中设置useHttpOnly=”false”，开启权限。  <img src="/2019/08/02/Spring-Boot中使用Session/Headers.png" title="未开启读取权限时，响应中有HttpOnly标识"></li></ol><h2 id="在-Spring-Boot中使用"><a href="#在-Spring-Boot中使用" class="headerlink" title="在 Spring Boot中使用"></a>在 Spring Boot中使用</h2><h3 id="设置useHttpOnly"><a href="#设置useHttpOnly" class="headerlink" title="设置useHttpOnly"></a>设置useHttpOnly</h3><ul><li>jar 项目<br>在配置文件中设置：<pre><code class="properties">server.servlet.session.cookie.http-only=false</code></pre></li><li><p>war项目<br>在context.xml文件中的Context添加属性useHttpOnly</p><pre><code class="xml">&lt;Context useHttpOnly=&quot;false&quot;&gt;&lt;Context&gt;</code></pre><h3 id="设置Cookie"><a href="#设置Cookie" class="headerlink" title="设置Cookie"></a>设置Cookie</h3><p>场景: 首次请求时跳转到指定页面，页面再通过ajax向后台请求数据，进行页面渲染。跳转页面时，需要指定cookie，否则会出现项目部署到外部tomcat时，cookie无法写入的情况，造成ajax请求时，两次的sessionId不一致。</p><pre><code class="java">@RequestMapping(value=&quot;/query&quot;, method=RequestMethod.GET)public ModeAndView queryInfo(@RequestParam(value=&quot;sq&quot;)String sq,                          HttpServletRequest request,                          HttpServletResponse response                          ) {      ModeAndView view = new ModeAndView();      //... view 操作      Cookie[] cookies = request.getCookies();      String sessionId = request.getSession().getId();      if (cookies == null) {          Cookie cookie = new Cookie(&quot;JSESSIONID&quot;, sessionId);          cookie.setMaxAge(5 * 60);          cookie.setDomian(&quot;localhost&quot;);          cookie.setPath(&quot;/hand&quot;);          response.addCookie(cookie);      } else {          for (Cookie cookie : cookies) {              if (cookie.getName().equals(&quot;JSESSIONID&quot;)) {                  cookie.setMaxAge(5 * 60);                  cookie.setValue(sessionId);                  cookie.setDomain(&quot;localhost&quot;);                  cookie.setPath(&quot;/hand&quot;);                  response.addCookie(cookie);                  break;              }          }      }      return view;}</code></pre><h3 id="ajax-请求时带上cookie"><a href="#ajax-请求时带上cookie" class="headerlink" title="ajax 请求时带上cookie"></a>ajax 请求时带上cookie</h3><p>在请求列表中加上xhrFields参数。  </p><pre><code class="js">var s = $.ajax({  type: &quot;get&quot;,  timeout: 8000,  xhrFields: { withCredentials: true},  url: &quot;/hand/val&quot;,  data: {&quot;params&quot;: &quot;&quot;},  success: function(rel) {      console.log(rel)  },  error: function() {      console.log(&quot;failed&quot;)  },  complete: function(XMLHttpRequest, status) {      if (status == &quot;timeout&quot;) {          s.abort();          console.log(&quot;timeout&quot;);      }  }})</code></pre><h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p>[1] Apache Tomcat 7 . The Context Container  <em><a href="http://tomcat.apache.org/tomcat-7.0-doc/config/context.html#Parallel_deployment" target="_blank" rel="noopener">http://tomcat.apache.org/tomcat-7.0-doc/config/context.html#Parallel_deployment</a></em><br>[2] springMVC操作cookie和session. Red_Code <em><a href="https://www.cnblogs.com/red-code/p/6629363.html" target="_blank" rel="noopener">https://www.cnblogs.com/red-code/p/6629363.html</a></em></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Spring Boot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spring Boot 创建新工程</title>
+      <link href="/2019/08/02/spring-boot-xiang-mu-jie-gou/"/>
+      <url>/2019/08/02/spring-boot-xiang-mu-jie-gou/</url>
+      
+        <content type="html"><![CDATA[<p>记录如何使用<code>Spring Boot</code>创建一个简单的应用工程<br><a id="more"></a></p><h2 id="jar项目"><a href="#jar项目" class="headerlink" title="jar项目"></a>jar项目</h2><p>//todo</p><h2 id="war项目"><a href="#war项目" class="headerlink" title="war项目"></a>war项目</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Spring Boot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HTML tips</title>
+      <link href="/2019/08/02/html-tips/"/>
+      <url>/2019/08/02/html-tips/</url>
+      
+        <content type="html"><![CDATA[<p>记录一些在使用<code>HTML</code>过程中的一些小<code>tips</code></p><a id="more"></a><h2 id="显示文本中的换行符"><a href="#显示文本中的换行符" class="headerlink" title="显示文本中的换行符"></a>显示文本中的换行符</h2><p>将文本内容置于<code>&lt;pre&gt;</code>标签内。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> HTML </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> tips </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Service Mesh简介</title>
+      <link href="/2019/07/31/service-mesh-jian-jie/"/>
+      <url>/2019/07/31/service-mesh-jian-jie/</url>
+      
+        <content type="html"><![CDATA[<p><code>Service Mesh</code> 是近年来不断被提及的一个新技术点，在此记录一些搜集到的相关概念及知识点。</p><a id="more"></a><blockquote><p>Service Mesh 是一个基础设施层，用于处理服务间通信。云原生应用有着复杂的服务拓扑，Service Mesh 可以保证 Request 可以在这些拓扑中可靠地穿梭。在实际应用当中，Service Mesh 通常是由一系列轻量级的网络代理组成的，它们与应用程序部署在一起，但对应用程序透明。</p></blockquote><p><code>Service Mesh</code>具有如下优点：</p><ul><li>屏蔽分布式系统通信的复杂性（负载均衡、服务发现、认证授权、监控追踪、流量控制等）服务只用关注业务逻辑。</li><li>真正的语言无关，服务可以用任何语言编写，只需和<code>Service Mesh</code>通信即可。</li><li>对应用透明，<code>Service Mesh</code>组件可以单独升级。</li></ul><p><code>Service Mesh</code>所面临的挑战：</p><ul><li><code>Service Mesh</code>组件以代理模式计算并转发请求，一定程度上会降低通信系统性能，并增加系统资源开销。</li><li><code>Service Mesh</code>组件接管了网络流量，因此服务的整体稳定性依赖于<code>Service Mesh</code>，同时，额外引入的大量<code>Service Mesh</code>服务实例的运维和管理也是一个挑战。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+          <category> 框架 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Service Mesh </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Knative简介</title>
+      <link href="/2019/07/31/knative-jian-jie/"/>
+      <url>/2019/07/31/knative-jian-jie/</url>
+      
+        <content type="html"><![CDATA[<p><code>Knative</code> 是谷歌开源的 <code>Serverless</code> 架构方案，旨在提供一套简单易用的 <code>Serverless</code> 方案，把 <code>Serverless</code> 标准化。在此记录一些收集到的概念知识点。</p><a id="more"></a><p>&emsp;&emsp;<code>Knative</code> 是一个开源社区项目，它可以向 Kubernetes 中添加组件，从而更轻松地部署、运行和管理无服务器的云原一应用。无服务器云计算模型可以提高开发人员的生产效率，并降低运维成本。<br>&emsp;&emsp;利用<code>Knative</code>无服务环境，可以将代码部署到 Kubernates 平台，并将代码打包为容器镜像并交给系统，以此来创建相应的服务。代码仅在需要时才会运行，并由 Knative 来自动启动和停止实例。除非代码需要执行某些操作，否则不会消耗资源。因而只需要为所需要的云计算时间付费，而不用全程运行和管理自己的服务器，因此可大大降低运维成本。<br>&emsp;&emsp;<code>Knative</code>主要由3个组件构成：</p><ul><li>构建 - 一种灵活地将源代码构建到容器中的方法。</li><li>服务 - 通过请求驱动模型实现容器的快速部署和自动扩展，以根据需要为工作负载提供服务。</li><li>事件 - 用于使用和发起事件以触发应用的基础架构。应用可能由多种源触发，例如自己应用的事件、来自多个提供商的云服务、软件即服务（SaaS）系统，以及红帽 AMQ 流。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+          <category> 架构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Serverless </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>译-Serverless架构</title>
+      <link href="/2019/07/31/yi-serverless-jia-gou/"/>
+      <url>/2019/07/31/yi-serverless-jia-gou/</url>
+      
+        <content type="html"><![CDATA[<p>找到一篇介绍<code>Serverless</code>的英文文章，特此了解一下。<br><a id="more"></a> </p><p><a href="https://martinfowler.com/articles/serverless.html" target="_blank" rel="noopener">原文</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 译文 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Serverless </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java 远程调试</title>
+      <link href="/2019/07/30/java-yuan-cheng-diao-shi/"/>
+      <url>/2019/07/30/java-yuan-cheng-diao-shi/</url>
+      
+        <content type="html"><![CDATA[<p>接触到一些 <code>Java</code> 远程调试的知识点，故研究记录一下。<br><a id="more"></a></p><ul><li><p>BTrace</p></li><li><p>Arthas</p></li><li><p>ASM框架</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spring Cloud Netflix 组件</title>
+      <link href="/2019/07/26/spring-clound-netflix-zu-jian/"/>
+      <url>/2019/07/26/spring-clound-netflix-zu-jian/</url>
+      
+        <content type="html"><![CDATA[<p>记录一些<code>Spring Cloud Netflix</code>使用过程中遇到的组件。<br><a id="more"></a></p><p>Spring Cloud Netflix <a href="https://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html" target="_blank" rel="noopener">官方文档</a></p><ul><li>组件</li></ul><p><code>Eureka</code>: 注册中心/服务发现<br><code>Hystrix</code>: 断路器<br><code>Netflix</code>: 路由网关<br><code>Ribbon</code>: 负载均衡</p><h2 id="服务发现"><a href="#服务发现" class="headerlink" title="服务发现"></a>服务发现</h2><h3 id="Eureka-Clients"><a href="#Eureka-Clients" class="headerlink" title="Eureka Clients"></a><code>Eureka Clients</code></h3><h3 id="Eureka-Server"><a href="#Eureka-Server" class="headerlink" title="Eureka Server"></a><code>Eureka Server</code></h3><h2 id="断路器"><a href="#断路器" class="headerlink" title="断路器"></a>断路器</h2><h3 id="Hystrix-Clients"><a href="#Hystrix-Clients" class="headerlink" title="Hystrix Clients"></a><code>Hystrix Clients</code></h3><h3 id="Hystrix-Dashboard"><a href="#Hystrix-Dashboard" class="headerlink" title="Hystrix Dashboard"></a><code>Hystrix Dashboard</code></h3><h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><h3 id="Ribbon"><a href="#Ribbon" class="headerlink" title="Ribbon"></a><code>Ribbon</code></h3><h2 id="配置中心"><a href="#配置中心" class="headerlink" title="配置中心"></a>配置中心</h2><h3 id="Arhaius"><a href="#Arhaius" class="headerlink" title="Arhaius"></a><code>Arhaius</code></h3><h2 id="路由与网关"><a href="#路由与网关" class="headerlink" title="路由与网关"></a>路由与网关</h2><h3 id="Zuul"><a href="#Zuul" class="headerlink" title="Zuul"></a><code>Zuul</code></h3><h2 id="多程序语言支持"><a href="#多程序语言支持" class="headerlink" title="多程序语言支持"></a>多程序语言支持</h2><h3 id="Sidecar"><a href="#Sidecar" class="headerlink" title="Sidecar"></a><code>Sidecar</code></h3><h2 id="请求的重试机制"><a href="#请求的重试机制" class="headerlink" title="请求的重试机制"></a>请求的重试机制</h2><p><code>Spring Cloud Netflix</code>提供了多种方式用以发起 <code>HTTP</code>请求，可以使用<code>RestTemplate</code>、<code>Ribbon</code>、或者<code>Feign</code>. 不论使用何种方式，都有可能出现请求失败的情形。当一个请求失败后，通常希望其他能自动重新发起请求。因而可以通过添加<code>Spring Retry</code>的依赖，来处理这类需求。添加该依赖后，负载均衡的<code>RestTemplate</code>、<code>Feign</code>、<code>Zuul</code>会在请求失败的时候重新发起请求。</p><h3 id="BackOff-Policies"><a href="#BackOff-Policies" class="headerlink" title="BackOff Policies"></a>BackOff Policies</h3><blockquote><blockquote><p>退避(backoff)是指当一个主机已经在有MAC 协议的网络中经历了一个冲突之后试图去重发之前的等待时期.</p></blockquote></blockquote><p>默认情况下，重试请求时没有使用退避机制的。如果要启动该功能。需要创建一个类型为<code>LoadBalancedRetryFactory</code>的<code>java bean</code>，并重写<code>createBackOffPolicy</code>函数，如：</p><pre><code class="java">@Configurationpublic class MyConfiguration {    @Bean    LoadBalancedRetryFactory retryFactory() {        return new LoadBalancedRetryFactory() {            @Override            public BackOffPolicy createBackOffPolicy(String service) {                return new ExponentialBackOffPolicy();            }        };    }}</code></pre><h3 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a><code>Configuration</code></h3><h4 id="Zuul-1"><a href="#Zuul-1" class="headerlink" title="Zuul"></a><code>Zuul</code></h4>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Spring Boot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Elasticsearch（一）简介</title>
+      <link href="/2019/07/26/elasticsearch-yi-jian-jie/"/>
+      <url>/2019/07/26/elasticsearch-yi-jian-jie/</url>
+      
+        <content type="html"><![CDATA[<img src="/2019/07/26/Elasticsearch（一）简介/apartments-4358755_960_720.jpg" title="apartment"><p><code>Elasticsearch</code> 的使用背景</p><a id="more"></a><p>搜索引擎三大过程，爬取内容、进行分词、建立反向索引。</p><p>存储海量数据的分布式搜索引擎<br>特有概念<br>索引、类型、文档<br>（数据库、表、行）</p><p>索引 - 存放数据<br>类型=定义数据结构<br>文档-数据</p><p>分布式存储<br>会对数据进行切分，同时每一个分片会保存多个副本，和HDFS一样，是为了保证分布式环境的高可用。<br>master - slave<br>节点是对等的，节点间会通过自己的一些规则选取集群的Master，Master会负责集群状态信息的改变，并同步给其他节点。</p><p>请求建立索引 -&gt; master -&gt; slave1/2…（信息同步）<br>只有建立索引和类型需要经过master，数据的写入有一个简单的routing规则，可以route到集群中的任意节点，所以数据写入压力是分散在整个集群的。</p><p>应用场景<br>ELK 系统，也就是日志分析系统，其中E是指Elasticsearch，L 是Logstash,是一上日志收集系统，K是Kibana，是一个数据可视化平台。</p><p>logstash采集业务系统日志，存储到es中，通过kibana展现给运维人员分析。<br>日志接入elk系统，可以在系统运行过程中，及时定位异常，和实时报警</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="7-x"><a href="#7-x" class="headerlink" title="7.x"></a>7.x</h3><p>在 <code>/etc/yum.repos.d/</code> 目录下新建文件 <code>elasticsearch.repo</code> ，加入以下内容:</p><pre><code>[elasticsearch-7.x]name=Elasticsearch repository for 7.x packagesbaseurl=https://artifacts.elastic.co/packages/7.x/yumgpgcheck=1gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearchenabled=1autorefresh=1type=rpm-md</code></pre><p>保存后。执行安装命令：</p><pre><code class="sh">sudo yum install elasticsearch</code></pre><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>安装完成后，<code>Elasticsearch</code> 还没有启动。查看当前服务管理工具：</p><pre><code>ps -p 1</code></pre><h3 id="以systemd启动"><a href="#以systemd启动" class="headerlink" title="以systemd启动"></a>以<code>systemd</code>启动</h3><ul><li>随系统启动</li></ul><pre><code>sudo /bin/systemctl daemo-reloadsudo /bin/systemctl enable elasticsearch.service</code></pre><ul><li>启动、停止</li></ul><pre><code>sudo systemctl start elasticsearch.servicesudo systemctl stop elasticsearch.service</code></pre><ul><li>6.x</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+          <category> 中间件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Elasticsearch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Vue项目搭建与部署</title>
+      <link href="/2019/07/25/vue-xiang-mu-da-jian-yu-bu-shu/"/>
+      <url>/2019/07/25/vue-xiang-mu-da-jian-yu-bu-shu/</url>
+      
+        <content type="html"><![CDATA[<p>  使用 <code> vue cli 3 </code> ，要求 <code>node.js 8.9</code>或更高版本，<code>UI</code> 插件选用的是<code>vux</code></p>  <a id="more"></a><h2 id="安装-vue"><a href="#安装-vue" class="headerlink" title="安装 vue"></a>安装 <code>vue</code></h2><h3 id="配置-cnpm"><a href="#配置-cnpm" class="headerlink" title="配置 cnpm"></a>配置 <code>cnpm</code></h3><p>//todo</p><h3 id="全局安装-vue"><a href="#全局安装-vue" class="headerlink" title="全局安装 vue"></a>全局安装 <code>vue</code></h3><p>在命令行中输入</p><pre><code>npm install -g @vue/cli# 安装成功后检验vue --version</code></pre><h2 id="创建新项目"><a href="#创建新项目" class="headerlink" title="创建新项目"></a>创建新项目</h2><p>创建新的项目</p><pre><code>vue create hand-vux</code></pre><p>输入上述命令后会被提示选取一个<code>preset</code>。可以选用默认包含了基本插件的 <code>Babel + ESLint</code> 的<code>preset</code>，也可以选“手动选择特性”来自定义。由于<code>vue cli 3</code>提供有一个图形化的界面，来对项目进行管理，方便又美观，不用白不用。</p><h3 id="图形化界面"><a href="#图形化界面" class="headerlink" title="图形化界面"></a>图形化界面</h3><p>在命令行中输入<code>vue ui</code>启动可视化界面，默认是在<code>8000</code></p><img src="/2019/07/25/Vue项目搭建与部署/vue_1.png" title="截图_1"><p>打开界面后，下方状态栏显示的是我们最近一次打开的项目</p><img src="/2019/07/25/Vue项目搭建与部署/vue_2.png" title="截图_2"><p>点击下方的 <code>更多</code>选取<code>Vue项目管理器</code>，可以创建/导入项目。项目安装依赖也比较简单，直接可在界面上操作。</p><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="去除URL中的-井号"><a href="#去除URL中的-井号" class="headerlink" title="去除URL中的#井号"></a>去除<code>URL</code>中的<code>#</code>井号</h3><p>使用<code>vue-router</code>之后，<code>URL</code>链接中会带有<code>#</code>符号，这是由于<code>vue-router</code>默认采用的是<code>hash</code>模式，这样可以模拟一个完整的链接，当<code>URL</code>改变时，页面不会重新加载。但在实际部署时，往往需要去掉这个<code>#</code>符号，于是需要在<code>vue</code>项目还有后端<code>web</code>服务器进行一些配置。</p><h4 id="配置vue-router"><a href="#配置vue-router" class="headerlink" title="配置vue-router"></a>配置<code>vue-router</code></h4><p>在原<code>router.js</code>的配置中添加<code>base、mode</code>的配置。</p><pre><code class="js">//route.jsimport Vue from &#39;vue&#39;import Router from &#39;vue-router&#39;Vue.use(Router)export default new Router({  base: &quot;/hand/&quot;, // 项目部署时的名字  mode: &#39;history&#39;, // 去除 URL 中的井号#，需要和后台一起配置才起作用  routes: [    {      path: &#39;/info/&#39;,      component: () =&gt; import(&#39;./views/info&#39;),      meta: {        title: &#39;Demo Info&#39;      }    },    {      path: &#39;*&#39;, // 返回自定义的错误页面      redirect: &#39;/404&#39;    },    {      path: &#39;/404&#39;,      name: &#39;404&#39;,      component: () =&gt; import(&#39;./views/error/404.vue&#39;)    },  ]})</code></pre><h4 id="项目打包"><a href="#项目打包" class="headerlink" title="项目打包"></a>项目打包</h4><p>在图形项目管理器中点击<code>配置</code>在<code>Vue CLi</code>中设置<code>基础设置</code>。配置<code>公共路径</code>、<code>输入目录</code>与<code>router.js</code>中的<code>base</code>项一致。<br><img src="/2019/07/25/Vue项目搭建与部署/vue_3.png" title="项目打包"><br>设置完成后，在<code>任务</code>选项卡里进行<code>build</code>打包。</p><h4 id="Web容器部署"><a href="#Web容器部署" class="headerlink" title="Web容器部署"></a><code>Web</code>容器部署</h4><p><code>vue-router</code><a href="https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90" target="_blank" rel="noopener">官网</a>有<code>Apache</code>、<code>Nginx</code>的配置说明，这里以<code>Tomcat</code>为例。<br>首先将打包生成<code>dist</code>文件全部拷贝到<code>Tomcat</code>的<code>webapps</code>目录下，并将名字更改为在<code>router.js</code>配置中<code>base</code>对应的名字，这里为<code>hand</code>。再在该文件夹下新建<code>WEB-INF/web.xml</code>文件，在里面配置</p><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;web-app xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;  xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee                      http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd&quot;  version=&quot;4.0&quot;  metadata-complete=&quot;true&quot;&gt;  &lt;display-name&gt;webapp&lt;/display-name&gt;  &lt;description&gt;webapp&lt;/description&gt;  &lt;error-page&gt;    &lt;error-code&gt;404&lt;/error-code&gt;    &lt;location&gt;/index.html&lt;/location&gt;  &lt;/error-page&gt;&lt;/web-app&gt;</code></pre><p>将所有的<code>404</code>请求，转向项目对应的<code>index.html</code>页面，如果不转的话，是访问不了页面的。但这样的配置之后，我们需要它返回<code>404</code>页面的地方，也是不会返回的错误页面的，所以刚在<code>router.js</code>中需要把所有的未定义路由导向到自定义的错误页面。</p><p>在<code>Tomcat</code>的<code>server.xml</code>的<code>HOST</code>标签中添加如下配置：</p><pre><code class="xml">&lt;Context path=&quot;/hand&quot; docBase=&quot;hand&quot; reloadable=&quot;false&quot; crossContext=&quot;true&quot; /&gt;</code></pre><p>启动<code>Tomcat</code>可以看到页面正常访问，且<code>URL</code>中没有<code>#</code>符号。</p><h2 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h2><h3 id="配置echarts"><a href="#配置echarts" class="headerlink" title="配置echarts"></a>配置<code>echarts</code></h3><p>首先安装<code>echarts</code>依赖，然后配置<code>main.js</code></p><pre><code class="js">import echarts from &quot;echarts&quot;;Vue.prototype.$echarts = echarts;</code></pre><p>在<code>components</code> 目录下新建一个<code>Line.vue</code>文件。</p><pre><code class="js">// Line.vue&lt;template&gt;    &lt;div&gt;        &lt;div ref=&quot;line&quot; :style=&quot;{width: &#39;100%&#39;, height: &#39;300px&#39;}&quot; &gt;&lt;/div&gt;     &lt;/div&gt;&lt;/template&gt;&lt;script&gt;export default {    name: &#39;MLine&#39;,    props: {        options: Object    },    mounted() {        var myChart = this.$echarts.init(this.$refs.line);        myChart.setOption(this.options);    }}&lt;/script&gt;</code></pre><p>在需要显示图表的页面中导入上述模块</p><pre><code class="js">&lt;template&gt;    &lt;m-line :options=&quot;optionsLine&quot;&gt;&lt;/m-line&gt;&lt;/template&gt;import MLine from &quot;@/components/MLine.vue&quot;;export default {    components: {        MLine    },    data() {        return {            optionsLine: {};        }    },    methods: {    },    mounted: function() {        // 更新 optionsLine    }}</code></pre><h3 id="配置vux"><a href="#配置vux" class="headerlink" title="配置vux"></a>配置<code>vux</code></h3><p>安装依赖: <code>vux</code>、<code>vuex-i18n</code></p><p>配置<code>main.js</code>:</p><pre><code class="js">import vuexI18n from &#39;vuex-i18n&#39;;Vue.use(vuexI18n.plugin, store, {  moduleName: &#39;i18n&#39;,  onTranslationNotFound (locale, key) {    console.warn(`i18n :: Key &#39;${key}&#39; not found for locale &#39;${locale}&#39;`)  } })</code></pre><p>配置<code>vue.config.js</code></p><pre><code class="js">module.exports = {    configureWebpack: config =&gt; {       require(&#39;vux-loader&#39;).merge(config, {           options: {},           plugins: [&#39;vux-ui&#39;]       })    }}</code></pre><p>在页面中按需引入模块即可操作</p><h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="vue对数据对象的属性更改后，视图没更新"><a href="#vue对数据对象的属性更改后，视图没更新" class="headerlink" title="vue对数据对象的属性更改后，视图没更新"></a><code>vue</code>对数据对象的属性更改后，视图没更新</h3><p>在函数中对数据对象直接采用赋值的形式更新数据后，视图中的数据没有相应的改变。</p><pre><code class="js">data () {  params: {}},method: {  queryInfo: funtion() {    this.params.name = &#39;Tony&#39;; // 不能触发数据的改变    this.$set(this.params, &#39;name&#39;, &#39;Tony&#39;); // 直接调用 set 来触发数据改变  }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CSS小Tips</title>
+      <link href="/2019/07/22/css-se-cai-kong-zhi/"/>
+      <url>/2019/07/22/css-se-cai-kong-zhi/</url>
+      
+        <content type="html"><![CDATA[<p><code>CSS</code> 使用小<code>tips</code></p><a id="more"></a><h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a><a href="https://www.cnblogs.com/xuan-0107/p/4448068.html" target="_blank" rel="noopener">颜色</a></h2><h3 id="RGBA"><a href="#RGBA" class="headerlink" title="RGBA"></a>RGBA</h3><p>RGB是一种色彩标准，是由红(R)、绿(G)、蓝(B)的变化以及相互叠加来得到各式各样的颜色。RGBA是在RGB的基础上增加了控制alpha透明度的参数。<br><!--------more --------><br>语法：</p><pre><code>color：rgba(R,G,B,A)</code></pre><p>R、G、B三个颜色参数，正整数值的取值范围为：0 - 255。<br>百分数值的取值范围为：0.0% - 100.0%。超出范围的数值将被截至其最接近的取值极限。并非所有浏览器都支持使用百分数值。</p><p>A为透明度参数，取值在0~1之间，不可为负值。</p><p>代码示例：</p><pre><code>background-color:rgba(100,120,60,0.5);</code></pre><h3 id="渐变色彩"><a href="#渐变色彩" class="headerlink" title="渐变色彩"></a>渐变色彩</h3><p>CSS3 Gradient 分为线性渐变(linear)和径向渐变(radial)</p><pre><code>background-image:linear-gradient(to left, red, orange,yellow,green,blue,indigo,violet);</code></pre><p><code>linear-gradient(to bottom, …)</code>第一个参数表示角度，后面的参数表颜色的起始点和结束点，可以有多个值。<br>第一个参数：</p><table><thead><tr><th style="text-align:center">角度</th><th style="text-align:center">英文</th><th style="text-align:center">作用</th></tr></thead><tbody><tr><td style="text-align:center">0deg</td><td style="text-align:center">to top</td><td style="text-align:center">从下向上</td></tr><tr><td style="text-align:center">90deg</td><td style="text-align:center">to right</td><td style="text-align:center">从左向右</td></tr><tr><td style="text-align:center">180deg</td><td style="text-align:center">to bottom</td><td style="text-align:center">从上向下</td></tr><tr><td style="text-align:center">270deg</td><td style="text-align:center">to left</td><td style="text-align:center">从右向左</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> CSS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript 使用的小 Tips</title>
+      <link href="/2019/07/22/javascript-tips/"/>
+      <url>/2019/07/22/javascript-tips/</url>
+      
+        <content type="html"><![CDATA[<p>记录在使用<code>JavaScript</code> 过程中遇到的一些小 <code>Tips</code></p><a id="more"></a><h2 id="数组赋值引用"><a href="#数组赋值引用" class="headerlink" title="数组赋值引用"></a>数组赋值引用</h2><pre><code class="js">let arrA = [0, 1, 2];let arrB = arrA;</code></pre><p>对<code>arrB</code>的操作也会影响到<code>arrA</code>。如果想避免这种情况，可以使用<code>concat()</code>方法：</p><pre><code class="js">let arrA = [0, 1, 2];let arrB = arrA.concat();</code></pre><p>对象数组，可采用循环遍历的方式创建新的数组</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> tips </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>设计小知识</title>
+      <link href="/2019/07/19/yan-se-da-pei/"/>
+      <url>/2019/07/19/yan-se-da-pei/</url>
+      
+        <content type="html"><![CDATA[<p>记录一些在设计过程中遇到的小<code>Tips</code><br><a id="more"></a></p><h2 id="颜色搭配"><a href="#颜色搭配" class="headerlink" title="颜色搭配"></a>颜色搭配</h2><h3 id="证件"><a href="#证件" class="headerlink" title="证件"></a>证件</h3><ul><li>红底</li></ul><p><code>R:182 G:38 B:38</code></p><ul><li>蓝底</li></ul><p><code>R:67 G:142 B:219</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 小知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> tips </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>常用软件的配置文件在CentOS中的默认路径</title>
+      <link href="/2019/07/08/chang-yong-ruan-jian-de-pei-zhi-wen-jian-zai-centos-zhong-de-mo-ren-lu-jing/"/>
+      <url>/2019/07/08/chang-yong-ruan-jian-de-pei-zhi-wen-jian-zai-centos-zhong-de-mo-ren-lu-jing/</url>
+      
+        <content type="html"><![CDATA[<p>&emsp;&emsp;收集整理一些常用的软件在 CentOS 中的安装地址。<br><a id="more"></a></p><h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a><code>Apache</code></h2><p>首先执行命令找到 <code>httpd</code> 路径:</p><pre><code>ps aux | grep httpd</code></pre><p> 如 <code>httpd</code> 路径为 <code>/usr/local/apache/bin/httpd</code> 然后执行以下命令:</p><pre><code>/usr/local/apache/bin/httpd -V | grep “SERVER_CONFIG_FILE”</code></pre><p>即可找到编译时加载的配置文件路径 <code>httpd.conf</code>， <code>-V</code> 参数可以看到编译时配置的参数</p><h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a><code>Nginx</code></h2><p>首先执行命令找到 <code>Nginx</code> 路径</p><pre><code>ps aux | grep nginx</code></pre><p>如 <code>Nginx</code> 路径为</p><pre><code>/usr/local/nginx/sbin/nginx</code></pre><p>然后执行以下命令</p><pre><code>/usr/local/nginx/sbin/nginx -V</code></pre><p>默认放在安装目录下的 </p><pre><code>conf/nginx.conf</code></pre><h2 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a><code>Mysql</code></h2><p>首先执行命令找到 <code>Mysql</code> 路径</p><pre><code>ps aux | grep mysqld</code></pre><p>如mysqld路径为</p><pre><code>/usr/bin/mysql</code></pre><p>然后执行以下命令</p><pre><code>/usr/bin/mysql –verbose –help | grep -A 1 ‘Default options’</code></pre><p>或</p><pre><code>/usr/bin/mysql –print-defaults</code></pre><h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a><code>PHP</code></h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>可通过 <code>php</code> 函数 <code>phpinfo</code> 来查看，写个文件，然后用网址访问一下，查找 <code>“Loaded Configuration File”</code> 对应的值即为 <code>php</code> 加载的配置文件</p><h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>如果是 <code>nginx + php</code> 配置，也可以通过查找 <code>php</code> 执行路径</p><pre><code>ps aux | grep php</code></pre><p>如，路径为 <code>/usr/local/nginx/sbin/php-fpm</code><br>然后执行以下命令</p><pre><code>/usr/local/nginx/sbin/php-fpm -i | grep “Loaded Configuration File”</code></pre><p>即可看到 <code>php</code> 加载的配置文件</p><h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p>如果是 <code>apache + mod_php</code> 配置，也可以在 <code>apache</code> 配置文件中查看加载的 <code>php.ini</code> 路径。如 </p><pre><code>PHPIniDir “/usr/local/apache/conf/php.ini”</code></pre><p>当然也有简单的方法，就是通过find来搜索<br>如</p><pre><code>find / -name nginx.conffind / -name php.inifind / -name my.cnffind / -name httpd.conf</code></pre><p>这种找法要经过刷选才行</p><p><a href="http://www.111cn.net/sys/CentOS/63491.htm" target="_blank" rel="noopener">原文链接</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 操作系统 </category>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 运维 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>RestTemplate</title>
+      <link href="/2019/07/08/resttemplate/"/>
+      <url>/2019/07/08/resttemplate/</url>
+      
+        <content type="html"><![CDATA[<p>记录在使用<code>RestTemplate</code>过程中遇到的问题</p><a id="more"></a><h2 id="Not-enough-variables-available-to-expand"><a href="#Not-enough-variables-available-to-expand" class="headerlink" title="Not enough variables available to expand"></a><code>Not enough variables available to expand</code></h2><p>现有请求链接:</p><pre><code>http://example.com?criteria={startDate:[&quot;2018-12-05&quot;], endDate:[&quot;2018-12-07&quot;]}</code></pre><ul><li>准备工作</li></ul><pre><code class="java">class Criteria {    List&lt;String&gt; startDate;    List&lt;String&gt; endDate;}</code></pre><pre><code class="java">// 假设现已有bean criteria// 转换成 json字符串// &lt;see&gt;com.fasterxml.jackson.databind.ObjectMapper&lt;/see&gt;ObjectMapper mapper = new ObjectMapper();String json = mapper.writeValueAsString(criteria);</code></pre><p>此时如直接用 <code>getForObject(String url, Class<t> responseType, Object… uriVariables)</t></code> 进行请求 :</p><pre><code class="java">String url = &quot;http://example.com?criteria=&quot; + json;Object obj = restTemplate.getForObject(url, Object.class);</code></pre><p>会报 <code>Not enough variables available to expand</code> 的错误。<br>这是因为 <code>getForObject(String url, Class<t> responseType, Object… uriVariables)</t></code> 会对 <code>url</code> 进行转换，会把 <code>{}</code> 当成了占位符，为了避免这种情况，可以直接使用 <code>T getForObject(URI url, Class<t> responseType)</t></code> 方法，自己对链接进行转换:</p><pre><code class="java">// java.net.URIString url = &quot;http://example.com&quot; + &quot;?criteria={json}&quot;;// build URIUriComponents uriComponents = UriComponentsBuilder.fromUriString(url)        .build().expand(json) // 指定参数，多个参数按出现的前后顺序添加 .build(json1, json2)        .encode();URI uri = uiComponents.toUri();Object result = restTemplate.getForObject(uri, Object.class);</code></pre><h2 id="GET-方式发送数据，服务器端拿到的数据为空"><a href="#GET-方式发送数据，服务器端拿到的数据为空" class="headerlink" title="GET 方式发送数据，服务器端拿到的数据为空"></a><code>GET</code> 方式发送数据，服务器端拿到的数据为空</h2><p>请求参数需要以占位符的形式才能获取值：</p><pre><code class="java">Map&lt;String, String&gt; map = new HashMap&lt;&gt;();map.put(&quot;p1&quot;, &quot;myValue&quot;);String url = &quot;http://localhost:8080/sayHello&quot;;String paramedUrl = &quot;http://localhost:8080/sayHello?p1={p1}&quot;;System.out.println(restTemplate.getForObject(paramedUrl, String.class, map));</code></pre><h2 id="连接池"><a href="#连接池" class="headerlink" title="连接池"></a>连接池</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Spring Boot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux常用命令</title>
+      <link href="/2019/07/08/linux-chang-yong-ming-ling/"/>
+      <url>/2019/07/08/linux-chang-yong-ming-ling/</url>
+      
+        <content type="html"><![CDATA[<p>记录<code>Linux</code>的一些日常使用命令</p><a id="more"></a><h2 id="开放端口"><a href="#开放端口" class="headerlink" title="开放端口"></a>开放端口</h2><h3 id="CentOS-7"><a href="#CentOS-7" class="headerlink" title="CentOS 7"></a><code>CentOS 7</code></h3><p>查看防火墙状态: </p><pre><code>firewall-cmd --state</code></pre><p>开启 <code>80</code> 端口:</p><pre><code>firewall-cmd --zone=public --add-port=80/tcp --permanent</code></pre><p>重启防火墙: </p><pre><code>firewall-cmd --reload</code></pre><p>查看端口开启状况: </p><pre><code>iptables -L -n </code></pre><h2 id="NPT时钟同步"><a href="#NPT时钟同步" class="headerlink" title="NPT时钟同步"></a>NPT时钟同步</h2><p>手动同步: <code>ntpdate -u server-ip</code><br>编辑<code>ntp</code>配置文件：<code>vim /etc/ntp.conf</code>:</p><pre><code>server server-iprestrict server-ip nomodify notrap noqueryserver 127.127.1.0fudge 127.127.1.0 stratum 10</code></pre><p>启动<code>ntp</code>服务：<code>service ntpd start</code><br>查看同步情况：<code>ntpq -p</code></p><h2 id="解压-压缩命令"><a href="#解压-压缩命令" class="headerlink" title="解压/压缩命令"></a>解压/压缩命令</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 操作系统 </category>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 运维 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git日常操作</title>
+      <link href="/2019/05/09/git-cao-zuo/"/>
+      <url>/2019/05/09/git-cao-zuo/</url>
+      
+        <content type="html"><![CDATA[<img src="/2019/05/09/git操作/cobweb-4439844_960_720.jpg" title="风景"><p>记录一些在使用<code>git</code>过程中遇到的问题</p><a id="more"></a><ol><li>错误信息</li></ol><ul><li><code>ssh: connect to host github.com port 22: Connection timed out</code></li></ul><p>解决方式：<br>在<code>~/.ssh</code>目录下新建文件名为<code>config</code>的文件，加入以下信息</p><pre><code class="sh">Host github.comUser gitHostname ssh.github.comPreferredAuthentications publickeyIdentityFile ~/.ssh/id_rsaPort 443</code></pre><p>测试<code>ssh T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></code></p><ol start="2"><li><a href="https://git-scm.com/book/zh/v1/Git-%E5%88%86%E6%94%AF-%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF" target="_blank" rel="noopener">推送本地分支</a></li></ol><p>如果本地有一个名为<code>hexo</code>的分支需要放到远程仓库里。可以通过以下方式：</p><pre><code class="sh">git push (远程仓库名) (分支名)</code></pre><p>如：</p><pre><code class="sh">git push origin hexo# 上述命令是下面的简写，二者效果相同git push origin hexo:hexo</code></pre><ul><li>获取远程分支</li></ul><pre><code class="sh">git fetch origingit checkout -b serverfix origin/serverfix</code></pre><ul><li>同步远程仓库</li></ul><pre><code class="sh">git pull</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>FPS C++ </title>
+      <link href="/2019/05/07/fps-c/"/>
+      <url>/2019/05/07/fps-c/</url>
+      
+        <content type="html"><![CDATA[<p>记录<code>UE4</code>中如何使用<code>C++</code>控制<code>Actor</code></p><a id="more"></a><p>使用<code>UGameplayStatics</code>需要引入头文件<code>Kismet/GameplayStatics.h</code></p><!-----more ----------------><pre><code class="c++">#include &quot;Kismet/GameplayStatics.h&quot;void AFPSCppProjectile::OnHit(    UPrimitiveComponent* HitComp,    AActor* OtherActor,    UPrimitiveComponent* OtherComp,    FVector NormalImpulse,    const FHitResult&amp; Hit){        if ((OtherActor != NULL) &amp;&amp; (OtherActor != this) &amp;&amp; (OtherComp != NULL) &amp;&amp; OtherComp-&gt;IsSimulatingPhysics())        {            OtherComp-&gt;AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());            Destroy();        }        UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ExplosionEffect, GetActorLocation());}</code></pre><h2 id="创建组件"><a href="#创建组件" class="headerlink" title="创建组件"></a>创建组件</h2><p>一个<code>Actor</code>中的添加多个组件时需要指定一个根组件。</p><pre><code class="c++">// .hUPROPERTY(VisibleAnywhere, Category = &quot;Components&quot;)class UStaticMeshComponent* MeshComp;UPROPERTY(VisibleAnywhere, Category = &quot;Components&quot;)class USphereComponent* SphereComp;</code></pre><pre><code class="c++">// .cppMeshComp = CreateDefaultSubobject&lt;UStaticMeshComponent&gt;(TEXT(&quot;MeshComp&quot;));RootComponent = MeshComp;SphereComp = CreateDefaultSubobject&lt;USphereComponent&gt;(TEXT(&quot;SphereComp&quot;));SphereComp-&gt;SetupAttachment(MeshComp);</code></pre><p>头文件中不要添加额外的包，其会加长编译的时间，可通过声明的方式解决编译时的报错</p><h3 id="设置碰撞"><a href="#设置碰撞" class="headerlink" title="设置碰撞"></a>设置碰撞</h3><pre><code class="c++">// 无碰撞MeshComp-&gt;SetCollisionEnabled(ECollisionEnabled::NoCollision); // 可查询，查询包括了追踪轨迹线或重叠事件等SphereComp-&gt;SetCollisionEnabled(ECollisionEnabled::QueryOnly);// 响应通道 忽略SphereComp-&gt;SetCollisionResponseToAllChannels(ECR_Ignore);// 响应 Pawn通道 发生重叠SphereComp-&gt;SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);</code></pre><h3 id="碰撞时生成粒子效果"><a href="#碰撞时生成粒子效果" class="headerlink" title="碰撞时生成粒子效果"></a>碰撞时生成粒子效果</h3><pre><code class="c++">// .h protected:    // 新建函数    void PlayEffects();</code></pre><pre><code class="c++">// .cpp#include &quot;Kismet/GameplayStatics.h&quot;AFPSObjectiveActor::PlayEffects(){    UGameplayStatics::SpawnEmitterAtLocation()}</code></pre><h3 id="重叠时调用"><a href="#重叠时调用" class="headerlink" title="重叠时调用"></a>重叠时调用</h3><pre><code class="c++">public:    virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;</code></pre><pre><code class="c++">// .cpp// 一种是调用 OnComponentBeginOverlap// 另一种是重写NotifyActorBeginOverlap方法void AFPSObjectiveActor::NotifyActorBeginOverlap(AActor* OtherActor){    Super::NotifyActorBeginOverlap(OtherActor);    PlayEffects();}</code></pre><h2 id="errors"><a href="#errors" class="headerlink" title="errors"></a><code>errors</code></h2><h3 id="不能将-“UStaticMeshComponent-“-类型的值分配到-“USceneComponent-“-类型的实体"><a href="#不能将-“UStaticMeshComponent-“-类型的值分配到-“USceneComponent-“-类型的实体" class="headerlink" title="不能将 “UStaticMeshComponent “ 类型的值分配到 “USceneComponent “ 类型的实体"></a>不能将 <code>“UStaticMeshComponent <em>“</em></code> 类型的值分配到 <code>“USceneComponent “</code> 类型的实体</h3><p>原因是未识别<code>UStaticMeshComponent</code>类型，导入其头文件即可: <code>include “Components/StaticMeshComponent.h”</code></p><h3 id="unrealheadertool-failed-for-target-ue4editor"><a href="#unrealheadertool-failed-for-target-ue4editor" class="headerlink" title="unrealheadertool failed for target ue4editor"></a><code>unrealheadertool failed for target ue4editor</code></h3><p>用<code>VS</code>编译时出现上述错误，不明所以，改用<code>Unreal Editor</code>打开项目，通过<code>Editor</code>编译，报错，信息指出是代码拼写出错，修正后解决。若<code>VS</code>提供的调试信息不够明确，可尝试换个方式。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Game </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> UE4 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2019/05/06/hello-world/"/>
+      <url>/2019/05/06/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><a id="more"></a><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>脚本运行时出现Bad Interpreter</title>
+      <link href="/2018/12/01/jiao-ben-yun-xing-shi-chu-xian-bad-interpreter/"/>
+      <url>/2018/12/01/jiao-ben-yun-xing-shi-chu-xian-bad-interpreter/</url>
+      
+        <content type="html"><![CDATA[<p>脚本运行时出现Bad Interpreter</p><a id="more"></a><p>在 <code>windows</code> 下创建的 <code>shell</code> 文件上传到 <code>Linux</code> 服务器，运行时出现</p><pre><code class="shell">/bin/sh^M: bad interpreter</code></pre><p>可以用以下方式解决<br><code>vi xxx.sh</code> (报错的那个文件)</p><pre><code class="sh">:set fileformat=unix:wq</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 操作系统 </category>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 运维 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo多主机同步</title>
+      <link href="/2018/11/30/hexo-duo-zhu-ji-tong-bu/"/>
+      <url>/2018/11/30/hexo-duo-zhu-ji-tong-bu/</url>
+      
+        <content type="html"><![CDATA[<p>通过<code>hexo deploy</code>发布到github上的文件，是经过转换后的文件，不能直接用于多端同步操作，所以需要新建一个分支用于存储原始文件，而各同步端通过提交分支来达到同步新文件的目的。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HelloWorld</title>
+      <link href="/2018/04/14/helloworld/"/>
+      <url>/2018/04/14/helloworld/</url>
+      
+        <content type="html"><![CDATA[<p>测试<code>hexo</code>中如何操作<br><a id="more"></a></p><h4 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h4><ul><li>新建分类<br><code>`</code><br>hexo new page handwriting<h2 id="在新生成的handwwriting目录下的index-md中添加type项"><a href="#在新生成的handwwriting目录下的index-md中添加type项" class="headerlink" title="在新生成的handwwriting目录下的index.md中添加type项."></a>在新生成的handwwriting目录下的index.md中添加type项.</h2></li></ul><hr><p>title: handwriting<br>date: 2018-12-01 23:10:11</p><h2 id="type-handwriting"><a href="#type-handwriting" class="headerlink" title="type: handwriting"></a>type: handwriting</h2><pre><code>- 允许文章添加图片修改&lt;code&gt;_config.yml&lt;/code&gt;配置文件中的&lt;code&gt;post_asset_folder&lt;/code&gt;项为&lt;code&gt;true&lt;/code&gt;创建新文章</code></pre><p>hexo new “新文章名”</p><pre><code>之后在&lt;code&gt;source/_posts&lt;/code&gt;下会生成一个名为&quot;新文章名&quot;的文件夹和一个名为&quot;新文章名&quot;的&lt;code&gt;.md&lt;/code&gt;文件，文件夹中放置需要收入的图片，在&lt;code&gt;.md&lt;/code&gt;文件中引入图片的方式为</code></pre><pre><code>- 编译文件</code></pre><p>hexo generate<br>hexo g</p><pre><code>- 提交提交之前可用&lt;code&gt;hexo clean&lt;/code&gt;删除以前的内容，也可以不用</code></pre><p>hexo d<br>hexo deploy<br><code>`</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> 测试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
