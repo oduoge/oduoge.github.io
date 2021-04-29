@@ -1,12 +1,19 @@
 ---
-title: jQuery使用
+title: JQuery使用
 date: 2019-08-29 14:38:52
 tags:
+- JQuery
 categories:
 - 前端
+- JavaScript
 ---
 
 {% asset_img shanghai-3459422_960_720.jpg shanghai %}
+
+记录在使用 `JQuery` 的过程中遇到的部分问题
+
+<!-----more ---->
+
 ## 兼容性
 
 ### 苹果手机 <code>jquery</code> 点击事件无效

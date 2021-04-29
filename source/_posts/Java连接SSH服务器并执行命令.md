@@ -3,11 +3,17 @@ title: Java连接SSH服务器并执行命令
 date: 2019-08-29 14:44:53
 tags:
 categories:
-- java
+- 后端
+- Java
 ---
 
 
 {% asset_img fileds-4439896_960_720.jpg fileds %}
+
+`Java` 中使用 `SSH` 连接
+
+<!----more ---->
+
 ## <code>jsch</code> 官方示例
 
 ```java 

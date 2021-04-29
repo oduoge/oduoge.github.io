@@ -4,11 +4,12 @@
 
 # Site
 title: 鱼香味的茄子
-subtitle:
+subtitle: 塘主杂记
 description: 千里之行, 始于足下
 keywords:
 author: Lieber
-language: zh-CN
+#language: zh-CN
+language: zh-Hans
 timezone:
 
 # URL
@@ -17,6 +18,9 @@ url: https://oduoge.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
+permalink_pinyin:
+  enable: true
+  separator: '-'
 
 # Directory
 source_dir: source
@@ -39,10 +43,15 @@ post_asset_folder: true
 relative_link: false
 future: true
 highlight:
-  enable: true
-  line_number: true
+  enable: false
+  line_number: false
   auto_detect: false
   tab_replace:
+prism_plugin:
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'tomorrow'
+  line_number: false    # default false
+  custom_css:
   
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -50,7 +59,7 @@ highlight:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 10
+  per_page: 9
   order_by: -date
   
 # Category & Tag
@@ -67,14 +76,16 @@ time_format: HH:mm:ss
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-per_page: 10
+per_page: 6
 pagination_dir: page
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 # theme: landscape
-theme: refined_news
+# theme: hexo-theme-matery
+# theme: next
+theme: yilia
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -82,3 +93,33 @@ deploy:
   type: git
   repo: git@github.com:oduoge/oduoge.github.io.git
   branch: master
+
+# Search
+search:
+  path: search.xml
+  field: post
+
+# 图片懒加载
+lazyload:
+  enable: true 
+  onlypost: false
+  loadingImg: /images/loading.gif #如果不填写图片则使用默认的图片  
+
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true  

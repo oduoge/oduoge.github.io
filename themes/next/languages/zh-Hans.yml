@@ -3,6 +3,8 @@ title:
   category: 分类
   tag: 标签
   schedule: 日程表
+  gallery: 相册
+  handwriting: 涂鸦
 
 author: 博主
 
@@ -18,6 +20,7 @@ menu:
   commonweal: 公益404
   something: 有料
   handwriting: 涂鸦
+  gallery: 相册
 
 sidebar:
   overview: 站点概览

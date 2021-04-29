@@ -5,7 +5,11 @@ tags:
 - Java
 categories:
 - 后端
+- Java
 ---
+
+接触到一些 `Java` 远程调试的知识点，故研究记录一下。
+<!-----more ----->
 
 - BTrace
 

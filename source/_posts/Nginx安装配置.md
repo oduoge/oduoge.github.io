@@ -1,14 +1,16 @@
 ---
-title: Nginx安装配置
+title: NGINX使用及配置
 date: 2019-08-20 14:54:21
 tags:
-- nginx
+- NGINX
 categories:
 - 后端
+- Web服务器
 ---
-
-
+记录`nginx`的使用过程
 {% asset_img pets-4415649_960_720.jpg pets %}
+<!----------------------more ----------------------->
+
 ### 安装<code>nginx</code>开源版
 
 通过<code>yum</code>源安装
@@ -28,8 +30,6 @@ categories:
 4. 验证是否安装成功
 
 <code>nginx -v</code>
-
-<!-------------more -------------->
 
 ### 启动<code>nginx</code>
 

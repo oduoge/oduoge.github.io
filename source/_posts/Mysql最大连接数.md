@@ -1,10 +1,12 @@
 ---
-title: Mysql最大连接数
+title: MySQL最大连接数
 date: 2019-08-19 15:01:04
+toc: true
 tags:
-- tips
+- MySQL
 categories:
-- Mysql
+- 数据库
+- MySQL
 ---
 
 {% asset_img flowers-4436910_960_720.jpg flowers %}
@@ -18,7 +20,7 @@ Mysql中可以通过设置<code>max_connections</code>参数来控制数据库�
 |System Variable|max_connections|
 |Scope|Global|
 |Dynamic|Yes|
-|Tyep|Integer|
+|Type|Integer|
 |Default Value|151|
 |Minimum Value| 1|
 |Maximum Value| 100,000|

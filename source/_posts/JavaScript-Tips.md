@@ -1,10 +1,16 @@
 ---
-title: JavaScript Tips
+title: JavaScript 使用的小 Tips
 date: 2019-07-22 14:48:16
 tags:
 - tips
 categories:
+- 前端
+- JavaScript
 ---
+
+记录在使用`JavaScript` 过程中遇到的一些小 `Tips`
+
+<!----more ---->
 
 ## 数组赋值引用
 

@@ -2,12 +2,17 @@
 title: Elasticsearch(二)操作
 date: 2019-08-29 14:48:18
 tags:
-- Elasticsearch
+- ElasticSearch
 categories:
 - 后端
+- 中间件
 ---
 
 {% asset_img outdoor-4433532_960_720.jpg outdoor %}
+
+记录 `Elasticsearch` 的使用过程中遇到的部分问题
+
+<!----more ----->
 
 # 插件
 

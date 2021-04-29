@@ -2,10 +2,16 @@
 title: Linux常用命令
 date: 2019-07-08 16:04:01
 tags:
-- tips
+- 运维
 categories:
+- 操作系统
 - Linux
+toc: true
 ---
+
+记录`Linux`的一些日常使用命令
+
+<!---more ---->
 
 ## 开放端口
 ### <code>CentOS 7</code>
