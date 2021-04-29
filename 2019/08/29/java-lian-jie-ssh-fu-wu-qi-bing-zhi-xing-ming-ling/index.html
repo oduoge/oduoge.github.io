@@ -15,12 +15,12 @@
 <meta property="og:site_name" content="鱼香味的茄子">
 <meta property="og:description" content="Java 中使用 SSH 连接">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://oduoge.github.io/2019/08/29/Java连接SSH服务器并执行命令/fileds-4439896_960_720.jpg">
+<meta property="og:image" content="https://oduoge.github.io/images/loading.gif">
 <meta property="og:updated_time" content="2021-04-29T14:59:35.688Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java连接SSH服务器并执行命令">
 <meta name="twitter:description" content="Java 中使用 SSH 连接">
-<meta name="twitter:image" content="https://oduoge.github.io/2019/08/29/Java连接SSH服务器并执行命令/fileds-4439896_960_720.jpg">
+<meta name="twitter:image" content="https://oduoge.github.io/images/loading.gif">
   
     <link rel="alternative" href="/atom.xml" title="鱼香味的茄子" type="application/atom+xml">
   
@@ -164,11 +164,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/images/loading.gif" data-original="/2019/08/29/Java连接SSH服务器并执行命令/fileds-4439896_960_720.jpg" title="fileds">
+        <img src="/images/loading.gif" data-original="/2019/08/29/java-lian-jie-ssh-fu-wu-qi-bing-zhi-xing-ming-ling/fileds-4439896_960_720.jpg" title="fileds">
 <p><code>Java</code> 中使用 <code>SSH</code> 连接</p>
 <a id="more"></a>
-<h2 id="jsch-官方示例"><a href="#jsch-官方示例" class="headerlink" title="jsch 官方示例"></a><code>jsch</code> 官方示例</h2><pre><code class="java">/* -*-mode:java; c-basic-offset:2; indent-tabs-mode:nil -*- */
-/**
+<h2 id="jsch-官方示例"><a href="#jsch-官方示例" class="headerlink" title="jsch 官方示例"></a><code>jsch</code> 官方示例</h2><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/* -*-mode:java; c-basic-offset:2; indent-tabs-mode:nil -*- */</span>
+<span class="token comment" spellcheck="true">/**
  * This program enables you to connect to sshd server and get the shell prompt.
  *   $ CLASSPATH=.:../build javac Shell.java 
  *   $ CLASSPATH=.:../build java Shell
@@ -176,120 +176,120 @@
  * If everything works fine, you will get the shell prompt. Output may
  * be ugly because of lacks of terminal-emulation, but you can issue commands.
  *
- */
-import com.jcraft.jsch.*;
-import java.awt.*;
-import javax.swing.*;
+ */</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>jcraft<span class="token punctuation">.</span>jsch<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>awt<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>swing<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
 
-public class Shell{
-  public static void main(String[] arg){
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Shell</span><span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> arg<span class="token punctuation">)</span><span class="token punctuation">{</span>
 
-    try{
-      JSch jsch=new JSch();
+    <span class="token keyword">try</span><span class="token punctuation">{</span>
+      JSch jsch<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">JSch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-      //jsch.setKnownHosts(&quot;/home/foo/.ssh/known_hosts&quot;);
+      <span class="token comment" spellcheck="true">//jsch.setKnownHosts("/home/foo/.ssh/known_hosts");</span>
 
-      String host=null;
-      if(arg.length&gt;0){
-        host=arg[0];
-      }
-      else{
-        host=JOptionPane.showInputDialog(&quot;Enter username@hostname&quot;,
-                                         System.getProperty(&quot;user.name&quot;)+
-                                         &quot;@localhost&quot;); 
-      }
-      String user=host.substring(0, host.indexOf(&#39;@&#39;));
-      host=host.substring(host.indexOf(&#39;@&#39;)+1);
+      String host<span class="token operator">=</span>null<span class="token punctuation">;</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>arg<span class="token punctuation">.</span>length<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        host<span class="token operator">=</span>arg<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">else</span><span class="token punctuation">{</span>
+        host<span class="token operator">=</span>JOptionPane<span class="token punctuation">.</span><span class="token function">showInputDialog</span><span class="token punctuation">(</span><span class="token string">"Enter username@hostname"</span><span class="token punctuation">,</span>
+                                         System<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"user.name"</span><span class="token punctuation">)</span><span class="token operator">+</span>
+                                         <span class="token string">"@localhost"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+      <span class="token punctuation">}</span>
+      String user<span class="token operator">=</span>host<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> host<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'@'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      host<span class="token operator">=</span>host<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>host<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'@'</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-      Session session=jsch.getSession(user, host, 22);
+      Session session<span class="token operator">=</span>jsch<span class="token punctuation">.</span><span class="token function">getSession</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span> host<span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-      String passwd = JOptionPane.showInputDialog(&quot;Enter password&quot;);
-      session.setPassword(passwd);
+      String passwd <span class="token operator">=</span> JOptionPane<span class="token punctuation">.</span><span class="token function">showInputDialog</span><span class="token punctuation">(</span><span class="token string">"Enter password"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      session<span class="token punctuation">.</span><span class="token function">setPassword</span><span class="token punctuation">(</span>passwd<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-      UserInfo ui = new MyUserInfo(){
-        public void showMessage(String message){
-          JOptionPane.showMessageDialog(null, message);
-        }
-        public boolean promptYesNo(String message){
-          Object[] options={ &quot;yes&quot;, &quot;no&quot; };
-          int foo=JOptionPane.showOptionDialog(null, 
-                                               message,
-                                               &quot;Warning&quot;, 
-                                               JOptionPane.DEFAULT_OPTION, 
-                                               JOptionPane.WARNING_MESSAGE,
-                                               null, options, options[0]);
-          return foo==0;
-        }
+      UserInfo ui <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyUserInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">showMessage</span><span class="token punctuation">(</span>String message<span class="token punctuation">)</span><span class="token punctuation">{</span>
+          JOptionPane<span class="token punctuation">.</span><span class="token function">showMessageDialog</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">promptYesNo</span><span class="token punctuation">(</span>String message<span class="token punctuation">)</span><span class="token punctuation">{</span>
+          Object<span class="token punctuation">[</span><span class="token punctuation">]</span> options<span class="token operator">=</span><span class="token punctuation">{</span> <span class="token string">"yes"</span><span class="token punctuation">,</span> <span class="token string">"no"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+          <span class="token keyword">int</span> foo<span class="token operator">=</span>JOptionPane<span class="token punctuation">.</span><span class="token function">showOptionDialog</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> 
+                                               message<span class="token punctuation">,</span>
+                                               <span class="token string">"Warning"</span><span class="token punctuation">,</span> 
+                                               JOptionPane<span class="token punctuation">.</span>DEFAULT_OPTION<span class="token punctuation">,</span> 
+                                               JOptionPane<span class="token punctuation">.</span>WARNING_MESSAGE<span class="token punctuation">,</span>
+                                               null<span class="token punctuation">,</span> options<span class="token punctuation">,</span> options<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">return</span> foo<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        // If password is not given before the invocation of Session#connect(),
-        // implement also following methods,
-        //   * UserInfo#getPassword(),
-        //   * UserInfo#promptPassword(String message) and
-        //   * UIKeyboardInteractive#promptKeyboardInteractive()
+        <span class="token comment" spellcheck="true">// If password is not given before the invocation of Session#connect(),</span>
+        <span class="token comment" spellcheck="true">// implement also following methods,</span>
+        <span class="token comment" spellcheck="true">//   * UserInfo#getPassword(),</span>
+        <span class="token comment" spellcheck="true">//   * UserInfo#promptPassword(String message) and</span>
+        <span class="token comment" spellcheck="true">//   * UIKeyboardInteractive#promptKeyboardInteractive()</span>
 
-      };
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-      session.setUserInfo(ui);
+      session<span class="token punctuation">.</span><span class="token function">setUserInfo</span><span class="token punctuation">(</span>ui<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-      // It must not be recommended, but if you want to skip host-key check,
-      // invoke following,
-      // session.setConfig(&quot;StrictHostKeyChecking&quot;, &quot;no&quot;);
+      <span class="token comment" spellcheck="true">// It must not be recommended, but if you want to skip host-key check,</span>
+      <span class="token comment" spellcheck="true">// invoke following,</span>
+      <span class="token comment" spellcheck="true">// session.setConfig("StrictHostKeyChecking", "no");</span>
 
-      //session.connect();
-      session.connect(30000);   // making a connection with timeout.
+      <span class="token comment" spellcheck="true">//session.connect();</span>
+      session<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token number">30000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// making a connection with timeout.</span>
 
-      Channel channel=session.openChannel(&quot;shell&quot;);
+      Channel channel<span class="token operator">=</span>session<span class="token punctuation">.</span><span class="token function">openChannel</span><span class="token punctuation">(</span><span class="token string">"shell"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-      // Enable agent-forwarding.
-      //((ChannelShell)channel).setAgentForwarding(true);
+      <span class="token comment" spellcheck="true">// Enable agent-forwarding.</span>
+      <span class="token comment" spellcheck="true">//((ChannelShell)channel).setAgentForwarding(true);</span>
 
-      channel.setInputStream(System.in);
-      /*
+      channel<span class="token punctuation">.</span><span class="token function">setInputStream</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">/*
       // a hack for MS-DOS prompt on Windows.
       channel.setInputStream(new FilterInputStream(System.in){
           public int read(byte[] b, int off, int len)throws IOException{
-            return in.read(b, off, (len&gt;1024?1024:len));
+            return in.read(b, off, (len>1024?1024:len));
           }
         });
-       */
+       */</span>
 
-      channel.setOutputStream(System.out);
+      channel<span class="token punctuation">.</span><span class="token function">setOutputStream</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>out<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-      /*
-      // Choose the pty-type &quot;vt102&quot;.
-      ((ChannelShell)channel).setPtyType(&quot;vt102&quot;);
-      */
+      <span class="token comment" spellcheck="true">/*
+      // Choose the pty-type "vt102".
+      ((ChannelShell)channel).setPtyType("vt102");
+      */</span>
 
-      /*
-      // Set environment variable &quot;LANG&quot; as &quot;ja_JP.eucJP&quot;.
-      ((ChannelShell)channel).setEnv(&quot;LANG&quot;, &quot;ja_JP.eucJP&quot;);
-      */
+      <span class="token comment" spellcheck="true">/*
+      // Set environment variable "LANG" as "ja_JP.eucJP".
+      ((ChannelShell)channel).setEnv("LANG", "ja_JP.eucJP");
+      */</span>
 
-      //channel.connect();
-      channel.connect(3*1000);
-    }
-    catch(Exception e){
-      System.out.println(e);
-    }
-  }
+      <span class="token comment" spellcheck="true">//channel.connect();</span>
+      channel<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token operator">*</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">catch</span><span class="token punctuation">(</span>Exception e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
 
-  public static abstract class MyUserInfo
-                          implements UserInfo, UIKeyboardInteractive{
-    public String getPassword(){ return null; }
-    public boolean promptYesNo(String str){ return false; }
-    public String getPassphrase(){ return null; }
-    public boolean promptPassphrase(String message){ return false; }
-    public boolean promptPassword(String message){ return false; }
-    public void showMessage(String message){ }
-    public String[] promptKeyboardInteractive(String destination,
-                                              String name,
-                                              String instruction,
-                                              String[] prompt,
-                                              boolean[] echo){
-      return null;
-    }
-  }
-}
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">MyUserInfo</span>
+                          <span class="token keyword">implements</span> <span class="token class-name">UserInfo</span><span class="token punctuation">,</span> UIKeyboardInteractive<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> String <span class="token function">getPassword</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token keyword">return</span> null<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">promptYesNo</span><span class="token punctuation">(</span>String str<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> String <span class="token function">getPassphrase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token keyword">return</span> null<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">promptPassphrase</span><span class="token punctuation">(</span>String message<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">promptPassword</span><span class="token punctuation">(</span>String message<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">showMessage</span><span class="token punctuation">(</span>String message<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> String<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">promptKeyboardInteractive</span><span class="token punctuation">(</span>String destination<span class="token punctuation">,</span>
+                                              String name<span class="token punctuation">,</span>
+                                              String instruction<span class="token punctuation">,</span>
+                                              String<span class="token punctuation">[</span><span class="token punctuation">]</span> prompt<span class="token punctuation">,</span>
+                                              <span class="token keyword">boolean</span><span class="token punctuation">[</span><span class="token punctuation">]</span> echo<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 
       
@@ -462,7 +462,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UE4</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Elasticsearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Go</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -474,75 +498,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">serverless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">UE4</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异常</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">abstract</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">service mesh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+                <a href="javascript:void(0)" class="js-tag color1">Serverless</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">待整理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Serverless</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -554,15 +514,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Service Mesh</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -571,6 +535,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Spring Framework</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">待整理</a>
               </li>
             
             <div class="clearfix"></div>

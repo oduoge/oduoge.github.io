@@ -16,12 +16,12 @@
 <meta property="og:site_name" content="鱼香味的茄子">
 <meta property="og:description" content="记录Spring Boot中操作Session的过程">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://oduoge.github.io/2019/08/02/Spring-Boot中使用Session/Headers.png">
+<meta property="og:image" content="https://oduoge.github.io/images/loading.gif">
 <meta property="og:updated_time" content="2021-04-29T14:59:35.698Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring Boot中使用Session">
 <meta name="twitter:description" content="记录Spring Boot中操作Session的过程">
-<meta name="twitter:image" content="https://oduoge.github.io/2019/08/02/Spring-Boot中使用Session/Headers.png">
+<meta name="twitter:image" content="https://oduoge.github.io/images/loading.gif">
   
     <link rel="alternative" href="/atom.xml" title="鱼香味的茄子" type="application/atom+xml">
   
@@ -180,69 +180,69 @@
 <li>session是存储在服务器端的，每一个 session 都有一个id，当创建一个 session 后，会将该 sessionID 存放到此次访问的 cookie 中，当下次客户端的访问到来需要提取服务器中的 session时，会根据访问中 cookie 里的 sessionID 值来找到服务器中的具体 session。  </li>
 <li>访问静态资源时不会创建 session  </li>
 <li>服务器会把长时间没有活动的 session 从服务器内存中清除，此时 session 便失效。Tomcat 中 session的默认失效时间为 20分钟  </li>
-<li>Tomcat 7以上的版本中默认禁止客户端脚本读取session Id，需要在context.xml中设置useHttpOnly=”false”，开启权限。  <img src="/images/loading.gif" data-original="/2019/08/02/Spring-Boot中使用Session/Headers.png" title="未开启读取权限时，响应中有HttpOnly标识">
+<li>Tomcat 7以上的版本中默认禁止客户端脚本读取session Id，需要在context.xml中设置useHttpOnly=”false”，开启权限。  <img src="/images/loading.gif" data-original="/2019/08/02/spring-boot-zhong-shi-yong-session/Headers.png" title="未开启读取权限时，响应中有HttpOnly标识">
 </li>
 </ol>
 <h2 id="在-Spring-Boot中使用"><a href="#在-Spring-Boot中使用" class="headerlink" title="在 Spring Boot中使用"></a>在 Spring Boot中使用</h2><h3 id="设置useHttpOnly"><a href="#设置useHttpOnly" class="headerlink" title="设置useHttpOnly"></a>设置useHttpOnly</h3><ul>
-<li>jar 项目<br>在配置文件中设置：<pre><code class="properties">server.servlet.session.cookie.http-only=false
+<li>jar 项目<br>在配置文件中设置：<pre class=" language-properties"><code class="language-properties"><span class="token attr-name">server.servlet.session.cookie.http-only</span><span class="token punctuation">=</span><span class="token attr-value">false</span>
 </code></pre>
 </li>
 <li><p>war项目<br>在context.xml文件中的Context添加属性useHttpOnly</p>
-<pre><code class="xml">&lt;Context useHttpOnly=&quot;false&quot;&gt;&lt;Context&gt;
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Context</span> <span class="token attr-name">useHttpOnly</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Context</span><span class="token punctuation">></span></span>
 </code></pre>
 <h3 id="设置Cookie"><a href="#设置Cookie" class="headerlink" title="设置Cookie"></a>设置Cookie</h3><p>场景: 首次请求时跳转到指定页面，页面再通过ajax向后台请求数据，进行页面渲染。跳转页面时，需要指定cookie，否则会出现项目部署到外部tomcat时，cookie无法写入的情况，造成ajax请求时，两次的sessionId不一致。</p>
-<pre><code class="java">@RequestMapping(value=&quot;/query&quot;, method=RequestMethod.GET)
-public ModeAndView queryInfo(@RequestParam(value=&quot;sq&quot;)String sq,
-                          HttpServletRequest request,
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">"/query"</span><span class="token punctuation">,</span> method<span class="token operator">=</span>RequestMethod<span class="token punctuation">.</span>GET<span class="token punctuation">)</span>
+<span class="token keyword">public</span> ModeAndView <span class="token function">queryInfo</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">"sq"</span><span class="token punctuation">)</span>String sq<span class="token punctuation">,</span>
+                          HttpServletRequest request<span class="token punctuation">,</span>
                           HttpServletResponse response
-                          ) {
+                          <span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-      ModeAndView view = new ModeAndView();
-      //... view 操作
-      Cookie[] cookies = request.getCookies();
-      String sessionId = request.getSession().getId();
-      if (cookies == null) {
-          Cookie cookie = new Cookie(&quot;JSESSIONID&quot;, sessionId);
-          cookie.setMaxAge(5 * 60);
-          cookie.setDomian(&quot;localhost&quot;);
-          cookie.setPath(&quot;/hand&quot;);
-          response.addCookie(cookie);
-      } else {
-          for (Cookie cookie : cookies) {
-              if (cookie.getName().equals(&quot;JSESSIONID&quot;)) {
-                  cookie.setMaxAge(5 * 60);
-                  cookie.setValue(sessionId);
-                  cookie.setDomain(&quot;localhost&quot;);
-                  cookie.setPath(&quot;/hand&quot;);
-                  response.addCookie(cookie);
-                  break;
-              }
-          }
-      }
+      ModeAndView view <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ModeAndView</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">//... view 操作</span>
+      Cookie<span class="token punctuation">[</span><span class="token punctuation">]</span> cookies <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getCookies</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      String sessionId <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>cookies <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          Cookie cookie <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cookie</span><span class="token punctuation">(</span><span class="token string">"JSESSIONID"</span><span class="token punctuation">,</span> sessionId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          cookie<span class="token punctuation">.</span><span class="token function">setMaxAge</span><span class="token punctuation">(</span><span class="token number">5</span> <span class="token operator">*</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          cookie<span class="token punctuation">.</span><span class="token function">setDomian</span><span class="token punctuation">(</span><span class="token string">"localhost"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          cookie<span class="token punctuation">.</span><span class="token function">setPath</span><span class="token punctuation">(</span><span class="token string">"/hand"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          response<span class="token punctuation">.</span><span class="token function">addCookie</span><span class="token punctuation">(</span>cookie<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          <span class="token keyword">for</span> <span class="token punctuation">(</span>Cookie cookie <span class="token operator">:</span> cookies<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span>cookie<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"JSESSIONID"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                  cookie<span class="token punctuation">.</span><span class="token function">setMaxAge</span><span class="token punctuation">(</span><span class="token number">5</span> <span class="token operator">*</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                  cookie<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span>sessionId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                  cookie<span class="token punctuation">.</span><span class="token function">setDomain</span><span class="token punctuation">(</span><span class="token string">"localhost"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                  cookie<span class="token punctuation">.</span><span class="token function">setPath</span><span class="token punctuation">(</span><span class="token string">"/hand"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                  response<span class="token punctuation">.</span><span class="token function">addCookie</span><span class="token punctuation">(</span>cookie<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                  <span class="token keyword">break</span><span class="token punctuation">;</span>
+              <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
 
-      return view;
-}
+      <span class="token keyword">return</span> view<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="ajax-请求时带上cookie"><a href="#ajax-请求时带上cookie" class="headerlink" title="ajax 请求时带上cookie"></a>ajax 请求时带上cookie</h3><p>在请求列表中加上xhrFields参数。  </p>
-<pre><code class="js">var s = $.ajax({
-  type: &quot;get&quot;,
-  timeout: 8000,
-  xhrFields: { withCredentials: true},
-  url: &quot;/hand/val&quot;,
-  data: {&quot;params&quot;: &quot;&quot;},
-  success: function(rel) {
-      console.log(rel)
-  },
-  error: function() {
-      console.log(&quot;failed&quot;)
-  },
-  complete: function(XMLHttpRequest, status) {
-      if (status == &quot;timeout&quot;) {
-          s.abort();
-          console.log(&quot;timeout&quot;);
-      }
-  }
-})
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> s <span class="token operator">=</span> $<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> <span class="token string">"get"</span><span class="token punctuation">,</span>
+  timeout<span class="token punctuation">:</span> <span class="token number">8000</span><span class="token punctuation">,</span>
+  xhrFields<span class="token punctuation">:</span> <span class="token punctuation">{</span> withCredentials<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  url<span class="token punctuation">:</span> <span class="token string">"/hand/val"</span><span class="token punctuation">,</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token string">"params"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  success<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>rel<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>rel<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  error<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"failed"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  complete<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>XMLHttpRequest<span class="token punctuation">,</span> status<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>status <span class="token operator">==</span> <span class="token string">"timeout"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          s<span class="token punctuation">.</span><span class="token function">abort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"timeout"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
 <h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p>[1] Apache Tomcat 7 . The Context Container  <em><a href="http://tomcat.apache.org/tomcat-7.0-doc/config/context.html#Parallel_deployment" target="_blank" rel="noopener">http://tomcat.apache.org/tomcat-7.0-doc/config/context.html#Parallel_deployment</a></em><br>[2] springMVC操作cookie和session. Red_Code <em><a href="https://www.cnblogs.com/red-code/p/6629363.html" target="_blank" rel="noopener">https://www.cnblogs.com/red-code/p/6629363.html</a></em></p>
 </li>
@@ -429,7 +429,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UE4</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Elasticsearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Go</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -441,75 +465,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">serverless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">UE4</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异常</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">abstract</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">service mesh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+                <a href="javascript:void(0)" class="js-tag color1">Serverless</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">待整理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Serverless</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,15 +481,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Service Mesh</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -538,6 +502,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Spring Framework</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">待整理</a>
               </li>
             
             <div class="clearfix"></div>

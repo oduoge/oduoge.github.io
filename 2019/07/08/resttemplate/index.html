@@ -170,37 +170,37 @@
 </code></pre><ul>
 <li>准备工作</li>
 </ul>
-<pre><code class="java">class Criteria {
-    List&lt;String&gt; startDate;
-    List&lt;String&gt; endDate;
-}
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Criteria</span> <span class="token punctuation">{</span>
+    List<span class="token operator">&lt;</span>String<span class="token operator">></span> startDate<span class="token punctuation">;</span>
+    List<span class="token operator">&lt;</span>String<span class="token operator">></span> endDate<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<pre><code class="java">// 假设现已有bean criteria
-// 转换成 json字符串
-// &lt;see&gt;com.fasterxml.jackson.databind.ObjectMapper&lt;/see&gt;
-ObjectMapper mapper = new ObjectMapper();
-String json = mapper.writeValueAsString(criteria);
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 假设现已有bean criteria</span>
+<span class="token comment" spellcheck="true">// 转换成 json字符串</span>
+<span class="token comment" spellcheck="true">// &lt;see>com.fasterxml.jackson.databind.ObjectMapper&lt;/see></span>
+ObjectMapper mapper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectMapper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+String json <span class="token operator">=</span> mapper<span class="token punctuation">.</span><span class="token function">writeValueAsString</span><span class="token punctuation">(</span>criteria<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>此时如直接用 <code>getForObject(String url, Class<t> responseType, Object… uriVariables)</t></code> 进行请求 :</p>
-<pre><code class="java">String url = &quot;http://example.com?criteria=&quot; + json;
-Object obj = restTemplate.getForObject(url, Object.class);
+<pre class=" language-java"><code class="language-java">String url <span class="token operator">=</span> <span class="token string">"http://example.com?criteria="</span> <span class="token operator">+</span> json<span class="token punctuation">;</span>
+Object obj <span class="token operator">=</span> restTemplate<span class="token punctuation">.</span><span class="token function">getForObject</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> Object<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>会报 <code>Not enough variables available to expand</code> 的错误。<br>这是因为 <code>getForObject(String url, Class<t> responseType, Object… uriVariables)</t></code> 会对 <code>url</code> 进行转换，会把 <code>{}</code> 当成了占位符，为了避免这种情况，可以直接使用 <code>T getForObject(URI url, Class<t> responseType)</t></code> 方法，自己对链接进行转换:</p>
-<pre><code class="java">// java.net.URI
-String url = &quot;http://example.com&quot; + &quot;?criteria={json}&quot;;
-// build URI
-UriComponents uriComponents = UriComponentsBuilder.fromUriString(url)
-        .build().expand(json) // 指定参数，多个参数按出现的前后顺序添加 .build(json1, json2)
-        .encode();
-URI uri = uiComponents.toUri();
-Object result = restTemplate.getForObject(uri, Object.class);
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// java.net.URI</span>
+String url <span class="token operator">=</span> <span class="token string">"http://example.com"</span> <span class="token operator">+</span> <span class="token string">"?criteria={json}"</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// build URI</span>
+UriComponents uriComponents <span class="token operator">=</span> UriComponentsBuilder<span class="token punctuation">.</span><span class="token function">fromUriString</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">expand</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 指定参数，多个参数按出现的前后顺序添加 .build(json1, json2)</span>
+        <span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+URI uri <span class="token operator">=</span> uiComponents<span class="token punctuation">.</span><span class="token function">toUri</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Object result <span class="token operator">=</span> restTemplate<span class="token punctuation">.</span><span class="token function">getForObject</span><span class="token punctuation">(</span>uri<span class="token punctuation">,</span> Object<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 id="GET-方式发送数据，服务器端拿到的数据为空"><a href="#GET-方式发送数据，服务器端拿到的数据为空" class="headerlink" title="GET 方式发送数据，服务器端拿到的数据为空"></a><code>GET</code> 方式发送数据，服务器端拿到的数据为空</h2><p>请求参数需要以占位符的形式才能获取值：</p>
-<pre><code class="java">Map&lt;String, String&gt; map = new HashMap&lt;&gt;();
-map.put(&quot;p1&quot;, &quot;myValue&quot;);
-String url = &quot;http://localhost:8080/sayHello&quot;;
-String paramedUrl = &quot;http://localhost:8080/sayHello?p1={p1}&quot;;
-System.out.println(restTemplate.getForObject(paramedUrl, String.class, map));
+<pre class=" language-java"><code class="language-java">Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"p1"</span><span class="token punctuation">,</span> <span class="token string">"myValue"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+String url <span class="token operator">=</span> <span class="token string">"http://localhost:8080/sayHello"</span><span class="token punctuation">;</span>
+String paramedUrl <span class="token operator">=</span> <span class="token string">"http://localhost:8080/sayHello?p1={p1}"</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>restTemplate<span class="token punctuation">.</span><span class="token function">getForObject</span><span class="token punctuation">(</span>paramedUrl<span class="token punctuation">,</span> String<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> map<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 id="连接池"><a href="#连接池" class="headerlink" title="连接池"></a>连接池</h2>
       
@@ -397,7 +397,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UE4</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Elasticsearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Go</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -409,75 +433,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">serverless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">UE4</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异常</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">abstract</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">service mesh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+                <a href="javascript:void(0)" class="js-tag color1">Serverless</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">待整理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Serverless</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -489,15 +449,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Service Mesh</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -506,6 +470,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Spring Framework</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">待整理</a>
               </li>
             
             <div class="clearfix"></div>

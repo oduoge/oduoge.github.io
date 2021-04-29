@@ -167,7 +167,7 @@
 <a id="more"></a>
 <p>使用<code>UGameplayStatics</code>需要引入头文件<code>Kismet/GameplayStatics.h</code></p>
 <!-----more ---------------->
-<pre><code class="c++">#include &quot;Kismet/GameplayStatics.h&quot;
+<pre class=" language-c++"><code class="language-c++">#include "Kismet/GameplayStatics.h"
 
 
 void AFPSCppProjectile::OnHit(
@@ -175,11 +175,11 @@ void AFPSCppProjectile::OnHit(
     AActor* OtherActor,
     UPrimitiveComponent* OtherComp,
     FVector NormalImpulse,
-    const FHitResult&amp; Hit)
+    const FHitResult& Hit)
 {
-        if ((OtherActor != NULL) &amp;&amp; (OtherActor != this) &amp;&amp; (OtherComp != NULL) &amp;&amp; OtherComp-&gt;IsSimulatingPhysics())
+        if ((OtherActor != NULL) && (OtherActor != this) && (OtherComp != NULL) && OtherComp->IsSimulatingPhysics())
         {
-            OtherComp-&gt;AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
+            OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
             Destroy();
         }
 
@@ -187,43 +187,43 @@ void AFPSCppProjectile::OnHit(
 }
 </code></pre>
 <h2 id="创建组件"><a href="#创建组件" class="headerlink" title="创建组件"></a>创建组件</h2><p>一个<code>Actor</code>中的添加多个组件时需要指定一个根组件。</p>
-<pre><code class="c++">// .h
-UPROPERTY(VisibleAnywhere, Category = &quot;Components&quot;)
+<pre class=" language-c++"><code class="language-c++">// .h
+UPROPERTY(VisibleAnywhere, Category = "Components")
 class UStaticMeshComponent* MeshComp;
 
-UPROPERTY(VisibleAnywhere, Category = &quot;Components&quot;)
+UPROPERTY(VisibleAnywhere, Category = "Components")
 class USphereComponent* SphereComp;
 
 </code></pre>
-<pre><code class="c++">// .cpp
+<pre class=" language-c++"><code class="language-c++">// .cpp
 
-MeshComp = CreateDefaultSubobject&lt;UStaticMeshComponent&gt;(TEXT(&quot;MeshComp&quot;));
+MeshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComp"));
 RootComponent = MeshComp;
 
-SphereComp = CreateDefaultSubobject&lt;USphereComponent&gt;(TEXT(&quot;SphereComp&quot;));
-SphereComp-&gt;SetupAttachment(MeshComp);
+SphereComp = CreateDefaultSubobject<USphereComponent>(TEXT("SphereComp"));
+SphereComp->SetupAttachment(MeshComp);
 </code></pre>
 <p>头文件中不要添加额外的包，其会加长编译的时间，可通过声明的方式解决编译时的报错</p>
-<h3 id="设置碰撞"><a href="#设置碰撞" class="headerlink" title="设置碰撞"></a>设置碰撞</h3><pre><code class="c++">// 无碰撞
-MeshComp-&gt;SetCollisionEnabled(ECollisionEnabled::NoCollision); 
+<h3 id="设置碰撞"><a href="#设置碰撞" class="headerlink" title="设置碰撞"></a>设置碰撞</h3><pre class=" language-c++"><code class="language-c++">// 无碰撞
+MeshComp->SetCollisionEnabled(ECollisionEnabled::NoCollision); 
 
 // 可查询，查询包括了追踪轨迹线或重叠事件等
-SphereComp-&gt;SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+SphereComp->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 
 // 响应通道 忽略
-SphereComp-&gt;SetCollisionResponseToAllChannels(ECR_Ignore);
+SphereComp->SetCollisionResponseToAllChannels(ECR_Ignore);
 
 // 响应 Pawn通道 发生重叠
-SphereComp-&gt;SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
+SphereComp->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
 
 </code></pre>
-<h3 id="碰撞时生成粒子效果"><a href="#碰撞时生成粒子效果" class="headerlink" title="碰撞时生成粒子效果"></a>碰撞时生成粒子效果</h3><pre><code class="c++">// .h 
+<h3 id="碰撞时生成粒子效果"><a href="#碰撞时生成粒子效果" class="headerlink" title="碰撞时生成粒子效果"></a>碰撞时生成粒子效果</h3><pre class=" language-c++"><code class="language-c++">// .h 
 protected:
     // 新建函数
     void PlayEffects();
 </code></pre>
-<pre><code class="c++">// .cpp
-#include &quot;Kismet/GameplayStatics.h&quot;
+<pre class=" language-c++"><code class="language-c++">// .cpp
+#include "Kismet/GameplayStatics.h"
 
 AFPSObjectiveActor::PlayEffects()
 {
@@ -231,11 +231,11 @@ AFPSObjectiveActor::PlayEffects()
 }
 
 </code></pre>
-<h3 id="重叠时调用"><a href="#重叠时调用" class="headerlink" title="重叠时调用"></a>重叠时调用</h3><pre><code class="c++">public:
+<h3 id="重叠时调用"><a href="#重叠时调用" class="headerlink" title="重叠时调用"></a>重叠时调用</h3><pre class=" language-c++"><code class="language-c++">public:
     virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
 
 </code></pre>
-<pre><code class="c++">// .cpp
+<pre class=" language-c++"><code class="language-c++">// .cpp
 // 一种是调用 OnComponentBeginOverlap
 // 另一种是重写NotifyActorBeginOverlap方法
 void AFPSObjectiveActor::NotifyActorBeginOverlap(AActor* OtherActor)
@@ -437,7 +437,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UE4</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Elasticsearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Go</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -449,75 +473,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">serverless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">UE4</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异常</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">abstract</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">service mesh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+                <a href="javascript:void(0)" class="js-tag color1">Serverless</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">待整理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Serverless</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,15 +489,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Service Mesh</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -546,6 +510,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Spring Framework</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">待整理</a>
               </li>
             
             <div class="clearfix"></div>
