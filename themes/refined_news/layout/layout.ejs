@@ -1,0 +1,1109 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%- css('css/plugin.css') %>
+  <%- css('css/theme.css') %>
+
+  <%- css('css/main.css') %>
+  <%- css('css/style.css') %>
+  <%- css('css/slick.css') %>
+
+  <%- css('css/slick-theme.css') %>
+  <%- css('css/block-library.css') %>
+  <%- css('css/block-style.css') %>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+  <style id='refined-magazine-style-inline-css' type='text/css'>
+    .site-branding h1, .site-branding p.site-title,.ct-dark-mode .site-title a, .site-title, .site-title a, .site-title a:hover, .site-title a:visited:hover { color: #fff; }.entry-content a, .entry-title a:hover, .related-title a:hover, .posts-navigation .nav-previous a:hover, .post-navigation .nav-previous a:hover, .posts-navigation .nav-next a:hover, .post-navigation .nav-next a:hover, #comments .comment-content a:hover, #comments .comment-author a:hover, .offcanvas-menu nav ul.top-menu li a:hover, .offcanvas-menu nav ul.top-menu li.current-menu-item > a, .error-404-title, #refined-magazine-breadcrumbs a:hover, .entry-content a.read-more-text:hover, a:hover, a:visited:hover, .widget_refined_magazine_category_tabbed_widget.widget ul.ct-nav-tabs li a  { color : #aa2222; }.candid-refined-post-format, .refined-magazine-featured-block .refined-magazine-col-2 .candid-refined-post-format, .cat-links a,.top-bar,.main-navigation ul li a:hover, .main-navigation ul li.current-menu-item > a, .main-navigation ul li a:hover, .main-navigation ul li.current-menu-item > a, .trending-title, .search-form input[type=submit], input[type="submit"], ::selection, #toTop, .breadcrumbs span.breadcrumb, article.sticky .refined-magazine-content-container, .candid-pagination .page-numbers.current, .candid-pagination .page-numbers:hover, .ct-title-head, .widget-title:before, .widget ul.ct-nav-tabs:before, .widget ul.ct-nav-tabs li.ct-title-head:hover, .widget ul.ct-nav-tabs li.ct-title-head.ui-tabs-active { background-color : #aa2222; }.candid-refined-post-format, .refined-magazine-featured-block .refined-magazine-col-2 .candid-refined-post-format, blockquote, .search-form input[type="submit"], input[type="submit"], .candid-pagination .page-numbers { border-color : #aa2222; }.cat-links a:focus{ outline : 1px dashed #aa2222; }.ct-post-overlay .post-content, .ct-post-overlay .post-content a, .widget .ct-post-overlay .post-content a, .widget .ct-post-overlay .post-content a:visited, .ct-post-overlay .post-content a:visited:hover, .slide-details:hover .cat-links a { color: #fff; }.logo-wrapper-block{background-color : #cc2222; }@media (min-width: 1600px){.ct-boxed #page{max-width : 1500px; }}
+    </style>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body class="home blog wp-embed-responsive hfeed no-sidebar ct-bg ct-full-layout ct-sticky-sidebar right-sidebar">
+  <div id="page" class="site" style="transform: none;">
+    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+    <!-- Preloader -->
+    <div id="loader-wrapper" style="display: none;">
+      <div id="loader"></div>
+
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+
+    </div>
+    <!-- 顶端通知条 -->
+    <header id="masthead" class="site-header" itemtype="https://schema.org/WPHeader" itemscope>
+      <div class="overlay"></div>
+      <div class="top-bar">
+        <a href="#" class="ct-show-hide-top"> <i class="fa fa-chevron-down"></i> </a>
+        <div class="container-inner clearfix">
+          <div class="top-left-col clearfix">
+            <div class="ct-clock float-left">
+              <!-- 此处可通过js计算，或引入配置 -->
+              <div id="ct-date"><%- date(Date.now(), 'YYYY年M月D日') %></div>
+            </div>
+          </div>
+          <div class="top-right-col clearfix"></div> <!-- .top-right-col -->
+        </div> <!-- .container-inner -->
+      </div> <!-- .top-bar -->
+
+      <div class="logo-wrapper-block" style="background-image: url(<%- url_for('images/default-header.jpg') %>);">
+        <div class="container-inner clearfix logo-wrapper-container">
+          <div class="logo-wrapper float-left">
+            <div class="site-branding">
+              <div class="refined-magazine-logo-container">
+                <!-- 此处可引入配置信息 -->
+                <h1 class="site-title"><a href="<%- url_for(config.url) %>" rel="home"><%- config.title %></a></h1>
+                <p class="site-description"><%- config.description %></p>
+              </div> <!-- refined-magazine-logo-container -->
+            </div><!-- .site-branding -->
+          </div> <!-- .logo-wrapper -->
+        </div> <!-- .container-inner -->
+      </div> <!-- .logo-wrapper-block -->
+      <div class="refined-magazine-menu-container sticky-header hide">
+        <div class="container-inner clearfix">
+          <!-- 此处为站点导航，可引入函数 -->
+          <nav id="site-navigation" class="main-navigation" itemtype="https://schema.org/SiteNavigationElement"
+            itemscope="">
+            <div class="navbar-header clearfix">
+              <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                <span> </span>
+              </button>
+            </div>
+            <ul id="primary-menu" class="nav navbar-nav nav-menu" aria-expanded="false">
+              <li class="current-menu-item"><a href="<%- url_for('/') %>"><i class="fa fa-home"></i></a></li>
+              <% for (var i in theme.menu){ %>
+              <li class="page-item">
+                <a href="<%- url_for(theme.menu[i]) %>"><%= __(i) %></a>
+              </li>
+              <% } %>
+            </ul>
+          </nav><!-- #site-navigation -->
+
+          <!-- 此处为搜索框 -->
+          <div class="ct-menu-search"><a class="search-icon-box" href="#"> <i class="fa fa-search"></i></a></div>
+          <!-- 此处为点击搜索框后弹出全屏的搜索输入框，可考虑略去 -->
+          <div class="top-bar-search">
+            <form role="search" method="get" class="search-form" action="https://wp-themes.com/refined-news/">
+              <label>
+                <span class="screen-reader-text">Search for:</span>
+                <input type="search" class="search-field" placeholder="Search …" value="" name="s">
+              </label>
+              <input type="submit" class="search-submit" value="Search">
+            </form>
+            <button type="button" class="close"></button>
+          </div>
+        </div> <!-- .container-inner -->
+      </div> <!-- refined-magazine-menu-container -->
+    </header>
+
+    <!-- magazine -->
+    <div class="refined-magazine-featured-block refined-magazine-ct-row refined-awesome-carousel clearfix">
+      <div class="refined-magazine-col">
+        <ul class="ct-post-carousel">
+
+              <!-- 取4个文章放到头面 -->
+              <li class="slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true" style="width: 950px;"
+                tabindex="-1">
+                <div class="featured-section-inner ct-post-overlay">
+                  <div class="post-thumb">
+                    <a href="https://wp-themes.com/refined-news/?p=8" tabindex="-1">
+                      <img
+                        src="https://wp-themes.com/wp-content/themes/refined-magazine/candidthemes/assets/images/refined-mag-carousel-large.jpg"
+                        alt="HTML">
+                    </a>
+                  </div>
+                  <div class="featured-section-details post-content">
+                    <div class="post-meta">
+                      <span class="cat-links">
+                        <!-- 分类信息 -->
+                        <a class="ct-cat-item-1" href="https://wp-themes.com/refined-news/?cat=1" rel="category tag"
+                          tabindex="-1">
+                          Uncategorized
+                        </a>
+                      </span>
+                    </div>
+                    <!-- 文章标题 -->
+                    <h3 class="post-title">
+                      <a href="https://wp-themes.com/refined-news/?p=8" tabindex="-1">HTML</a>
+                    </h3>
+                    <div class="post-meta">
+                      <span class="posted-on">
+                        <i class="fa fa-calendar"></i>
+                        <a href="https://wp-themes.com/refined-news/?p=8" rel="bookmark" tabindex="-1">
+                          <!-- 发布时间 -->
+                          <time class="entry-date published" datetime="2008-06-21T00:04:53+00:00"
+                            itemprop="datePublished">
+                            June 21, 2008
+                          </time>
+                          <time class="updated" datetime="2020-11-18T07:19:05+00:00" itemprop="dateModified">
+                            November 18, 2020
+                          </time>
+                        </a>
+                      </span>
+                      <!-- 阅读量 -->
+                      <span class="min-read"><i class="fa fa-clock-o" aria-hidden="true"></i>1 min read</span>
+                    </div>
+                  </div>
+                </div> <!-- .featured-section-inner -->
+              </li>
+              <li class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false"
+                style="width: 950px;" tabindex="0">
+                <div class="featured-section-inner ct-post-overlay">
+                  <div class="post-thumb">
+                    <a href="https://wp-themes.com/refined-news/?p=19" tabindex="0">
+                      <img
+                        src="https://wp-themes.com/wp-content/themes/refined-magazine/candidthemes/assets/images/refined-mag-carousel-large.jpg"
+                        alt="Worth A Thousand Words">
+                    </a>
+                  </div>
+                  <div class="featured-section-details post-content">
+                    <div class="post-meta">
+                      <span class="cat-links">
+                        <a class="ct-cat-item-1" href="https://wp-themes.com/refined-news/?cat=1" rel="category tag"
+                          tabindex="0">Uncategorized</a>
+                      </span> </div>
+                    <h3 class="post-title">
+                      <a href="https://wp-themes.com/refined-news/?p=19" tabindex="0">Worth A Thousand Words</a>
+                    </h3>
+                    <div class="post-meta">
+                      <span class="posted-on">
+                        <i class="fa fa-calendar"></i>
+                        <a href="https://wp-themes.com/refined-news/?p=19" rel="bookmark" tabindex="0">
+                          <time class="entry-date published" datetime="2008-10-17T04:33:51+00:00"
+                            itemprop="datePublished">
+                            October 17, 2008
+                          </time>
+                          <time class="updated" datetime="2020-11-18T07:19:05+00:00" itemprop="dateModified">
+                            November 18, 2020
+                          </time>
+                        </a>
+                      </span>
+                      <span class="min-read"><i class="fa fa-clock-o" aria-hidden="true"></i>1 min read</span>
+                    </div>
+                  </div>
+                </div> <!-- .featured-section-inner -->
+              </li>
+              <li class="slick-slide" data-slick-index="1" aria-hidden="true" style="width: 950px;" tabindex="-1">
+                <div class="featured-section-inner ct-post-overlay">
+                  <div class="post-thumb">
+                    <a href="https://wp-themes.com/refined-news/?p=36" tabindex="-1">
+                      <img
+                        src="https://wp-themes.com/wp-content/themes/refined-magazine/candidthemes/assets/images/refined-mag-carousel-large.jpg"
+                        alt="Elements">
+                    </a>
+                  </div>
+                  <div class="featured-section-details post-content">
+                    <div class="post-meta">
+                      <span class="cat-links">
+                        <a class="ct-cat-item-1" href="https://wp-themes.com/refined-news/?cat=1" rel="category tag"
+                          tabindex="-1">
+                          Uncategorized
+                        </a>
+                      </span>
+                    </div>
+                    <h3 class="post-title">
+                      <a href="https://wp-themes.com/refined-news/?p=36" tabindex="-1">Elements</a>
+                    </h3>
+                    <div class="post-meta">
+                      <span class="posted-on">
+                        <i class="fa fa-calendar"></i>
+                        <a href="https://wp-themes.com/refined-news/?p=36" rel="bookmark" tabindex="-1">
+                          <time class="entry-date published" datetime="2008-09-05T19:39:12+00:00"
+                            itemprop="datePublished">
+                            September 5, 2008
+                          </time>
+                          <time class="updated" datetime="2020-11-18T07:19:05+00:00" itemprop="dateModified">
+                            November 18, 2020
+                          </time>
+                        </a>
+                      </span>
+                      <span class="min-read"><i class="fa fa-clock-o" aria-hidden="true"></i>3 min read</span>
+                    </div>
+                  </div>
+                </div> <!-- .featured-section-inner -->
+              </li>
+              <li class="slick-slide" data-slick-index="2" aria-hidden="true" style="width: 950px;" tabindex="-1">
+                <div class="featured-section-inner ct-post-overlay">
+                  <div class="post-thumb">
+                    <a href="https://wp-themes.com/refined-news/?p=14" tabindex="-1">
+                      <img
+                        src="https://wp-themes.com/wp-content/themes/refined-magazine/candidthemes/assets/images/refined-mag-carousel-large.jpg"
+                        alt="More Tags">
+                    </a>
+                  </div>
+                  <div class="featured-section-details post-content">
+                    <div class="post-meta">
+                      <span class="cat-links"><a class="ct-cat-item-1" href="https://wp-themes.com/refined-news/?cat=1"
+                          rel="category tag" tabindex="-1">Uncategorized</a> </span> </div>
+                    <h3 class="post-title">
+                      <a href="https://wp-themes.com/refined-news/?p=14" tabindex="-1">More Tags</a>
+                    </h3>
+                    <div class="post-meta">
+                      <span class="posted-on"><i class="fa fa-calendar"></i><a
+                          href="https://wp-themes.com/refined-news/?p=14" rel="bookmark" tabindex="-1"><time
+                            class="entry-date published" datetime="2008-06-21T00:09:24+00:00"
+                            itemprop="datePublished">June 21, 2008</time><time class="updated"
+                            datetime="2020-11-18T07:19:05+00:00" itemprop="dateModified">November 18,
+                            2020</time></a></span><span class="min-read"><i class="fa fa-clock-o"
+                          aria-hidden="true"></i>1 min read</span> </div>
+                  </div>
+                </div> <!-- .featured-section-inner -->
+              </li>
+              <li class="slick-slide" data-slick-index="3" aria-hidden="true" style="width: 950px;" tabindex="-1">
+                <div class="featured-section-inner ct-post-overlay">
+                  <div class="post-thumb">
+                    <a href="https://wp-themes.com/refined-news/?p=8" tabindex="-1">
+                      <img
+                        src="https://wp-themes.com/wp-content/themes/refined-magazine/candidthemes/assets/images/refined-mag-carousel-large.jpg"
+                        alt="HTML">
+                    </a>
+                  </div>
+                  <div class="featured-section-details post-content">
+                    <div class="post-meta">
+                      <span class="cat-links"><a class="ct-cat-item-1" href="https://wp-themes.com/refined-news/?cat=1"
+                          rel="category tag" tabindex="-1">Uncategorized</a> </span> </div>
+                    <h3 class="post-title">
+                      <a href="https://wp-themes.com/refined-news/?p=8" tabindex="-1">HTML</a>
+                    </h3>
+                    <div class="post-meta">
+                      <span class="posted-on"><i class="fa fa-calendar"></i><a
+                          href="https://wp-themes.com/refined-news/?p=8" rel="bookmark" tabindex="-1"><time
+                            class="entry-date published" datetime="2008-06-21T00:04:53+00:00"
+                            itemprop="datePublished">June 21, 2008</time><time class="updated"
+                            datetime="2020-11-18T07:19:05+00:00" itemprop="dateModified">November 18,
+                            2020</time></a></span><span class="min-read"><i class="fa fa-clock-o"
+                          aria-hidden="true"></i>1 min read</span> </div>
+                  </div>
+                </div> <!-- .featured-section-inner -->
+              </li>
+              <li class="slick-slide slick-cloned" data-slick-index="4" id="" aria-hidden="true" style="width: 950px;"
+                tabindex="-1">
+                <div class="featured-section-inner ct-post-overlay">
+                  <div class="post-thumb">
+                    <a href="https://wp-themes.com/refined-news/?p=19" tabindex="-1">
+                      <img
+                        src="https://wp-themes.com/wp-content/themes/refined-magazine/candidthemes/assets/images/refined-mag-carousel-large.jpg"
+                        alt="Worth A Thousand Words">
+                    </a>
+                  </div>
+                  <div class="featured-section-details post-content">
+                    <div class="post-meta">
+                      <span class="cat-links"><a class="ct-cat-item-1" href="https://wp-themes.com/refined-news/?cat=1"
+                          rel="category tag" tabindex="-1">Uncategorized</a> </span> </div>
+                    <h3 class="post-title">
+                      <a href="https://wp-themes.com/refined-news/?p=19" tabindex="-1">Worth A Thousand Words</a>
+                    </h3>
+                    <div class="post-meta">
+                      <span class="posted-on"><i class="fa fa-calendar"></i><a
+                          href="https://wp-themes.com/refined-news/?p=19" rel="bookmark" tabindex="-1"><time
+                            class="entry-date published" datetime="2008-10-17T04:33:51+00:00"
+                            itemprop="datePublished">October 17, 2008</time><time class="updated"
+                            datetime="2020-11-18T07:19:05+00:00" itemprop="dateModified">November 18,
+                            2020</time></a></span><span class="min-read"><i class="fa fa-clock-o"
+                          aria-hidden="true"></i>1 min read</span> </div>
+                  </div>
+                </div> <!-- .featured-section-inner -->
+              </li>
+              <li class="slick-slide slick-cloned" data-slick-index="5" id="" aria-hidden="true" style="width: 950px;"
+                tabindex="-1">
+                <div class="featured-section-inner ct-post-overlay">
+                  <div class="post-thumb">
+                    <a href="https://wp-themes.com/refined-news/?p=36" tabindex="-1">
+                      <img
+                        src="https://wp-themes.com/wp-content/themes/refined-magazine/candidthemes/assets/images/refined-mag-carousel-large.jpg"
+                        alt="Elements">
+                    </a>
+                  </div>
+                  <div class="featured-section-details post-content">
+                    <div class="post-meta">
+                      <span class="cat-links"><a class="ct-cat-item-1" href="https://wp-themes.com/refined-news/?cat=1"
+                          rel="category tag" tabindex="-1">Uncategorized</a> </span> </div>
+                    <h3 class="post-title">
+                      <a href="https://wp-themes.com/refined-news/?p=36" tabindex="-1">Elements</a>
+                    </h3>
+                    <div class="post-meta">
+                      <span class="posted-on"><i class="fa fa-calendar"></i><a
+                          href="https://wp-themes.com/refined-news/?p=36" rel="bookmark" tabindex="-1"><time
+                            class="entry-date published" datetime="2008-09-05T19:39:12+00:00"
+                            itemprop="datePublished">September 5, 2008</time><time class="updated"
+                            datetime="2020-11-18T07:19:05+00:00" itemprop="dateModified">November 18,
+                            2020</time></a></span><span class="min-read"><i class="fa fa-clock-o"
+                          aria-hidden="true"></i>3 min read</span> </div>
+                  </div>
+                </div> <!-- .featured-section-inner -->
+              </li>
+              <li class="slick-slide slick-cloned" data-slick-index="6" id="" aria-hidden="true" style="width: 950px;"
+                tabindex="-1">
+                <div class="featured-section-inner ct-post-overlay">
+                  <div class="post-thumb">
+                    <a href="https://wp-themes.com/refined-news/?p=14" tabindex="-1">
+                      <img
+                        src="https://wp-themes.com/wp-content/themes/refined-magazine/candidthemes/assets/images/refined-mag-carousel-large.jpg"
+                        alt="More Tags">
+                    </a>
+                  </div>
+                  <div class="featured-section-details post-content">
+                    <div class="post-meta">
+                      <span class="cat-links"><a class="ct-cat-item-1" href="https://wp-themes.com/refined-news/?cat=1"
+                          rel="category tag" tabindex="-1">Uncategorized</a> </span> </div>
+                    <h3 class="post-title">
+                      <a href="https://wp-themes.com/refined-news/?p=14" tabindex="-1">More Tags</a>
+                    </h3>
+                    <div class="post-meta">
+                      <span class="posted-on"><i class="fa fa-calendar"></i><a
+                          href="https://wp-themes.com/refined-news/?p=14" rel="bookmark" tabindex="-1"><time
+                            class="entry-date published" datetime="2008-06-21T00:09:24+00:00"
+                            itemprop="datePublished">June 21, 2008</time><time class="updated"
+                            datetime="2020-11-18T07:19:05+00:00" itemprop="dateModified">November 18,
+                            2020</time></a></span><span class="min-read"><i class="fa fa-clock-o"
+                          aria-hidden="true"></i>1 min read</span> </div>
+                  </div>
+                </div> <!-- .featured-section-inner -->
+              </li>
+              <li class="slick-slide slick-cloned" data-slick-index="7" id="" aria-hidden="true" style="width: 950px;"
+                tabindex="-1">
+                <div class="featured-section-inner ct-post-overlay">
+                  <div class="post-thumb">
+                    <a href="https://wp-themes.com/refined-news/?p=8" tabindex="-1">
+                      <img
+                        src="https://wp-themes.com/wp-content/themes/refined-magazine/candidthemes/assets/images/refined-mag-carousel-large.jpg"
+                        alt="HTML">
+                    </a>
+                  </div>
+                  <div class="featured-section-details post-content">
+                    <div class="post-meta">
+                      <span class="cat-links"><a class="ct-cat-item-1" href="https://wp-themes.com/refined-news/?cat=1"
+                          rel="category tag" tabindex="-1">Uncategorized</a> </span> </div>
+                    <h3 class="post-title">
+                      <a href="https://wp-themes.com/refined-news/?p=8" tabindex="-1">HTML</a>
+                    </h3>
+                    <div class="post-meta">
+                      <span class="posted-on"><i class="fa fa-calendar"></i><a
+                          href="https://wp-themes.com/refined-news/?p=8" rel="bookmark" tabindex="-1"><time
+                            class="entry-date published" datetime="2008-06-21T00:04:53+00:00"
+                            itemprop="datePublished">June 21, 2008</time><time class="updated"
+                            datetime="2020-11-18T07:19:05+00:00" itemprop="dateModified">November 18,
+                            2020</time></a></span><span class="min-read"><i class="fa fa-clock-o"
+                          aria-hidden="true"></i>1 min read</span> </div>
+                  </div>
+                </div> <!-- .featured-section-inner -->
+              </li>
+        </ul>
+      </div>
+      <!--.refined-magazine-col-->
+      <div class="refined-magazine-col refined-magazine-col-2">
+        <div class="refined-magazine-inner-row clearfix">
+          <div class="refined-magazine-col">
+            <div class="featured-section-inner ct-post-overlay">
+              <div class="post-thumb">
+                <a href="https://wp-themes.com/refined-news/?p=19">
+                  <img
+                    src="https://wp-themes.com/wp-content/themes/refined-magazine/candidthemes/assets/images/refined-mag-carousel-large.jpg"
+                    alt="Worth A Thousand Words">
+                </a>
+              </div>
+
+              <div class="featured-section-details post-content">
+                <div class="post-meta">
+                  <span class="cat-links"><a class="ct-cat-item-1" href="https://wp-themes.com/refined-news/?cat=1"
+                      rel="category tag">Uncategorized</a> </span> </div>
+                <h3 class="post-title">
+                  <a href="https://wp-themes.com/refined-news/?p=19">Worth A Thousand Words</a>
+                </h3>
+                <div class="post-meta">
+                  <span class="posted-on"><i class="fa fa-calendar"></i><a
+                      href="https://wp-themes.com/refined-news/?p=19" rel="bookmark"><time class="entry-date published"
+                        datetime="2008-10-17T04:33:51+00:00" itemprop="datePublished">October 17, 2008</time><time
+                        class="updated" datetime="2020-11-18T07:19:05+00:00" itemprop="dateModified">November 18,
+                        2020</time></a></span><span class="min-read"><i class="fa fa-clock-o" aria-hidden="true"></i>1
+                    min read</span> </div>
+              </div>
+            </div> <!-- .featured-section-inner -->
+          </div>
+          <!--.refined-magazine-col-->
+          <div class="refined-magazine-col">
+            <div class="featured-section-inner ct-post-overlay">
+              <div class="post-thumb">
+                <a href="https://wp-themes.com/refined-news/?p=36">
+                  <img
+                    src="https://wp-themes.com/wp-content/themes/refined-magazine/candidthemes/assets/images/refined-mag-carousel-large.jpg"
+                    alt="Elements">
+                </a>
+              </div>
+
+              <div class="featured-section-details post-content">
+                <div class="post-meta">
+                  <span class="cat-links"><a class="ct-cat-item-1" href="https://wp-themes.com/refined-news/?cat=1"
+                      rel="category tag">Uncategorized</a> </span> </div>
+                <h3 class="post-title">
+                  <a href="https://wp-themes.com/refined-news/?p=36">Elements</a>
+                </h3>
+                <div class="post-meta">
+                  <span class="posted-on"><i class="fa fa-calendar"></i><a
+                      href="https://wp-themes.com/refined-news/?p=36" rel="bookmark"><time class="entry-date published"
+                        datetime="2008-09-05T19:39:12+00:00" itemprop="datePublished">September 5, 2008</time><time
+                        class="updated" datetime="2020-11-18T07:19:05+00:00" itemprop="dateModified">November 18,
+                        2020</time></a></span><span class="min-read"><i class="fa fa-clock-o" aria-hidden="true"></i>3
+                    min read</span> </div>
+              </div>
+            </div> <!-- .featured-section-inner -->
+          </div>
+          <!--.refined-magazine-col-->
+          <div class="refined-magazine-col">
+            <div class="featured-section-inner ct-post-overlay">
+              <div class="post-thumb">
+                <a href="https://wp-themes.com/refined-news/?p=14">
+                  <img
+                    src="https://wp-themes.com/wp-content/themes/refined-magazine/candidthemes/assets/images/refined-mag-carousel-large.jpg"
+                    alt="More Tags">
+                </a>
+              </div>
+
+              <div class="featured-section-details post-content">
+                <div class="post-meta">
+                  <span class="cat-links"><a class="ct-cat-item-1" href="https://wp-themes.com/refined-news/?cat=1"
+                      rel="category tag">Uncategorized</a> </span> </div>
+                <h3 class="post-title">
+                  <a href="https://wp-themes.com/refined-news/?p=14">More Tags</a>
+                </h3>
+                <div class="post-meta">
+                  <span class="posted-on"><i class="fa fa-calendar"></i><a
+                      href="https://wp-themes.com/refined-news/?p=14" rel="bookmark"><time class="entry-date published"
+                        datetime="2008-06-21T00:09:24+00:00" itemprop="datePublished">June 21, 2008</time><time
+                        class="updated" datetime="2020-11-18T07:19:05+00:00" itemprop="dateModified">November 18,
+                        2020</time></a></span><span class="min-read"><i class="fa fa-clock-o" aria-hidden="true"></i>1
+                    min read</span> </div>
+              </div>
+            </div> <!-- .featured-section-inner -->
+          </div>
+          <!--.refined-magazine-col-->
+          <div class="refined-magazine-col">
+            <div class="featured-section-inner ct-post-overlay">
+              <div class="post-thumb">
+                <a href="https://wp-themes.com/refined-news/?p=8">
+                  <img
+                    src="https://wp-themes.com/wp-content/themes/refined-magazine/candidthemes/assets/images/refined-mag-carousel-large.jpg"
+                    alt="HTML">
+                </a>
+              </div>
+
+              <div class="featured-section-details post-content">
+                <div class="post-meta">
+                  <span class="cat-links"><a class="ct-cat-item-1" href="https://wp-themes.com/refined-news/?cat=1"
+                      rel="category tag">Uncategorized</a> </span> </div>
+                <h3 class="post-title">
+                  <a href="https://wp-themes.com/refined-news/?p=8">HTML</a>
+                </h3>
+                <div class="post-meta">
+                  <span class="posted-on"><i class="fa fa-calendar"></i><a
+                      href="https://wp-themes.com/refined-news/?p=8" rel="bookmark"><time class="entry-date published"
+                        datetime="2008-06-21T00:04:53+00:00" itemprop="datePublished">June 21, 2008</time><time
+                        class="updated" datetime="2020-11-18T07:19:05+00:00" itemprop="dateModified">November 18,
+                        2020</time></a></span><span class="min-read"><i class="fa fa-clock-o" aria-hidden="true"></i>1
+                    min read</span> </div>
+              </div>
+            </div> <!-- .featured-section-inner -->
+          </div>
+          <!--.refined-magazine-col-->
+
+        </div>
+      </div>
+      <!--.refined-magazine-col-->
+
+    </div>
+
+    <div class="trending-wrapper">
+      <strong class="trending-title">标签</strong>
+      <div class="trending-content trending-left">
+        <div
+          style="width: 100000px; margin-left: 0px; animation: marqueeAnimation-6551019 42.9063s linear 0s infinite normal none running;"
+          class="js-marquee-wrapper">
+          <div class="js-marquee" style="margin-right: 0px; float: left;">
+            <a href="https://wp-themes.com/refined-news/?p=19" title="Worth A Thousand Words">
+              <span class="img-marq">
+              </span>
+              Worth A Thousand Words </a>
+            <a href="https://wp-themes.com/refined-news/?p=36" title="Elements">
+              <span class="img-marq">
+              </span>
+              Elements </a>
+            <a href="https://wp-themes.com/refined-news/?p=14" title="More Tags">
+              <span class="img-marq">
+              </span>
+              More Tags </a>
+            <a href="https://wp-themes.com/refined-news/?p=8" title="HTML">
+              <span class="img-marq">
+              </span>
+              HTML </a>
+            <a href="https://wp-themes.com/refined-news/?p=6" title="Links">
+              <span class="img-marq">
+              </span>
+              Links </a>
+            <a href="https://wp-themes.com/refined-news/?p=4" title="Category Hierarchy">
+              <span class="img-marq">
+              </span>
+              Category Hierarchy </a>
+            <a href="https://wp-themes.com/refined-news/?p=1" title="Hello world!">
+              <span class="img-marq">
+              </span>
+              Hello world! </a>
+
+          </div>
+          <div class="js-marquee" style="margin-right: 0px; float: left;">
+            <a href="https://wp-themes.com/refined-news/?p=19" title="Worth A Thousand Words">
+              <span class="img-marq">
+              </span>
+              Worth A Thousand Words </a>
+            <a href="https://wp-themes.com/refined-news/?p=36" title="Elements">
+              <span class="img-marq">
+              </span>
+              Elements </a>
+            <a href="https://wp-themes.com/refined-news/?p=14" title="More Tags">
+              <span class="img-marq">
+              </span>
+              More Tags </a>
+            <a href="https://wp-themes.com/refined-news/?p=8" title="HTML">
+              <span class="img-marq">
+              </span>
+              HTML </a>
+            <a href="https://wp-themes.com/refined-news/?p=6" title="Links">
+              <span class="img-marq">
+              </span>
+              Links </a>
+            <a href="https://wp-themes.com/refined-news/?p=4" title="Category Hierarchy">
+              <span class="img-marq">
+              </span>
+              Category Hierarchy </a>
+            <a href="https://wp-themes.com/refined-news/?p=1" title="Hello world!">
+              <span class="img-marq">
+              </span>
+              Hello world! </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ct-header-carousel-section -->
+    <div class="ct-header-carousel-section">
+      <!-- container-inner -->
+      <div class="container-inner">
+        <h2 class="widget-title">
+          <%- theme.home.last %>
+        </h2>
+
+        <div class="ct-header-carousel clearfix">
+          <!-- 轮播文章 -->
+
+          <div class="ct-carousel-signle ct-post-voerlay slick-slide slick-cloned" data-slick-index="-3" id
+            aria-hidden="true" tabindex="-1" style="width: 467;">
+            <div class="post-thumb">
+              <a href="" tabindex="-1">
+                <img
+                  src="https://wp-themes.com/wp-content/themes/refined-magazine/candidthemes/assets/images/refined-mag-carousel.jpg"
+                  atl="Links">
+              </a>
+            </div>
+            <div class="featured-section-details post-content">
+              <div class="post-meta">
+                <span class="cat-links">
+                  <a class="ct-cat-item-1" href="to category" rel="category tag" tabindex="-1">Uncategorized</a>
+                </span>
+              </div>
+              <h3 class="post-title">
+                <a href="to post " tabindex="-1">Links</a>
+              </h3>
+              <div class="post-meta">
+                <span class="posted-on">
+                  <!-- 发表时间 -->
+                  <i class="fa fa-calendar"></i>
+                  <a href="指向文章" rel="bookmark" tabindex="-1">
+                    <time class="entry-date published" datetime="2021-03-13 15:49:22"
+                      itemprop="datePublished">2021年3月13日</time>
+                    <time class="updated" datetime="2021-03-13 15:50:01" itemprop="dateModified">2021.03.13</time>
+                  </a>
+                </span>
+                <span class="min-read">
+                  <!-- 浏览量 -->
+                  <i class="fa fa-clock-o" aria-hidden="true"></i>
+                  "1 min read"
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="ct-carousel-signle ct-post-voerlay slick-slide slick-cloned" data-slick-index="-3" id
+            aria-hidden="true" tabindex="-1" style="width: 467;">
+            <div class="post-thumb">
+              <a href="" tabindex="-1">
+                <img
+                  src="https://wp-themes.com/wp-content/themes/refined-magazine/candidthemes/assets/images/refined-mag-carousel.jpg"
+                  atl="Links">
+              </a>
+            </div>
+            <div class="featured-section-details post-content">
+              <div class="post-meta">
+                <span class="cat-links">
+                  <a class="ct-cat-item-1" href="to category" rel="category tag" tabindex="-1">Uncategorized</a>
+                </span>
+              </div>
+              <h3 class="post-title">
+                <a href="to post " tabindex="-1">Links</a>
+              </h3>
+              <div class="post-meta">
+                <span class="posted-on">
+                  <!-- 发表时间 -->
+                  <i class="fa fa-calendar"></i>
+                  <a href="指向文章" rel="bookmark" tabindex="-1">
+                    <time class="entry-date published" datetime="2021-03-13 15:49:22"
+                      itemprop="datePublished">2021年3月13日</time>
+                    <time class="updated" datetime="2021-03-13 15:50:01" itemprop="dateModified">2021.03.13</time>
+                  </a>
+                </span>
+                <span class="min-read">
+                  <!-- 浏览量 -->
+                  <i class="fa fa-clock-o" aria-hidden="true"></i>
+                  "1 min read"
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="ct-carousel-signle ct-post-voerlay slick-slide slick-cloned" data-slick-index="-3" id
+            aria-hidden="true" tabindex="-1" style="width: 467;">
+            <div class="post-thumb">
+              <a href="" tabindex="-1">
+                <img
+                  src="https://wp-themes.com/wp-content/themes/refined-magazine/candidthemes/assets/images/refined-mag-carousel.jpg"
+                  atl="Links">
+              </a>
+            </div>
+            <div class="featured-section-details post-content">
+              <div class="post-meta">
+                <span class="cat-links">
+                  <a class="ct-cat-item-1" href="to category" rel="category tag" tabindex="-1">Uncategorized</a>
+                </span>
+              </div>
+              <h3 class="post-title">
+                <a href="to post " tabindex="-1">Links</a>
+              </h3>
+              <div class="post-meta">
+                <span class="posted-on">
+                  <!-- 发表时间 -->
+                  <i class="fa fa-calendar"></i>
+                  <a href="指向文章" rel="bookmark" tabindex="-1">
+                    <time class="entry-date published" datetime="2021-03-13 15:49:22"
+                      itemprop="datePublished">2021年3月13日</time>
+                    <time class="updated" datetime="2021-03-13 15:50:01" itemprop="dateModified">2021.03.13</time>
+                  </a>
+                </span>
+                <span class="min-read">
+                  <!-- 浏览量 -->
+                  <i class="fa fa-clock-o" aria-hidden="true"></i>
+                  "1 min read"
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- .container-inner -->
+    </div>
+    <!-- .ct-header-carousel-section -->
+
+    <div id="content" class="site-content" style="transform: none;">
+      <div class="container-inner ct-container-main clearfix" style="transform: none;">
+        <div class="front-page-content-wrapper" style="transform: none;">
+
+          <div id="primary" class="content-area"
+            style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+            <!-- #main -->
+            <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static;">
+              <main id="main" class="site-main">
+                <div class="refined-news-article-wrapper">
+                  <article id="post-19"
+                    class="post-19 post type-post status-publish format-standard hentry category-uncategorized tag-boat tag-lake two-columns"
+                    itemtype="https://schema.org/CreativeWork" itemscope="">
+                    <div class="refined-magazine-content-container refined-magazine-no-thumbnail">
+                      <div class="refined-magazine-content-area">
+                        <header class="entry-header">
+
+                          <div class="post-meta">
+                            <span class="cat-links"><a class="ct-cat-item-1"
+                                href="https://wp-themes.com/refined-news/?cat=1" rel="category tag">Uncategorized</a>
+                            </span> </div>
+                          <h2 class="entry-title" itemprop="headline"><a href="https://wp-themes.com/refined-news/?p=19"
+                              rel="bookmark">Worth A Thousand Words</a></h2>
+                          <div class="entry-meta">
+                            <span class="posted-on"><i class="fa fa-calendar"></i><a
+                                href="https://wp-themes.com/refined-news/?p=19" rel="bookmark"><time
+                                  class="entry-date published" datetime="2008-10-17T04:33:51+00:00"
+                                  itemprop="datePublished">October 17, 2008</time><time class="updated"
+                                  datetime="2020-11-18T07:19:05+00:00" itemprop="dateModified">November 18,
+                                  2020</time></a></span><span class="min-read"><i class="fa fa-clock-o"
+                                aria-hidden="true"></i>1 min read</span> </div><!-- .entry-meta -->
+                        </header><!-- .entry-header -->
+
+
+                        <div class="entry-content">
+                          <p>Boat.</p>
+
+                          <p><a href="https://wp-themes.com/refined-news/?p=19" class="read-more-text">
+                              Read More
+                            </a></p>
+                        </div>
+                        <!-- .entry-content -->
+
+                        <footer class="entry-footer">
+                        </footer><!-- .entry-footer -->
+
+                      </div> <!-- .refined-magazine-content-area -->
+                    </div> <!-- .refined-magazine-content-container -->
+                  </article><!-- #post-19 -->
+                  <article id="post-36"
+                    class="post-36 post type-post status-publish format-standard hentry category-uncategorized two-columns"
+                    itemtype="https://schema.org/CreativeWork" itemscope="">
+                    <div class="refined-magazine-content-container refined-magazine-no-thumbnail">
+                      <div class="refined-magazine-content-area">
+                        <header class="entry-header">
+
+                          <div class="post-meta">
+                            <span class="cat-links"><a class="ct-cat-item-1"
+                                href="https://wp-themes.com/refined-news/?cat=1" rel="category tag">Uncategorized</a>
+                            </span> </div>
+                          <h2 class="entry-title" itemprop="headline"><a href="https://wp-themes.com/refined-news/?p=36"
+                              rel="bookmark">Elements</a></h2>
+                          <div class="entry-meta">
+                            <span class="posted-on"><i class="fa fa-calendar"></i><a
+                                href="https://wp-themes.com/refined-news/?p=36" rel="bookmark"><time
+                                  class="entry-date published" datetime="2008-09-05T19:39:12+00:00"
+                                  itemprop="datePublished">September 5, 2008</time><time class="updated"
+                                  datetime="2020-11-18T07:19:05+00:00" itemprop="dateModified">November 18,
+                                  2020</time></a></span><span class="min-read"><i class="fa fa-clock-o"
+                                aria-hidden="true"></i>3 min read</span> </div><!-- .entry-meta -->
+                        </header><!-- .entry-header -->
+
+
+                        <div class="entry-content">
+                          <p>The purpose of this HTML is to help determine what default settings are with CSS and to
+                            make sure that all possible HTML Elements are</p>
+
+                          <p><a href="https://wp-themes.com/refined-news/?p=36" class="read-more-text">
+                              Read More
+                            </a></p>
+                        </div>
+                        <!-- .entry-content -->
+
+                        <footer class="entry-footer">
+                        </footer><!-- .entry-footer -->
+
+                      </div> <!-- .refined-magazine-content-area -->
+                    </div> <!-- .refined-magazine-content-container -->
+                  </article><!-- #post-36 -->
+                  <article id="post-14"
+                    class="post-14 post type-post status-publish format-standard hentry category-uncategorized tag-wordpress two-columns"
+                    itemtype="https://schema.org/CreativeWork" itemscope="">
+                    <div class="refined-magazine-content-container refined-magazine-no-thumbnail">
+                      <div class="refined-magazine-content-area">
+                        <header class="entry-header">
+
+                          <div class="post-meta">
+                            <span class="cat-links"><a class="ct-cat-item-1"
+                                href="https://wp-themes.com/refined-news/?cat=1" rel="category tag">Uncategorized</a>
+                            </span> </div>
+                          <h2 class="entry-title" itemprop="headline"><a href="https://wp-themes.com/refined-news/?p=14"
+                              rel="bookmark">More Tags</a></h2>
+                          <div class="entry-meta">
+                            <span class="posted-on"><i class="fa fa-calendar"></i><a
+                                href="https://wp-themes.com/refined-news/?p=14" rel="bookmark"><time
+                                  class="entry-date published" datetime="2008-06-21T00:09:24+00:00"
+                                  itemprop="datePublished">June 21, 2008</time><time class="updated"
+                                  datetime="2020-11-18T07:19:05+00:00" itemprop="dateModified">November 18,
+                                  2020</time></a></span><span class="min-read"><i class="fa fa-clock-o"
+                                aria-hidden="true"></i>1 min read</span> </div><!-- .entry-meta -->
+                        </header><!-- .entry-header -->
+
+
+                        <div class="entry-content">
+                          <p>More of these posts need tags.</p>
+
+                          <p><a href="https://wp-themes.com/refined-news/?p=14" class="read-more-text">
+                              Read More
+                            </a></p>
+                        </div>
+                        <!-- .entry-content -->
+
+                        <footer class="entry-footer">
+                        </footer><!-- .entry-footer -->
+
+                      </div> <!-- .refined-magazine-content-area -->
+                    </div> <!-- .refined-magazine-content-container -->
+                  </article><!-- #post-14 -->
+                  <article id="post-8"
+                    class="post-8 post type-post status-publish format-standard hentry category-uncategorized tag-html tag-wordpress two-columns"
+                    itemtype="https://schema.org/CreativeWork" itemscope="">
+                    <div class="refined-magazine-content-container refined-magazine-no-thumbnail">
+                      <div class="refined-magazine-content-area">
+                        <header class="entry-header">
+
+                          <div class="post-meta">
+                            <span class="cat-links"><a class="ct-cat-item-1"
+                                href="https://wp-themes.com/refined-news/?cat=1" rel="category tag">Uncategorized</a>
+                            </span> </div>
+                          <h2 class="entry-title" itemprop="headline"><a href="https://wp-themes.com/refined-news/?p=8"
+                              rel="bookmark">HTML</a></h2>
+                          <div class="entry-meta">
+                            <span class="posted-on"><i class="fa fa-calendar"></i><a
+                                href="https://wp-themes.com/refined-news/?p=8" rel="bookmark"><time
+                                  class="entry-date published" datetime="2008-06-21T00:04:53+00:00"
+                                  itemprop="datePublished">June 21, 2008</time><time class="updated"
+                                  datetime="2020-11-18T07:19:05+00:00" itemprop="dateModified">November 18,
+                                  2020</time></a></span><span class="min-read"><i class="fa fa-clock-o"
+                                aria-hidden="true"></i>1 min read</span> </div><!-- .entry-meta -->
+                        </header><!-- .entry-header -->
+
+
+                        <div class="entry-content">
+                          <p>What HTML tags would you like to see? Let’s start with an unordered list: One Two Three
+                            Four And then move on to a more</p>
+
+                          <p><a href="https://wp-themes.com/refined-news/?p=8" class="read-more-text">
+                              Read More
+                            </a></p>
+                        </div>
+                        <!-- .entry-content -->
+
+                        <footer class="entry-footer">
+                        </footer><!-- .entry-footer -->
+
+                      </div> <!-- .refined-magazine-content-area -->
+                    </div> <!-- .refined-magazine-content-container -->
+                  </article><!-- #post-8 -->
+                  <article id="post-6"
+                    class="post-6 post type-post status-publish format-standard hentry category-uncategorized two-columns"
+                    itemtype="https://schema.org/CreativeWork" itemscope="">
+                    <div class="refined-magazine-content-container refined-magazine-no-thumbnail">
+                      <div class="refined-magazine-content-area">
+                        <header class="entry-header">
+
+                          <div class="post-meta">
+                            <span class="cat-links"><a class="ct-cat-item-1"
+                                href="https://wp-themes.com/refined-news/?cat=1" rel="category tag">Uncategorized</a>
+                            </span> </div>
+                          <h2 class="entry-title" itemprop="headline"><a href="https://wp-themes.com/refined-news/?p=6"
+                              rel="bookmark">Links</a></h2>
+                          <div class="entry-meta">
+                            <span class="posted-on"><i class="fa fa-calendar"></i><a
+                                href="https://wp-themes.com/refined-news/?p=6" rel="bookmark"><time
+                                  class="entry-date published" datetime="2008-06-20T20:06:53+00:00"
+                                  itemprop="datePublished">June 20, 2008</time><time class="updated"
+                                  datetime="2020-11-18T07:19:06+00:00" itemprop="dateModified">November 18,
+                                  2020</time></a></span><span class="min-read"><i class="fa fa-clock-o"
+                                aria-hidden="true"></i>1 min read</span> </div><!-- .entry-meta -->
+                        </header><!-- .entry-header -->
+
+
+                        <div class="entry-content">
+                          <p>A few well known WordPress links: WordPress.org, the Codex and the download page.</p>
+
+                          <p><a href="https://wp-themes.com/refined-news/?p=6" class="read-more-text">
+                              Read More
+                            </a></p>
+                        </div>
+                        <!-- .entry-content -->
+
+                        <footer class="entry-footer">
+                        </footer><!-- .entry-footer -->
+
+                      </div> <!-- .refined-magazine-content-area -->
+                    </div> <!-- .refined-magazine-content-container -->
+                  </article><!-- #post-6 -->
+                  <article id="post-4"
+                    class="post-4 post type-post status-publish format-standard hentry category-first-child-category category-one-grandchild-category category-parent category-second-child-category two-columns"
+                    itemtype="https://schema.org/CreativeWork" itemscope="">
+                    <div class="refined-magazine-content-container refined-magazine-no-thumbnail">
+                      <div class="refined-magazine-content-area">
+                        <header class="entry-header">
+
+                          <div class="post-meta">
+                            <span class="cat-links"><a class="ct-cat-item-6"
+                                href="https://wp-themes.com/refined-news/?cat=6" rel="category tag">First Child
+                                Category</a> <a class="ct-cat-item-8" href="https://wp-themes.com/refined-news/?cat=8"
+                                rel="category tag">One Grandchild Category</a> <a class="ct-cat-item-5"
+                                href="https://wp-themes.com/refined-news/?cat=5" rel="category tag">Parent</a> <a
+                                class="ct-cat-item-7" href="https://wp-themes.com/refined-news/?cat=7"
+                                rel="category tag">Second Child Category</a> </span> </div>
+                          <h2 class="entry-title" itemprop="headline"><a href="https://wp-themes.com/refined-news/?p=4"
+                              rel="bookmark">Category Hierarchy</a></h2>
+                          <div class="entry-meta">
+                            <span class="posted-on"><i class="fa fa-calendar"></i><a
+                                href="https://wp-themes.com/refined-news/?p=4" rel="bookmark"><time
+                                  class="entry-date published" datetime="2008-06-20T19:59:54+00:00"
+                                  itemprop="datePublished">June 20, 2008</time><time class="updated"
+                                  datetime="2020-11-18T07:19:06+00:00" itemprop="dateModified">November 18,
+                                  2020</time></a></span><span class="min-read"><i class="fa fa-clock-o"
+                                aria-hidden="true"></i>1 min read</span> </div><!-- .entry-meta -->
+                        </header><!-- .entry-header -->
+
+
+                        <div class="entry-content">
+                          <p>This post has 4 categories, part of a hierarchy that is 3 deep. Lorem ipsum dolor sit amet,
+                            consectetuer adipiscing elit. Fusce euismod commodo ante.</p>
+
+                          <p><a href="https://wp-themes.com/refined-news/?p=4" class="read-more-text">
+                              Read More
+                            </a></p>
+                        </div>
+                        <!-- .entry-content -->
+
+                        <footer class="entry-footer">
+                        </footer><!-- .entry-footer -->
+
+                      </div> <!-- .refined-magazine-content-area -->
+                    </div> <!-- .refined-magazine-content-container -->
+                  </article><!-- #post-4 -->
+                  <article id="post-1"
+                    class="post-1 post type-post status-publish format-standard hentry category-uncategorized two-columns"
+                    itemtype="https://schema.org/CreativeWork" itemscope="">
+                    <div class="refined-magazine-content-container refined-magazine-no-thumbnail">
+                      <div class="refined-magazine-content-area">
+                        <header class="entry-header">
+
+                          <div class="post-meta">
+                            <span class="cat-links"><a class="ct-cat-item-1"
+                                href="https://wp-themes.com/refined-news/?cat=1" rel="category tag">Uncategorized</a>
+                            </span> </div>
+                          <h2 class="entry-title" itemprop="headline"><a href="https://wp-themes.com/refined-news/?p=1"
+                              rel="bookmark">Hello world!</a></h2>
+                          <div class="entry-meta">
+                            <span class="posted-on"><i class="fa fa-calendar"></i><a
+                                href="https://wp-themes.com/refined-news/?p=1" rel="bookmark"><time
+                                  class="entry-date published" datetime="2008-06-04T22:40:06+00:00"
+                                  itemprop="datePublished">June 4, 2008</time><time class="updated"
+                                  datetime="2020-11-18T07:19:06+00:00" itemprop="dateModified">November 18,
+                                  2020</time></a></span><span class="min-read"><i class="fa fa-clock-o"
+                                aria-hidden="true"></i>1 min read</span> </div><!-- .entry-meta -->
+                        </header><!-- .entry-header -->
+
+
+                        <div class="entry-content">
+                          <p>Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!</p>
+
+                          <p><a href="https://wp-themes.com/refined-news/?p=1" class="read-more-text">
+                              Read More
+                            </a></p>
+                        </div>
+                        <!-- .entry-content -->
+
+                        <footer class="entry-footer">
+                        </footer><!-- .entry-footer -->
+
+                      </div> <!-- .refined-magazine-content-area -->
+                    </div> <!-- .refined-magazine-content-container -->
+                  </article><!-- #post-1 -->
+                </div>
+                <div class="candid-pagination"></div>
+              </main>
+            </div>
+          </div><!-- #primary -->
+
+        </div> <!-- .front-page-content-wrapper -->
+      </div>
+    </div>
+
+    <footer id="colophon" class="site-footer">
+
+      <div class="top-footer">
+        <div class="container-inner clearfix">
+          <div class="ct-col-3">
+
+            <section id="recent-posts-52" class="widget widget_recent_entries">
+              <h2 class="widget-title">Recent Posts</h2>
+              <ul>
+                <li>
+                  <a href="https://wp-themes.com/refined-news/?p=19">Worth A Thousand Words</a>
+                </li>
+                <li>
+                  <a href="https://wp-themes.com/refined-news/?p=36">Elements</a>
+                </li>
+                <li>
+                  <a href="https://wp-themes.com/refined-news/?p=14">More Tags</a>
+                </li>
+                <li>
+                  <a href="https://wp-themes.com/refined-news/?p=8">HTML</a>
+                </li>
+                <li>
+                  <a href="https://wp-themes.com/refined-news/?p=6">Links</a>
+                </li>
+              </ul>
+
+            </section>
+          </div>
+          <div class="ct-col-3">
+            <section id="recent-comments-52" class="widget widget_recent_comments">
+              <h2 class="widget-title">Recent Comments</h2>
+              <ul id="recentcomments">
+                <li class="recentcomments"><span class="comment-author-link"><a href="http://josephscott.org/"
+                      rel="external nofollow ugc" class="url">Joseph Scott</a></span> on <a
+                    href="https://wp-themes.com/refined-news/?p=1#comment-509">Hello world!</a></li>
+                <li class="recentcomments"><span class="comment-author-link"><a href="http://joseph.randomnetworks.com/"
+                      rel="external nofollow ugc" class="url">Joseph Scott</a></span> on <a
+                    href="https://wp-themes.com/refined-news/?p=8#comment-2">HTML</a></li>
+                <li class="recentcomments"><span class="comment-author-link"><a href="https://wordpress.org/"
+                      rel="external nofollow ugc" class="url" target="_blank">A WordPress Commenter</a></span> on <a
+                    href="https://wp-themes.com/refined-news/?p=1#comment-37977">Hello world!</a></li>
+              </ul>
+            </section>
+          </div>
+          <div class="ct-col-3">
+            <section id="search-52" class="widget widget_search">
+              <form role="search" method="get" class="search-form" action="https://wp-themes.com/refined-news/">
+                <label>
+                  <span class="screen-reader-text">Search for:</span>
+                  <input type="search" class="search-field" placeholder="Search …" value="" name="s">
+                </label>
+                <input type="submit" class="search-submit" value="Search">
+              </form>
+            </section>
+          </div>
+        </div> <!-- .container-inner -->
+      </div> <!-- .top-footer -->
+
+      <div class="site-info" itemtype="https://schema.org/WPFooter" itemscope="">
+        <div class="container-inner">
+          <span class="copy-right-text">All Rights Reserved 2021.</span><br>
+
+          <a href="https://wordpress.org/" target="_blank">
+            Proudly powered by WordPress </a>
+          <span class="sep"> | </span>
+          Theme: Refined News by <a href="https://www.candidthemes.com/" target="_blank">Candid Themes</a>. </div>
+        <!-- .container-inner -->
+      </div><!-- .site-info -->
+    </footer>
+
+    <a id="toTop" class="go-to-top" href="#" title="Go to Top">
+      <i class="fa fa-angle-double-up"></i>
+    </a>
+
+  </div>
+
+
+  
+  
+
+  <script src="https://cdn.bootcdn.net/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <%- js('js/jquery.marquee.js')%>
+  <%- js( 'js/slick.js') %>
+  
+
+  <%- js('js/navigation.js') %>
+  
+  <%- js('js/skip-link-focus-fix.js') %>
+  <%- js('js/theia-stick-sidebar.js') %>
+  <%- js('js/refined-magazine-custom.js') %>
+  <%- js('js/refined-news-custom.js') %>
+</body>
+
+</html>

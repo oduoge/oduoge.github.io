@@ -1,0 +1,15 @@
+favicon:
+  small:
+  medium:
+menu:
+  categories: /categories/
+  tags: /tags/
+  archive_a: /archives
+
+home:
+  last: 最新文章
+
+footer:
+  sice:
+  icon: user
+  custom_text: Private ❤ Blog

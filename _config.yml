@@ -74,7 +74,7 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 # theme: landscape
-theme: hueman
+theme: refined_news
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
