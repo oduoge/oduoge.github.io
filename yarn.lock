@@ -1300,7 +1300,7 @@ hexo-generator-index@^0.2.0:
     hexo-pagination "0.0.2"
     object-assign "^4.0.1"
 
-hexo-generator-json-content@^4.1.6:
+hexo-generator-json-content@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/hexo-generator-json-content/-/hexo-generator-json-content-4.2.3.tgz#1cabaf53319c4ca5be41a34a501f280e76cae60b"
   dependencies:
@@ -1327,6 +1327,12 @@ hexo-i18n@^0.2.1:
   resolved "http://registry.npm.taobao.org/hexo-i18n/download/hexo-i18n-0.2.1.tgz#84f141432bf09d8b558ed878c728164b6d1cd6de"
   dependencies:
     sprintf-js "^1.0.2"
+
+hexo-lazyload-image@^1.0.9:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/hexo-lazyload-image/-/hexo-lazyload-image-1.0.10.tgz#08a67e724590371ef49b77c88eab51d5d367f32e"
+  dependencies:
+    uglify-js "^3.0.27"
 
 hexo-log@^0.2.0:
   version "0.2.0"
@@ -1423,7 +1429,7 @@ hexo-wordcount@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/hexo-wordcount/-/hexo-wordcount-6.0.1.tgz#5a60efc9d3c8e421956f2fd6683ca94a8a795264"
 
-hexo@^3.9.0:
+hexo@^3.7.1:
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/hexo/-/hexo-3.9.0.tgz#7b5afe3b7de8829469635acc952757fac3ec863c"
   dependencies:
@@ -1847,8 +1853,8 @@ lodash.map@^4.4.0:
   resolved "http://registry.npm.taobao.org/lodash.map/download/lodash.map-4.6.0.tgz#771ec7839e3473d9c4cde28b19394c3562f4f6d3"
 
 lodash.merge@^4.4.0:
-  version "4.6.1"
-  resolved "http://registry.npm.taobao.org/lodash.merge/download/lodash.merge-4.6.1.tgz#adc25d9cb99b9391c59624f379fbba60d7111d54"
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
 
 lodash.pick@^4.2.1:
   version "4.4.0"
@@ -3024,6 +3030,10 @@ uglify-js@2.6.0:
     source-map "~0.5.1"
     uglify-to-browserify "~1.0.0"
     yargs "~3.10.0"
+
+uglify-js@^3.0.27:
+  version "3.13.4"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.13.4.tgz#592588bb9f47ae03b24916e2471218d914955574"
 
 uglify-js@~2.4:
   version "2.4.24"
